@@ -6,6 +6,7 @@
 <title>Index JSP</title>
 </head>
 <body>
+	<!--  수정된 부분  -->
 	<%@ include file="/WEB-INF/views/common/header.jsp" %>
 </body>
 </html>
