@@ -18,7 +18,7 @@
 </head>
 
 <body>
-	<%-- <%@ include file="/WEB-INF/views/common/header.jsp"%> --%>
+	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 
 	<div class="content-wrap">
 		<ul class="navi-bar">
@@ -181,7 +181,7 @@
 		</div>
 	</div>
 	
-	<%-- <%@ include file="/WEB-INF/views/common/footer.jsp"%> --%>
+	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 
 	<script type="text/javascript">
 		var navi = $(".navi-bar>li");
