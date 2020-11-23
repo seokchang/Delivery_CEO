@@ -68,12 +68,12 @@ a {
 	box-sizing: border-box;
 }
 
-.notice-wrapper {
+.notice-wrap {
 	float: left;
 	width: 54%;
 }
 
-.review-wrapper {
+.review-wrap {
 	float: right;
 	width: 43%;
 }

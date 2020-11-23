@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SelfServicePageServlet
+ * Servlet implementation class ManageMenuPageServlet
  */
-@WebServlet(name = "SelfServicePage", urlPatterns = { "/selfServicePage" })
-public class SelfServicePageServlet extends HttpServlet {
+@WebServlet(name = "ManageMenuPage", urlPatterns = { "/manageMenuPage" })
+public class ManageMenuPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SelfServicePageServlet() {
+	public ManageMenuPageServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -31,7 +31,7 @@ public class SelfServicePageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/pageSelfService/selfService.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/pageSelfService/manageMenu.jsp");
 
 		rd.forward(request, response);
 	}
