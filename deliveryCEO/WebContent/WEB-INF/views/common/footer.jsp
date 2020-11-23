@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- <div class="inner">
+  <div class="inner">
         
         <div class="footer">
             <div class="footer1">
@@ -42,7 +42,7 @@
         </div>
     </div>
     <style>
-    body{
+   body{
     margin:0;
 }
 .inner{
@@ -97,7 +97,7 @@ h5.b{
 }
 
 
-    
+
     </style>
 </body>
 </html>
