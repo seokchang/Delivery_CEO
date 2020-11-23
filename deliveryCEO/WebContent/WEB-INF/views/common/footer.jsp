@@ -8,7 +8,7 @@
 </head>
 <body>
  <div class="inner">
-        <div class="a"></div>
+        
         <div class="footer">
             <div class="footer1">
                 <ul>
