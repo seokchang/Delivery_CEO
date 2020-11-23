@@ -52,11 +52,7 @@
 ul{
     margin:0;
 }
-div.a{
-    width:100%;
-    height:800px;
-    background-color:black;
-}
+
 div.footer{
     width:100%;
     height:200px;
