@@ -18,16 +18,17 @@
                 <div class="logo">
                     <p>모방의민족</p>
                 </div>
-                <form>
+                
                     <div class="join">
+                    <form name="/join" method='post' id="ceoJoin">
                         필수 정보를 입력해주세요.
-                        <input type="text" name="memberId" id="id" class="a" placeholder="아이디*(4~20자)" required>
-                        <input type="password" name="memberPw" id="pw" class="a" placeholder="비밀번호*(영문+숫자,8~20자 영어먼저)"
+                        <input type="text" name="ceoId" id="id" class="a" placeholder="아이디*(4~20자)" required>
+                        <input type="password" name="ceoPw" id="pw" class="a" placeholder="비밀번호*(영문+숫자,8~20자 영어먼저)"
                             required>
-                        <input type="text" name="memberName" id="name" class="a" placeholder="이름* " required>
-                        <input type="number" name="memberPhone" id="phone" class="a" placeholder="휴대폰*(-빼고 쓰세요) "
+                        <input type="text" name="ceoName" id="name" class="a" placeholder="이름* " required>
+                        <input type="number" name="ceoTel" id="tel" class="a" placeholder="휴대폰*(-빼고 쓰세요) "
                             required>
-                        <input type="text" name="memberAddr" id="addr" class="a" placeholder="주소* " required>
+                        <input type="text" name="ceoAddr" id="addr" class="a" placeholder="주소* " required>
                         <br>
                         <br>
                         <div class="checkbox_group">
@@ -45,14 +46,16 @@
                             <input type="checkbox" id="check_2">광고성 정보 수신 동의 (선택)
                         </div>
                         <ul>
-                            <li class="b" style="color: gray;">배민사장님광장 회원에게 제공하는 서비스의 광고성 정보를 수신합니다.</li>
-                            <br>
-                            <br>
+                            <li class="b" style="color: gray;">배민사장님광장 회원에게 제공하는 서비스의 광고성 정보를 수신합니다.<br><br></li>
+                            
+                           
+                            
                             <li class="c">만 14세 이상 회원만 가입 가능합니다. <a href="#">내용보기</a></li>
                         </ul>
                         <input type="submit" value="회원가입" class="a" style="background-color:#1a7cff;">
+                        </form>
                     </div>
-                </form>
+                
             </div>
         </div>
 
