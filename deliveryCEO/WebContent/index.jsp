@@ -4,21 +4,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Index JSP</title>
-</head>
-<body>
 	<!--  수정된 부분  -->
-	<%@ include file="/WEB-INF/views/common/header.jsp" %>
-	<!DOCTYPE html>
-<html>
-
-<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Header JSP</title>
-</head>
 
+
+</head>
+<body>
 <body>
     <div class="container" style="margin-top: -10px;">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -133,7 +128,7 @@
     }
 
     .content1 {
-        width: 550px;
+        width: 425px;
         height: 300px;
         background-color: red;
         float: left;
@@ -255,7 +250,7 @@
     }
 
     .inner {
-        width: 70%;
+        width: 86%;
         margin: 0 auto;
     }
 
@@ -333,9 +328,6 @@
 </style>
 
 
-
-</html>
-	<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 	
 </body>
 </html>
