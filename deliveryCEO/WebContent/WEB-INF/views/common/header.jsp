@@ -10,7 +10,6 @@
 </head>
 <body>
 	<div class="container" style="margin-top: -10px;">
-
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 
