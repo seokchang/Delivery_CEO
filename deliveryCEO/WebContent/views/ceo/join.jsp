@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
-    <link rel="stylesheet" href="join.css">
     <title>Document</title>
 </head>
 
@@ -20,14 +19,12 @@
                 </div>
                 
                     <div class="join">
-                    <form name="/join" method='post' id="ceoJoin">
+                    <form action="/join" method='post' id="ceoJoin">
                         필수 정보를 입력해주세요.
-                        <input type="text" name="ceoId" id="id" class="a" placeholder="아이디*(4~20자)" required>
-                        <input type="password" name="ceoPw" id="pw" class="a" placeholder="비밀번호*(영문+숫자,8~20자 영어먼저)"
-                            required>
+                        <input type="text" name="ceoId" id="id" class="a" placeholder="아이디*(4~20자)" required><span id="idChkMsg"></span>
+                        <input type="password" name="ceoPw" id="pw" class="a" placeholder="비밀번호*(영문+숫자,8~20자 영어먼저)" required>
                         <input type="text" name="ceoName" id="name" class="a" placeholder="이름* " required>
-                        <input type="number" name="ceoTel" id="tel" class="a" placeholder="휴대폰*(-빼고 쓰세요) "
-                            required>
+                        <input type="number" name="ceoTel" id="tel" class="a" placeholder="휴대폰*(-빼고 쓰세요) " required>
                         <input type="text" name="ceoAddr" id="addr" class="a" placeholder="주소* " required>
                         <br>
                         <br>
@@ -36,10 +33,10 @@
                             <br>
                             <br>
                             <br>
-                            <input type="checkbox" id="check_1">필수 항목에 동의합니다.
+                            <input type="checkbox" id="check_1" required>필수 항목에 동의합니다.
                             <ul>
-                                <li class="b"><a href="#">배민사장님광장 이용약관</a></li>
-                                <li class="b"><a href="#">개인정보 수집이용 동의</a></li>
+                                <li class="b"><a href="/views/ceo/joinAgreeMent.jsp">배민사장님광장 이용약관</a></li>
+                                <li class="b"><a href="/views/ceo/joinAgreeMent.jsp">개인정보 수집이용 동의</a></li>
                             </ul>
                             <br>
                             <br>
@@ -50,7 +47,7 @@
                             
                            
                             
-                            <li class="c">만 14세 이상 회원만 가입 가능합니다. <a href="#">내용보기</a></li>
+                            <li class="c">만 14세 이상 회원만 가입 가능합니다. <a href="/views/ceo/joinAgreeMent.jsp">내용보기</a></li>
                         </ul>
                         <input type="submit" value="회원가입" class="a" style="background-color:#1a7cff;">
                         </form>
@@ -123,9 +120,6 @@ a{
     color:gray;
     font-size:11px;
 }
-
-
-
 </style>
 <script>
     $(function () {
@@ -141,9 +135,9 @@ a{
 
         //비밀번호 유효성검사        (수정해야댐 정규식)
         $("#pw").focusout(function (e) {
-            var regExp = /^[a-zA-Z]+[0-9]{8,20}$/;
+        	var regExp = /^[A-Za-z0-9]{6,12}$/;//숫자와 문자 포함 형태의 6~12자리 이내의 암호 정규식
             if (!regExp.test($("#pw").val())) {
-                alert("영어+숫자,8~20자 입력해주세요 (영어먼저)");
+                alert("숫자,문자 포함 6~12자 입력해주세요.");
                 $("#pw").val("");
                 $("#pw").focus();
             }
@@ -174,8 +168,27 @@ a{
 
             $("#check_all").prop("checked", is_checked);
         });
+        $("#id").keyup(function(){
+			var ceoId = $(this).val();
+			$.ajax({
+				url : "/ajaxCheckId",
+				type : "get",
+				data : {ceoId:ceoId},
+				success : function(data){
+					var msg = $("#idChkMsg");
+					if(data == 1){
+						msg.html('사용가능');
+						msg.css('color','green');
+					}else{
+						msg.html('이미사용중인 아이디');
+						msg.css('color','red');
+					}
+				}
+				
+				
+			});
+		});
     });
-
 
 </script>
 

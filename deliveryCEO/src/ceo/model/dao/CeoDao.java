@@ -13,7 +13,7 @@ public class CeoDao {
 	public int insertCeo(Connection conn, Ceo ceo) {
 		PreparedStatement pstmt = null;
 		int result = 0;
-		String query = "insert into CEO_DB values(?,?,?,?,?)";
+		String query = "insert into CEO_DB values(?,?,?,?,?,to_char(sysdate,'yyyy-mm-dd'))";
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, ceo.getCeoId());
@@ -47,6 +47,7 @@ public class CeoDao {
 				loginCeo.setCeoName(rset.getString("ceo_name"));
 				loginCeo.setCeoTel(rset.getString("ceo_tel"));
 				loginCeo.setCeoAddr(rset.getString("ceo_addr"));
+				loginCeo.setCeoEnroll(rset.getString("ceo_Enroll"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -55,7 +56,33 @@ public class CeoDao {
 			JDBCTemplate.close(rset);
 			JDBCTemplate.close(pstmt);
 		}
-		
+		return loginCeo;
+	}
+	public Ceo selectOneCeo(Connection conn, String ceoId) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		Ceo loginCeo = null;
+		String query = "select * from CEO_DB where ceo_id=?";
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, ceoId);
+			rset = pstmt.executeQuery();
+			if(rset.next()) {
+				loginCeo = new Ceo();
+				loginCeo.setCeoId(rset.getString("ceo_id"));
+				loginCeo.setCeoPw(rset.getString("ceo_pw"));
+				loginCeo.setCeoName(rset.getString("ceo_name"));
+				loginCeo.setCeoTel(rset.getString("ceo_tel"));
+				loginCeo.setCeoAddr(rset.getString("ceo_addr"));
+				loginCeo.setCeoEnroll(rset.getString("ceo_Enroll"));		
+			}	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
 		return loginCeo;
 	}
 

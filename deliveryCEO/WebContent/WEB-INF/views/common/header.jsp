@@ -1,4 +1,8 @@
+<%@page import="ceo.model.vo.Ceo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+Ceo ceo= (Ceo)session.getAttribute("Ceo");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -168,12 +172,22 @@ div.headermom:hover {
 		<div class="inner">
 			<div class="header" style="margin-top: -10px">
 				<div class="a">
+				<%if(ceo==null) {%>
 					<ul>
-						<li class="menu"><a href="#" style="color: black;">회원가입</a></li>
-						<li class="menu"><a href="#" style="color: black;">로그인</a></li>
+						<li class="menu"><a href="/views/ceo/joinClick.jsp" style="color: black;">회원가입</a></li>
+						<li class="menu"><a href="/views/ceo/login.jsp" style="color: black;">로그인</a></li>
 						<li class="menu"><a href="#" style="color: black;">고객센터</a></li>
 						<li class="menu"><a href="/selfServicePage" style="color: black;">셀프서비스</a></li>
 					</ul>
+					<%}else{%>
+					<ul>
+						<li class="menu"><a href="/logout" style="color: black;">로그아웃</a></li>
+						<li class="menu"><a href="#" style="color: black;"><%=ceo.getCeoName() %></a></li>
+						<li class="menu"><a href="#" style="color: black;">고객센터</a></li>
+						<li class="menu"><a href="/selfServicePage" style="color: black;">셀프서비스</a></li>
+					</ul>
+					<%}%>
+				
 				</div>
 				<div class="b">
 					<p style="margin-top: 10px;">

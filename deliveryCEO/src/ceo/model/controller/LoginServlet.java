@@ -41,7 +41,6 @@ public class LoginServlet extends HttpServlet {
 			Ceo loginCeo = new CeoService().selectOneCeo(ceo);
 			//4. 결과 처리
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
-			request.setAttribute("loc", "/");
 			if(loginCeo != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("Ceo", loginCeo);
@@ -49,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 				request.setAttribute("loc", "/");
 			}else {
 				request.setAttribute("msg","아이디 혹은 비밀번호를 확인하세요.");
-				request.setAttribute("loc", "/views/ceo/login.jsp");	
+				request.setAttribute("loc", "/views/ceo/login.jsp");
 			}
 			rd.forward(request, response);
 	}

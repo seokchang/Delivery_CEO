@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,59 +15,7 @@
 
 </head>
 <body>
-<body>
-	<div class="container" style="margin-top: -10px;">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner">
-
-				<div class="item active">
-					<div class="one"></div>
-					<div class="carousel-caption"></div>
-				</div>
-
-				<div class="item">
-					<div class="two"></div>
-					<div class="carousel-caption"></div>
-				</div>
-
-				<div class="item">
-					<div class="three"></div>
-					<div class="carousel-caption"></div>
-				</div>
-
-			</div>
-
-			<!-- Left and right controls -->
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span
-				class="glyphicon glyphicon-chevron-left"></span> <span class="sr-only">Previous</span>
-			</a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right"></span> <span class="sr-only">Next</span>
-			</a>
-		</div>
-	</div>
-	<div class="headermom">
-		<div class="inner">
-			<div class="header" style="margin-top: -10px">
-				<div class="a">
-					<ul>
-						<li class="menu"><a href="/views/ceo/joinClick.jsp" style="color: black;">회원가입</a></li>
-						<li class="menu"><a href="/views/ceo/login.jsp" style="color: black;">로그인</a></li>
-						<li class="menu"><a href="#" style="color: black;">고객센터</a></li>
-						<li class="menu"><a href="/selfService" style="color: black;">셀프서비스</a></li>
-					</ul>
-				</div>
-				<div class="b">
-					<p style="margin-top: 10px;">
-						<a href="#" style="color: black;">모방의민족</a>
-					</p>
-				</div>
-				<div class="c"></div>
-			</div>
-		</div>
-	</div>
+<%@ include file="/WEB-INF/views/common/header.jsp"%>
 	<div class="blank"></div>
 	<hr>
 	<br>

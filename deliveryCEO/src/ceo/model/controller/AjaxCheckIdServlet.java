@@ -1,8 +1,8 @@
 package ceo.model.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,16 +13,16 @@ import ceo.model.service.CeoService;
 import ceo.model.vo.Ceo;
 
 /**
- * Servlet implementation class JoinServlet
+ * Servlet implementation class AjaxCheckIdServlet
  */
-@WebServlet(name = "Join", urlPatterns = { "/join" })
-public class JoinServlet extends HttpServlet {
+@WebServlet(name = "AjaxCheckId", urlPatterns = { "/ajaxCheckId" })
+public class AjaxCheckIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JoinServlet() {
+    public AjaxCheckIdServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,26 +31,20 @@ public class JoinServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			//1.인코딩(생략가능)
-			//2.view에서 온 데이터 저장
-			Ceo ceo = new Ceo();
-			ceo.setCeoId(request.getParameter("ceoId"));
-			ceo.setCeoPw(request.getParameter("ceoPw"));
-			ceo.setCeoName(request.getParameter("ceoName"));
-			ceo.setCeoTel(request.getParameter("ceoTel"));
-			ceo.setCeoAddr(request.getParameter("ceoAddr"));
-			System.out.println("test");
-			//3.비즈니스 로직
-			int result = new CeoService().insertCeo(ceo);
-			//4.결과처리
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
-			request.setAttribute("loc", "/");
-			if(result>0) {
-				request.setAttribute("msg", "회원가입 축하드립니다.");
-			}else {
-				request.setAttribute("msg", "회원가입을 다시해주세요.");
-			}
-			rd.forward(request, response);
+				//1.인코딩
+				//2. view에서 넘어온 값 저장
+				String  ceoId = request.getParameter("ceoId");
+				//3. 비지니스 로직 처리
+				Ceo loginCeo = new CeoService().selectOneCeo(ceoId);
+				//4.결과처리
+				PrintWriter out = response.getWriter();
+				if(loginCeo == null) {
+					//사용가능
+					out.print(1);
+				}else {
+					//사용불가능	
+					out.print(0);
+				}
 	}
 
 	/**

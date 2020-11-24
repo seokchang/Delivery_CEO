@@ -26,5 +26,12 @@ public class CeoService {
 		return loginCeo;
 	}
 
+	public Ceo selectOneCeo(String ceoId) {
+		Connection conn = JDBCTemplate.getConnection();
+		Ceo loginCeo = new CeoDao().selectOneCeo(conn,ceoId);
+		JDBCTemplate.close(conn);
+		return loginCeo;
+	}
+
 
 }
