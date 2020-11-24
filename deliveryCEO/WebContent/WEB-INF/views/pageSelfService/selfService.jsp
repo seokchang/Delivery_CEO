@@ -23,28 +23,41 @@
 	<div class="content-wrap">
 		<ul class="navi-bar">
 			<li><a href="/">HOME</a></li>
-			<li>
-				<a href="#">STORE</a>
+			<li><a href="#">STORE</a>
 				<ul class="subMenu">
-					<li><a href="#">가게 정보 등록</a></li>
-					<li><a href="#">가게 정보 관리</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">MENU</a>
+					<li><a href="/insertStoreForm">가게 정보 등록</a></li>
+					<li><a href="/updateStoreForm">가게 정보 관리</a></li>
+				</ul></li>
+			<li><a href="#">MENU</a>
 				<ul class="subMenu">
-					<li><a href="#">메뉴 등록</a></li>
+					<li><a href="/insertMenuForm">메뉴 등록</a></li>
 					<li><a href="/listMenu">메뉴 관리</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">REVIEW</a>
+				</ul></li>
+			<li><a href="#">REVIEW</a>
 				<ul class="subMenu">
 					<li><a href="/listReview">리뷰 리스트</a></li>
 					<li><a href="/listOrder">주문 리스트</a></li>
-				</ul>
-			</li>
+				</ul></li>
 		</ul>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h4 class="modal-title">Modal Header</h4>
+					</div>
+					<div class="modal-body">
+						<p>Some text in the modal.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div class="content-1">
 			<div class="notice-wrap">
@@ -69,7 +82,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<button type="button" class="btn btn-primary">공지사항 더보기</button>
+				<button type="button" class="btn btn-primary moreNotice">공지사항 더보기</button>
 			</div>
 
 			<div class="review-wrap">
@@ -94,7 +107,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<button type="button" class="btn btn-primary">리뷰 더보기</button>
+				<button type="button" class="btn btn-primary listReview">리뷰 더보기</button>
 			</div>
 		</div>
 
@@ -136,7 +149,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="button" class="btn btn-primary">메뉴 더보기</button>
+			<button type="button" class="btn btn-primary listMenu">메뉴 더보기</button>
 		</div>
 		<div class="content-3">
 			<div class="order-wrap">
@@ -177,11 +190,11 @@
 						</tr>
 					</tbody>
 				</table>
-				<button type="button" class="btn btn-primary">주문 관리</button>
+				<button type="button" class="btn btn-primary listOrder">주문 관리</button>
 			</div>
 		</div>
 	</div>
-	
+
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 
 	<script type="text/javascript">
@@ -190,10 +203,26 @@
 
 		$(function() {
 			subMenu.hide();
-			
+
 			$(navi).hover(function() {
 				$(this).children(".subMenu").slideToggle();
 			});
+		});
+
+		$(".moreNotice").click(function() {
+			location.href = "/listNotice";
+		});
+
+		$(".listReview").click(function() {
+			location.href = "/listReview";
+		});
+
+		$(".listMenu").click(function() {
+			location.href = "/listMenu";
+		});
+
+		$(".listOrder").click(function() {
+			location.href = "/listOrder";
 		});
 	</script>
 </body>

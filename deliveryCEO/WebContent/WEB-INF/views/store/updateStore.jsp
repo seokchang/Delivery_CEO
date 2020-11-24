@@ -1,0 +1,136 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Update Store Form</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+	<%@ include file="/WEB-INF/views/common/headerService.jsp"%>
+	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+
+	<div class="content-wrap">
+		<form action="/insertStoreInfo" method="POST" enctype="multipart/form-data">
+			<h1>가게 정보 등록</h1>
+			<table class="table">
+				<tr>
+					<th>카테고리</th>
+					<td>
+						<select>
+							<option value="1" selected>치킨</option>
+							<option value="2">피자</option>
+							<option value="3">한식</option>
+							<option value="4">중식</option>
+							<option value="5">일식</option>
+							<option value="6">양식</option>
+							<option value="7">분식</option>
+							<option value="8">족발&보쌈</option>
+							<option value="9">패스트푸드</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>아이디</th>
+					<td>
+						<!-- 로그인한 아이디 불러옴 -->
+						<input type="text" name="storeNo" id="storeNo" class="form-control" value=""
+							readonly="readonly">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="storeNo">사업자 번호</label></th>
+					<td>
+						<input type="text" name="storeNo" id="storeNo" class="form-control" value=""
+							readonly="readonly">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="storeName">상호명</label></th>
+					<td>
+						<input type="text" name="storeName" id="storeName" class="form-control" value="">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="storeAddr">위치</label></th>
+					<td>
+						<input type="text" name="storeAddr" id="storeAddr" class="form-control" value="">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="storeTel">전화번호</label></th>
+					<td>
+						<input type="text" name="storeTel" id="storeTel" class="form-control" value="">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="storeStartTime">영업 시작 시간</label></th>
+					<td>
+						<input type="text" name="storeStartTime" id="storeStartTime" class="form-control" value="">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="storeEndTime">영업 종료 시간</label></th>
+					<td>
+						<input type="text" name="storeEndTime" id="storeEndTime" class="form-control" value="">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="storeRest">휴무일</label></th>
+					<td>
+						<input type="text" name="storeRest" id="storeRest" class="form-control" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>첨부파일</th>
+					<td>
+						<input type="file" name="fileName" onchange="LoadImg(this)">
+					</td>
+				</tr>
+				<tr>
+					<th>이미지보기</th>
+					<td>
+						<div id="img-view">
+							<img id="img-view" width="350">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th><label for="storeDetail">가게 설명</label></th>
+					<td>
+						<textarea rows="3" cols="50" name="storeDetail" id="storeDetail" class="form-control"
+							style="resize: none;"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2" style="text-align: center;">
+						<button type="submit" class="btn btn-primary btn-lg">변경하기</button>
+						<button type="submit" class="btn btn-primary btn-lg">삭제하기</button>
+					</th>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	<script type="text/javascript">
+		function LoadImg(file) {
+			if (file.files.length != 0 && file.files[0] != 0) {
+				var reader = new FileReader();
+
+				reader.readAsDataURL(file.files[0]);
+				reader.onload = function(e) {
+					$("#img-view").attr('src', e.target.result);
+				}
+			} else {
+				$("#img-view").attr('src', '');
+			}
+		}
+	</script>
+</body>
+</html>

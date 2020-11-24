@@ -1,4 +1,4 @@
-package selfService.controller;
+package menu.controller;
 
 import java.io.IOException;
 
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ListReviewServlet
+ * Servlet implementation class InsertMenuFormServlet
  */
-@WebServlet(name = "ListReview", urlPatterns = { "/listReview" })
-public class ListReviewServlet extends HttpServlet {
+@WebServlet(name = "InsertMenuForm", urlPatterns = { "/insertMenuForm" })
+public class InsertMenuFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ListReviewServlet() {
+	public InsertMenuFormServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -31,7 +31,7 @@ public class ListReviewServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/review/listReview.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/menu/insertMenu.jsp");
 
 		rd.forward(request, response);
 	}

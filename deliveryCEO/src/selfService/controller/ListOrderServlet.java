@@ -31,7 +31,7 @@ public class ListOrderServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/pageSelfService/listOrder.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/order/listOrder.jsp");
 
 		rd.forward(request, response);
 	}

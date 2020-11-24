@@ -24,7 +24,7 @@
 				</div>
 				<div class="menu-wrap">
 					<ul>
-						<li><a href="#">셀프서비스</a></li>
+						<li><a href="/selfService">셀프서비스</a></li>
 						<li><a href="#">고객센터</a></li>
 						<li><a href="#">로그아웃</a></li>
 					</ul>

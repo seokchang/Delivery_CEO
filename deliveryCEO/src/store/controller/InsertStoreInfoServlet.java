@@ -1,8 +1,6 @@
-package selfService.controller;
+package store.controller;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ListReviewServlet
+ * Servlet implementation class InsertStoreInfoServlet
  */
-@WebServlet(name = "ListReview", urlPatterns = { "/listReview" })
-public class ListReviewServlet extends HttpServlet {
+@WebServlet(name = "InsertStoreInfo", urlPatterns = { "/insertStoreInfo" })
+public class InsertStoreInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ListReviewServlet() {
+	public InsertStoreInfoServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -31,9 +29,7 @@ public class ListReviewServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/review/listReview.jsp");
 
-		rd.forward(request, response);
 	}
 
 	/**
