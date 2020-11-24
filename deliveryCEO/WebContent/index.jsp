@@ -54,7 +54,7 @@
 						<li class="menu"><a href="/views/ceo/join.jsp" style="color: black;">회원가입</a></li>
 						<li class="menu"><a href="#" style="color: black;">로그인</a></li>
 						<li class="menu"><a href="#" style="color: black;">고객센터</a></li>
-						<li class="menu"><a href="/selfServicePage" style="color: black;">셀프서비스</a></li>
+						<li class="menu"><a href="/selfService" style="color: black;">셀프서비스</a></li>
 					</ul>
 				</div>
 				<div class="b">

@@ -18,7 +18,7 @@
 </head>
 
 <body>
-	<%@ include file="/WEB-INF/views/common/header.jsp"%>
+	<%-- <%@ include file="/WEB-INF/views/common/headerService.jsp"%> --%>
 
 	<div class="content-wrap">
 		<ul class="navi-bar">
@@ -34,13 +34,14 @@
 				<a href="#">MENU</a>
 				<ul class="subMenu">
 					<li><a href="#">메뉴 등록</a></li>
-					<li><a href="/manageMenuPage">메뉴 관리</a></li>
+					<li><a href="/listMenu">메뉴 관리</a></li>
 				</ul>
 			</li>
 			<li>
 				<a href="#">REVIEW</a>
 				<ul class="subMenu">
-					<li><a href="#">리뷰 보기</a></li>
+					<li><a href="/listReview">리뷰 리스트</a></li>
+					<li><a href="/listOrder">주문 리스트</a></li>
 				</ul>
 			</li>
 		</ul>
