@@ -1,6 +1,7 @@
+<%@page import="store.model.vo.Store"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	
+	Store store = (Store) request.getAttribute("store");
 %>
 <!DOCTYPE html>
 <html>
@@ -12,17 +13,18 @@
 </head>
 
 <body>
-	<%@ include file="/WEB-INF/views/common/headerService.jsp"%>
+	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
 
+	<div class="blank"></div>
 	<div class="content-wrap">
-		<form action="/insertStoreInfo" method="POST" enctype="multipart/form-data">
-			<h1>가게 정보 등록</h1>
+		<form action="/updateStoreInfo" method="POST" enctype="multipart/form-data">
+			<h1>가게 정보 관리</h1>
 			<table class="table">
 				<tr>
 					<th>카테고리</th>
 					<td>
-						<select>
+						<select name="storeCateId">
 							<option value="1" selected>치킨</option>
 							<option value="2">피자</option>
 							<option value="3">한식</option>
@@ -39,51 +41,57 @@
 					<th>아이디</th>
 					<td>
 						<!-- 로그인한 아이디 불러옴 -->
-						<input type="text" name="storeNo" id="storeNo" class="form-control" value=""
-							readonly="readonly">
+						<input type="text" name="storeCEO" id="storeCEO" class="form-control"
+							value="<%=ceo.getCeoId()%>" readonly="readonly">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeNo">사업자 번호</label></th>
 					<td>
-						<input type="text" name="storeNo" id="storeNo" class="form-control" value=""
-							readonly="readonly">
+						<input type="text" name="storeNo" id="storeNo" class="form-control"
+							value="<%=store.getStoreNo()%>" readonly="readonly">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeName">상호명</label></th>
 					<td>
-						<input type="text" name="storeName" id="storeName" class="form-control" value="">
+						<input type="text" name="storeName" id="storeName" class="form-control"
+							value="<%=store.getStoreName()%>">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeAddr">위치</label></th>
 					<td>
-						<input type="text" name="storeAddr" id="storeAddr" class="form-control" value="">
+						<input type="text" name="storeAddr" id="storeAddr" class="form-control"
+							value="<%=store.getStoreAddr()%>">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeTel">전화번호</label></th>
 					<td>
-						<input type="text" name="storeTel" id="storeTel" class="form-control" value="">
+						<input type="text" name="storeTel" id="storeTel" class="form-control"
+							value="<%=store.getStoreTel()%>">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeStartTime">영업 시작 시간</label></th>
 					<td>
-						<input type="text" name="storeStartTime" id="storeStartTime" class="form-control" value="">
+						<input type="text" name="storeStartTime" id="storeStartTime" class="form-control"
+							value="<%=store.getStoreStartTime()%>">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeEndTime">영업 종료 시간</label></th>
 					<td>
-						<input type="text" name="storeEndTime" id="storeEndTime" class="form-control" value="">
+						<input type="text" name="storeEndTime" id="storeEndTime" class="form-control"
+							value="<%=store.getStoreEndTime()%>">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeRest">휴무일</label></th>
 					<td>
-						<input type="text" name="storeRest" id="storeRest" class="form-control" value="">
+						<input type="text" name="storeRest" id="storeRest" class="form-control"
+							value="<%=store.getStoreRest()%>">
 					</td>
 				</tr>
 				<tr>
@@ -104,13 +112,12 @@
 					<th><label for="storeDetail">가게 설명</label></th>
 					<td>
 						<textarea rows="3" cols="50" name="storeDetail" id="storeDetail" class="form-control"
-							style="resize: none;"></textarea>
+							style="resize: none;"><%=store.getStoreDet()%></textarea>
 					</td>
 				</tr>
 				<tr>
 					<th colspan="2" style="text-align: center;">
 						<button type="submit" class="btn btn-primary btn-lg">변경하기</button>
-						<button type="submit" class="btn btn-primary btn-lg">삭제하기</button>
 					</th>
 				</tr>
 			</table>

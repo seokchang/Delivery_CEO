@@ -18,19 +18,18 @@ import store.model.service.StoreService;
 import store.model.vo.Store;
 
 /**
- * Servlet implementation class InsertStoreInfoServlet
+ * Servlet implementation class UpdateStoreInfoServlet
  */
-@WebServlet(name = "InsertStoreInfo", urlPatterns = { "/insertStoreInfo" })
-public class InsertStoreInfoServlet extends HttpServlet {
+@WebServlet(name = "UpdateStoreInfo", urlPatterns = { "/updateStoreInfo" })
+public class UpdateStoreInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public InsertStoreInfoServlet() {
+	public UpdateStoreInfoServlet() {
 		super();
 		// TODO Auto-generated constructor stub
-
 	}
 
 	/**
@@ -40,8 +39,7 @@ public class InsertStoreInfoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// 1. 인코딩
-		// 2. view에서 받은 데이터 저장
+		// 1. view에서 받은 데이터 저장
 		// 파일 업로드 형식이 맞는지 검사
 		if (!ServletFileUpload.isMultipartContent(request)) {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
@@ -53,12 +51,11 @@ public class InsertStoreInfoServlet extends HttpServlet {
 			return;
 		}
 
-		// 파일 업로드 준비
+		// 파일 업로드
 		String root = getServletContext().getRealPath("/");
 		String saveDirectory = root + "upload/photo";
-		// 최대 파일 크기 설정
 		int maxSize = 10 * 1024 * 1024;
-		// request -> MultipartRequest
+
 		MultipartRequest mRequest = new MultipartRequest(request, saveDirectory, maxSize, "UTF-8",
 				new DefaultFileRenamePolicy());
 
@@ -77,16 +74,16 @@ public class InsertStoreInfoServlet extends HttpServlet {
 		store.setStoreFilePath(mRequest.getFilesystemName("fileName"));
 		store.setStoreDet(mRequest.getParameter("storeDetail"));
 
-		// 3. 비즈니스 로직
-		int result = new StoreService().insertStoreInfo(store);
+		// 2. 비즈니스 로직
+		int result = new StoreService().updateStoreInfo(store);
 
-		// 4. 결과처리
+		// 3. 결과처리
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 
 		if (result > 0) {
-			request.setAttribute("msg", "가게 정보 등록 성공");
+			request.setAttribute("msg", "가게 정보 수정 성공");
 		} else {
-			request.setAttribute("msg", "가게 정보 등록 실패");
+			request.setAttribute("msg", "가게 정보 수정 실패");
 		}
 		request.setAttribute("loc", "/");
 		rd.forward(request, response);

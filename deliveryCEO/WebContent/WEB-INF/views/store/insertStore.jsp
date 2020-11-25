@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +9,10 @@
 </head>
 
 <body>
-	<%@ include file="/WEB-INF/views/common/headerService.jsp"%>
+	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
-
+	
+	<div class="blank"></div>
 	<div class="content-wrap">
 		<form action="/insertStoreInfo" method="POST" enctype="multipart/form-data">
 			<h1>가게 정보 등록</h1>
@@ -20,7 +20,7 @@
 				<tr>
 					<th style="text-align: center; vertical-align: middle;">카테고리</th>
 					<td>
-						<select>
+						<select name="storeCateId">
 							<option value="1" selected>치킨</option>
 							<option value="2">피자</option>
 							<option value="3">한식</option>
@@ -37,13 +37,16 @@
 					<th>아이디</th>
 					<td>
 						<!-- 로그인한 아이디 불러옴 -->
-						<input type="text" name="storeCEO" id="storeCEO" class="form-control" value="">
+						<input type="text" name="storeCEO" id="storeCEO" class="form-control"
+							value="<%=ceo.getCeoId()%>" readonly="readonly">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeNo">사업자 번호</label></th>
 					<td>
-						<input type="text" name="storeNo" id="storeNo" class="form-control">
+						<input type="text" name="storeNo" id="storeNo" class="form-control"
+							style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;">사업자 번호 유효성 체크</span>
 					</td>
 				</tr>
 				<tr>
@@ -61,19 +64,25 @@
 				<tr>
 					<th><label for="storeTel">전화번호</label></th>
 					<td>
-						<input type="text" name="storeTel" id="storeTel" class="form-control">
+						<input type="text" name="storeTel" id="storeTel" class="form-control"
+							style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;">전화번호 유효성 체크</span>
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeStartTime">영업 시작 시간</label></th>
 					<td>
-						<input type="text" name="storeStartTime" id="storeStartTime" class="form-control">
+						<input type="text" name="storeStartTime" id="storeStartTime" class="form-control"
+							style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;">영업 시작 시간 유효성체크</span>
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeEndTime">영업 종료 시간</label></th>
 					<td>
-						<input type="text" name="storeEndTime" id="storeEndTime" class="form-control">
+						<input type="text" name="storeEndTime" id="storeEndTime" class="form-control"
+							style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;">영업 종료 시간 유효성 체크</span>
 					</td>
 				</tr>
 				<tr>
@@ -113,6 +122,7 @@
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+
 	<script type="text/javascript">
 		function LoadImg(file) {
 			if (file.files.length != 0 && file.files[0] != 0) {

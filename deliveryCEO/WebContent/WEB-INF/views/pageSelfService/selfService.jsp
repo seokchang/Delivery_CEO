@@ -4,60 +4,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Self Service</title>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/css/selfservice/styleSelfService.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
-	<%-- <%@ include file="/WEB-INF/views/common/headerService.jsp"%> --%>
-
+	<%@ include file="/WEB-INF/views/common/header.jsp"%>
+	<link rel="stylesheet" href="/css/selfservice/styleSelfService.css">
+	<div class="blank"></div>
 	<div class="content-wrap">
 		<ul class="navi-bar">
 			<li><a href="/">HOME</a></li>
-			<li><a href="#">STORE</a>
+			<li><a href="javascript:void(0)">STORE</a>
 				<ul class="subMenu">
 					<li><a href="/insertStoreForm">가게 정보 등록</a></li>
-					<li><a href="/updateStoreForm">가게 정보 관리</a></li>
+					<li><a href="/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>">가게 정보 관리</a></li>
 				</ul></li>
-			<li><a href="#">MENU</a>
+			<li><a href="javascript:void(0)">MENU</a>
 				<ul class="subMenu">
 					<li><a href="/insertMenuForm">메뉴 등록</a></li>
 					<li><a href="/listMenu">메뉴 관리</a></li>
 				</ul></li>
-			<li><a href="#">REVIEW</a>
+			<li><a href="javascript:void(0)">REVIEW</a>
 				<ul class="subMenu">
 					<li><a href="/listReview">리뷰 리스트</a></li>
 					<li><a href="/listOrder">주문 리스트</a></li>
 				</ul></li>
 		</ul>
-
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">×</button>
-						<h4 class="modal-title">Modal Header</h4>
-					</div>
-					<div class="modal-body">
-						<p>Some text in the modal.</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<div class="content-1">
 			<div class="notice-wrap">

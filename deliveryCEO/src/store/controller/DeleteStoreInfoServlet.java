@@ -9,17 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import store.model.service.StoreService;
+
 /**
- * Servlet implementation class UpdateStoreFormServlet
+ * Servlet implementation class DeleteStoreInfoServlet
  */
-@WebServlet(name = "UpdateStoreForm", urlPatterns = { "/updateStoreForm" })
-public class UpdateStoreFormServlet extends HttpServlet {
+@WebServlet(name = "DeleteStoreInfo", urlPatterns = { "/deleteStoreInfo" })
+public class DeleteStoreInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public UpdateStoreFormServlet() {
+	public DeleteStoreInfoServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -31,8 +33,22 @@ public class UpdateStoreFormServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/store/updateStore.jsp");
+		// 1. view에서 받은 데이터 저장
+		String ceoId = request.getParameter("ceoId");
+		int storeNo = Integer.parseInt(request.getParameter("storeNo"));
 
+		// 2. 비즈니스 로직
+		int result = new StoreService().deleteStoreInfo(ceoId, storeNo);
+
+		// 3. 결과처리
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
+
+		if (result > 0) {
+			request.setAttribute("msg", "가게 정보 삭제 완료");
+		} else {
+			request.setAttribute("msg", "가게 정보 삭제 실패");
+		}
+		request.setAttribute("loc", "/");
 		rd.forward(request, response);
 	}
 

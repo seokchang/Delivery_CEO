@@ -9,9 +9,10 @@
 </head>
 
 <body>
-	<%@ include file="/WEB-INF/views/common/headerService.jsp"%>
+	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
-
+	
+	<div class="blank"></div>
 	<div class="content-wrap">
 		<form action="/insertMenu" method="POST" enctype="multipart/form-data">
 			<h1>메뉴 등록</h1>
@@ -32,7 +33,9 @@
 				<tr>
 					<th><label for="menuPrice">메뉴 가격</label></th>
 					<td>
-						<input type="text" name="menuPrice" id="menuPrice" class="form-control">
+						<input type="text" name="menuPrice" id="menuPrice" class="form-control"
+							style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;">메뉴 가격 유효성 검사</span>
 					</td>
 				</tr>
 				<tr>

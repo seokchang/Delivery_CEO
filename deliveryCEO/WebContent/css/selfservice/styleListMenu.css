@@ -15,9 +15,5 @@
 }
 
 .btn-wrap {
-	float: right;
-}
-
-.btn-wrap>button:last-child {
-	margin-left: 5px;
+	text-align: center;
 }

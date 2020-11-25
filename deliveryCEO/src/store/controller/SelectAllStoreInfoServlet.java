@@ -1,6 +1,7 @@
-package selfService.controller;
+package store.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,21 +9,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import ceo.model.vo.Ceo;
+import store.model.service.StoreService;
+import store.model.vo.Store;
 
 /**
- * Servlet implementation class SelfServiceServlet
+ * Servlet implementation class SelectAllStoreInfoServlet
  */
-@WebServlet(name = "SelfService", urlPatterns = { "/selfService" })
-public class SelfServiceServlet extends HttpServlet {
+@WebServlet(name = "SelectAllStoreInfo", urlPatterns = { "/selectAllStoreInfo" })
+public class SelectAllStoreInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SelfServiceServlet() {
+	public SelectAllStoreInfoServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -34,18 +35,16 @@ public class SelfServiceServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession(false);
+		// 1. view에서 받은 데이터 저장
+		String ceoId = request.getParameter("ceoId");
 
-		Ceo loginCEO = (Ceo) session.getAttribute("Ceo");
+		// 2. 비즈니스 로직
+		ArrayList<Store> listStore = new StoreService().selectAllStore(ceoId);
 
-		RequestDispatcher rd = null;
+		// 3. 결과처리
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/store/listStore.jsp");
 
-		if (loginCEO == null) {
-			rd = request.getRequestDispatcher("/views/ceo/login.jsp");
-		} else {
-			rd = request.getRequestDispatcher("/WEB-INF/views/pageSelfService/selfService.jsp");
-			request.setAttribute("Ceo", loginCEO);
-		}
+		request.setAttribute("listStore", listStore);
 		rd.forward(request, response);
 	}
 

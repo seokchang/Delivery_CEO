@@ -9,9 +9,10 @@
 </head>
 
 <body>
-	<%@ include file="/WEB-INF/views/common/headerService.jsp"%>
+	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
 
+	<div class="blank"></div>
 	<div class="content-wrap">
 		<h1>리뷰 확인</h1>
 		<hr>
