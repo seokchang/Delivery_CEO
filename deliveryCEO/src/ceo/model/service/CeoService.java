@@ -33,5 +33,23 @@ public class CeoService {
 		return loginCeo;
 	}
 
+	public Ceo searchId(String ceoName, String ceoTel) {
+		Connection conn = JDBCTemplate.getConnection();
+		Ceo ceo = new CeoDao().searchId(conn,ceoName,ceoTel);
+		JDBCTemplate.close(conn);
+		
+		System.out.println("ceo :"+ceo);
+		return ceo;
+	}
+
+	public Ceo searchPw(String ceoId, String ceoTel, String ceoName) {
+		Connection conn = JDBCTemplate.getConnection();
+		Ceo ceo = new CeoDao().searchPw(conn, ceoId, ceoName, ceoTel);
+		JDBCTemplate.close(conn);
+		
+		return ceo;
+	}
+
+
 
 }

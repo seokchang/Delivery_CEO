@@ -27,7 +27,7 @@
 						<input type="text" name="ceoId" id="id" class="a" placeholder="아이디를 입력하세요" required>
 							 <input type="password" name="ceoPw" id="pw" class="a" placeholder="비밀번호를 입력하세요" required>
 						<ul>
-							<li><a href="#">아이디</a>/<a href="#">비밀번호 찾기</a></li>
+							<li><a href="/views/ceo/findId.jsp">아이디</a>/<a href="/views/ceo/findPw.jsp">비밀번호 찾기</a></li>
 							<li><a href="/views/ceo/join.jsp">회원가입</a></li>
 						</ul>
 

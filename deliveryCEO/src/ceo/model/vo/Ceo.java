@@ -7,6 +7,19 @@ public class Ceo {
 	private String ceoTel;
 	private String ceoAddr;
 	private String ceoEnroll;
+	public Ceo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Ceo(String ceoId, String ceoPw, String ceoName, String ceoTel, String ceoAddr, String ceoEnroll) {
+		super();
+		this.ceoId = ceoId;
+		this.ceoPw = ceoPw;
+		this.ceoName = ceoName;
+		this.ceoTel = ceoTel;
+		this.ceoAddr = ceoAddr;
+		this.ceoEnroll = ceoEnroll;
+	}
 	public String getCeoId() {
 		return ceoId;
 	}
@@ -43,17 +56,5 @@ public class Ceo {
 	public void setCeoEnroll(String ceoEnroll) {
 		this.ceoEnroll = ceoEnroll;
 	}
-	public Ceo(String ceoId, String ceoPw, String ceoName, String ceoTel, String ceoAddr, String ceoEnroll) {
-		super();
-		this.ceoId = ceoId;
-		this.ceoPw = ceoPw;
-		this.ceoName = ceoName;
-		this.ceoTel = ceoTel;
-		this.ceoAddr = ceoAddr;
-		this.ceoEnroll = ceoEnroll;
-	}
-	public Ceo() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
 }

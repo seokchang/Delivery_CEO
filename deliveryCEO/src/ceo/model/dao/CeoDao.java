@@ -85,5 +85,73 @@ public class CeoDao {
 		}
 		return loginCeo;
 	}
+	public Ceo searchId(Connection conn, String ceoName, String ceoTel) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		System.out.println("Service>"+ceoName);
+		System.out.println("Service>"+ceoTel);
+		String query = "select * from CEO_DB where ceo_name=? and ceo_tel=?";
+		Ceo ceo = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1,ceoName);
+			pstmt.setString(2,ceoTel+"  ");
+			rset = pstmt.executeQuery();
+			System.out.println("if문 전");
+			if(rset.next()) {
+				System.out.println("if문 안");
+				ceo = new Ceo();
+				ceo.setCeoId(rset.getString("ceo_id"));
+				ceo.setCeoPw(rset.getString("ceo_pw"));
+				ceo.setCeoName(rset.getString("ceo_name"));
+				ceo.setCeoTel(rset.getString("ceo_tel"));
+				ceo.setCeoAddr(rset.getString("ceo_addr"));
+				ceo.setCeoEnroll(rset.getString("ceo_Enroll"));	
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
+		System.out.println("dao : "+ ceo);
+		return ceo;
+	}
+	public Ceo searchPw(Connection conn, String ceoId, String ceoName, String ceoTel) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String query = "select * from CEO_DB where ceo_id=? and ceo_tel=?";
+		Ceo ceo = null;
+			try {
+				pstmt = conn.prepareStatement(query);
+				pstmt.setString(1, ceoId);
+				pstmt.setString(2,ceoTel+"  ");
+				rset = pstmt.executeQuery();
+				while(rset.next()) {
+					ceo = new Ceo();
+					ceo.setCeoId(rset.getString("ceo_id"));
+					ceo.setCeoPw(rset.getString("ceo_pw"));
+					ceo.setCeoName(rset.getString("ceo_name"));
+					ceo.setCeoTel(rset.getString("ceo_tel"));
+					ceo.setCeoAddr(rset.getString("ceo_addr"));
+					ceo.setCeoEnroll(rset.getString("ceo_Enroll"));	
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				JDBCTemplate.close(rset);
+				JDBCTemplate.close(pstmt);
+			}
+		
+		
+		
+		
+		
+		return ceo;
+	}
+
+
 
 }
