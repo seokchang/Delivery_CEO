@@ -185,13 +185,13 @@ div.headermom:hover {
 							} else {
 						%>
 					<ul>
+						
 						<li class="menu"><a href="/logout" style="color: black;">로그아웃</a></li>
-						<li class="menu"><a href="#" style="color: black;"><%=ceo.getCeoName()%></a></li>
+						<li class="menu"><a href="/mypage?ceoId=<%=ceo.getCeoId()%>" style="color: black;"><%=ceo.getCeoName()%></a></li>
 						<li class="menu"><a href="#" style="color: black;">고객센터</a></li>
 						<li class="menu"><a href="/selfService" style="color: black;">셀프서비스</a></li>
 					</ul>
 					<%}%>
-
 				</div>
 				<div class="b">
 					<p style="margin-top: 10px;">
