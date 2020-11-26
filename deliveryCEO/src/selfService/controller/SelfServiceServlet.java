@@ -1,6 +1,7 @@
 package selfService.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import ceo.model.vo.Ceo;
+import store.model.service.StoreService;
+import store.model.vo.Store;
 
 /**
  * Servlet implementation class SelfServiceServlet
@@ -43,8 +46,11 @@ public class SelfServiceServlet extends HttpServlet {
 		if (loginCEO == null) {
 			rd = request.getRequestDispatcher("/views/ceo/login.jsp");
 		} else {
+			ArrayList<Store> listStore = new StoreService().selectAllStore(loginCEO.getCeoId());
+
 			rd = request.getRequestDispatcher("/WEB-INF/views/pageSelfService/selfService.jsp");
 			request.setAttribute("Ceo", loginCEO);
+			request.setAttribute("listStore", listStore);
 		}
 		rd.forward(request, response);
 	}

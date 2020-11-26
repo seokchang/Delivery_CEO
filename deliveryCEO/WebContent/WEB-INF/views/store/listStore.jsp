@@ -1,3 +1,4 @@
+<%@page import="oracle.net.aso.a"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="store.model.vo.Store"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -19,6 +20,16 @@
 	<div class="blank"></div>
 	<div class="content-wrap">
 		<h1>가게 정보</h1>
+		<%
+			if (list.isEmpty()) {
+		%>
+		<div style="text-align: center;">
+			<h3>등록된 가게 정보가 없습니다.</h3>
+		</div>
+		<%
+			}
+		%>
+		<a class="btn btn-info btn-md" href="/insertStoreForm" style="float: right; margin-bottom: 5px;">가게 정보 등록</a>
 		<div class="table-wrap">
 			<table class="table table-striped">
 				<tbody>
@@ -39,9 +50,12 @@
 						</td>
 						<td>
 							<a class="btn btn-info btn-md"
-								href="/selectOneStoreInfo?ceoId=<%=ceo.getCeoId()%>&storeNo=<%=store.getStoreNo()%>">수정</a>
-							<a class="btn btn-info btn-md"
-								href="/deleteStoreInfo?ceoId=<%=ceo.getCeoId()%>&storeNo=<%=store.getStoreNo()%>">삭제</a>
+								href="/selectAllMenu?storeNo=<%=store.getStoreNo()%>&storeName=<%=store.getStoreName()%>">메뉴
+								관리</a> <a class="btn btn-info btn-md"
+								href="/selectOneStoreInfo?ceoId=<%=ceo.getCeoId()%>&storeNo=<%=store.getStoreNo()%>">가게
+								정보 수정</a> <a class="btn btn-info btn-md"
+								href="/deleteStoreInfo?ceoId=<%=ceo.getCeoId()%>&storeNo=<%=store.getStoreNo()%>">가게 정보
+								삭제</a>
 						</td>
 					</tr>
 				</tbody>

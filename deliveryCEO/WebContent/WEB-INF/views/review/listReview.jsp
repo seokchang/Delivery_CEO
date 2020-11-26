@@ -18,7 +18,7 @@
 		<hr>
 		<div class="table-wrap">
 			<table class="table table-hover">
-				<thead class="thead-dark">
+				<thead>
 					<tr>
 						<th>번호</th>
 						<th>고객 ID</th>

@@ -1,4 +1,11 @@
+<%@page import="menu.model.vo.Menu"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	ArrayList<Menu> listMenu = (ArrayList<Menu>) request.getAttribute("listMenu");
+int storeNo = (Integer) request.getAttribute("storeNo");
+String storeName = (String) request.getAttribute("storeName");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,35 +22,49 @@
 	<div class="blank"></div>
 	<div class="content-wrap">
 		<h1>메뉴 정보</h1>
+		<%
+			if (listMenu.isEmpty()) {
+		%>
+		<div style="text-align: center;">
+			<h3>등록된 메뉴가 없습니다.</h3>
+		</div>
+		<%
+			}
+		%>
+		<a class="btn btn-info btn-md"
+			href="/insertMenuForm?storeNo=<%=storeNo%>&storeName=<%=storeName%>"
+			style="margin-bottom: 5px; float: right;">메뉴 등록</a>
 		<div class="table-wrap">
-			<table class="table table-striped">
+			<table class="table">
 				<tbody>
+					<%
+						if (!listMenu.isEmpty()) {
+						for (Menu menu : listMenu) {
+					%>
 					<tr>
 						<td>1</td>
-						<td>
-							<input type="checkbox" name="chkMenuBox">
-						</td>
 						<td>
 							<img src="/img/tower1.PNG" width="150px;" height="150px;">
 						</td>
 						<td>
-							메뉴 : <input type="text" name="menuName" value="후라이드"> <br> <br> 가격 : <input
-								type="text" name="price" value="15,000"> <br> <br> 설명 : <input type="text"
-								name="info" value="바삭하게 튀긴 치킨">
+							<input type="text" name="menuName" class="form-control" value="<%=menu.getMenuName()%>"
+								readonly="readonly"> <br> <input type="text" name="menuPrice"
+								class="form-control" value="<%=menu.getMenuPrice()%>" readonly="readonly"> <br>
+							<textarea class="form-control" style="resize: none;" readonly="readonly"><%=menu.getMenuDetail()%></textarea>
 						</td>
 						<td>
-							<button type="button" class="btn btn-info">수정</button>
-							<button type="button" class="btn btn-info">삭제</button>
+							<a class="btn btn-info btn-md" href="/selectOneMenu?menuNo=<%=menu.getMenuNo()%>">수정</a> <a
+								class="btn btn-info btn-md" href="/deleteMenu?menuNo=<%=menu.getMenuNo()%>">삭제</a>
 						</td>
 					</tr>
+					<%
+						}
+					}
+					%>
 				</tbody>
 			</table>
 		</div>
 		<hr>
-		<div class="btn-wrap">
-			<button type="button" class="btn btn-primary">전체 수정</button>
-			<button type="button" class="btn btn-primary">전체 삭제</button>
-		</div>
 		<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 	</div>
 </body>

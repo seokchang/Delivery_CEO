@@ -1,13 +1,13 @@
+<%@page import="menu.model.vo.Menu"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	int storeNo = (Integer) request.getAttribute("storeNo");
-String storeName = (String) request.getAttribute("storeName");
+	Menu menu = (Menu) request.getAttribute("menu");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert Menu JSP</title>
+<title>Update Menu JSP</title>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
@@ -18,8 +18,8 @@ String storeName = (String) request.getAttribute("storeName");
 
 	<div class="blank"></div>
 	<div class="content-wrap">
-		<form action="/insertMenu" method="POST" enctype="multipart/form-data">
-			<h1>메뉴 등록</h1>
+		<form action="/updateMenu" method="POST" enctype="multipart/form-data">
+			<h1>메뉴 수정</h1>
 			<table class="table">
 				<tr>
 					<th>아이디</th>
@@ -29,31 +29,25 @@ String storeName = (String) request.getAttribute("storeName");
 					</td>
 				</tr>
 				<tr>
-					<th>사업자 번호</th>
+					<th>메뉴 번호</th>
 					<td>
-						<input type="text" name="storeNo" id="storeNo" class="form-control" value="<%=storeNo%>"
-							readonly="readonly">
-					</td>
-				</tr>
-				<tr>
-					<th>상호명</th>
-					<td>
-						<input type="text" name="storeName" id="storeName" class="form-control" value="<%=storeName%>"
-							readonly="readonly">
+						<input type="text" name="menuNo" id="menuNo" class="form-control"
+							value="<%=menu.getMenuNo()%>" readonly="readonly">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="menuName">메뉴명</label></th>
 					<td>
-						<input type="text" name="menuName" id="menuName" class="form-control">
+						<input type="text" name="menuName" id="menuName" class="form-control"
+							value="<%=menu.getMenuName()%>">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="menuPrice">메뉴 가격</label></th>
 					<td>
 						<input type="text" name="menuPrice" id="menuPrice" class="form-control"
-							style="width: 50%; display: inline-block;"> <span class="msg"
-							style="margin-left: 10px;">메뉴 가격 유효성 검사</span>
+							style="width: 50%; display: inline-block;" value="<%=menu.getMenuPrice()%>"> <span
+							class="msg" style="margin-left: 10px;">메뉴 가격 유효성 검사</span>
 					</td>
 				</tr>
 				<tr>
@@ -74,12 +68,12 @@ String storeName = (String) request.getAttribute("storeName");
 					<th><label for="menuDetail">메뉴 설명</label></th>
 					<td>
 						<textarea rows="3" cols="50" name="menuDetail" id="menuDetail" class="form-control"
-							style="resize: none;"></textarea>
+							style="resize: none;"><%=menu.getMenuDetail()%></textarea>
 					</td>
 				</tr>
 				<tr>
 					<th colspan="2" style="text-align: center;">
-						<button type="submit" class="btn btn-primary btn-lg">등록하기</button>
+						<button type="submit" class="btn btn-primary btn-lg">메뉴 수정</button>
 					</th>
 				</tr>
 			</table>
