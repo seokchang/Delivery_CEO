@@ -44,7 +44,7 @@
 				</tr>
 				<tr>
 					<th><label for="menuPrice">메뉴 가격</label></th>
-					<td>
+					<td style="text-align: left;">
 						<input type="text" name="menuPrice" id="menuPrice" class="form-control"
 							style="width: 50%; display: inline-block;" value="<%=menu.getMenuPrice()%>"> <span
 							class="msg" style="margin-left: 10px;">메뉴 가격 유효성 검사</span>
@@ -81,5 +81,6 @@
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	<script src="/js/checkReg/checkRegMenu.js"></script>
 </body>
 </html>

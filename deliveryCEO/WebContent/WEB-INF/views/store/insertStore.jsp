@@ -11,7 +11,7 @@
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
-	
+
 	<div class="blank"></div>
 	<div class="content-wrap">
 		<form action="/insertStoreInfo" method="POST" enctype="multipart/form-data">
@@ -19,7 +19,7 @@
 			<table class="table">
 				<tr>
 					<th style="text-align: center; vertical-align: middle;">카테고리</th>
-					<td>
+					<td style="text-align: left;">
 						<select name="storeCateId">
 							<option value="1" selected>치킨</option>
 							<option value="2">피자</option>
@@ -42,14 +42,6 @@
 					</td>
 				</tr>
 				<tr>
-					<th><label for="storeNo">사업자 번호</label></th>
-					<td>
-						<input type="text" name="storeNo" id="storeNo" class="form-control"
-							style="width: 50%; display: inline-block;"> <span class="msg"
-							style="margin-left: 10px;">사업자 번호 유효성 체크</span>
-					</td>
-				</tr>
-				<tr>
 					<th><label for="storeName">상호명</label></th>
 					<td>
 						<input type="text" name="storeName" id="storeName" class="form-control">
@@ -63,26 +55,26 @@
 				</tr>
 				<tr>
 					<th><label for="storeTel">전화번호</label></th>
-					<td>
+					<td style="text-align: left;">
 						<input type="text" name="storeTel" id="storeTel" class="form-control"
-							style="width: 50%; display: inline-block;"> <span class="msg"
-							style="margin-left: 10px;">전화번호 유효성 체크</span>
+							placeholder="ex) 02-1234-5678" style="width: 50%; display: inline-block;"> <span
+							class="msg" style="margin-left: 10px;"></span>
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeStartTime">영업 시작 시간</label></th>
-					<td>
+					<td style="text-align: left;">
 						<input type="text" name="storeStartTime" id="storeStartTime" class="form-control"
-							style="width: 50%; display: inline-block;"> <span class="msg"
-							style="margin-left: 10px;">영업 시작 시간 유효성체크</span>
+							placeholder="ex) 09:00" style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;"></span>
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeEndTime">영업 종료 시간</label></th>
-					<td>
+					<td style="text-align: left;">
 						<input type="text" name="storeEndTime" id="storeEndTime" class="form-control"
-							style="width: 50%; display: inline-block;"> <span class="msg"
-							style="margin-left: 10px;">영업 종료 시간 유효성 체크</span>
+							placeholder="ex) 23:00" style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;"></span>
 					</td>
 				</tr>
 				<tr>
@@ -98,7 +90,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th>이미지보기</th>
+					<th>이미지 보기</th>
 					<td>
 						<div id="img-view">
 							<img id="img-view" width="350">
@@ -113,29 +105,14 @@
 					</td>
 				</tr>
 				<tr>
-					<th colspan="2" style="text-align: center;">
-						<button type="submit" class="btn btn-primary btn-lg">등록하기</button>
-					</th>
+					<th colspan="2" style="text-align: center;"><input type="submit"
+						class="btn btn-primary btn-lg" value="등록하기"></th>
 				</tr>
 			</table>
 		</form>
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
-
-	<script type="text/javascript">
-		function LoadImg(file) {
-			if (file.files.length != 0 && file.files[0] != 0) {
-				var reader = new FileReader();
-
-				reader.readAsDataURL(file.files[0]);
-				reader.onload = function(e) {
-					$("#img-view").attr('src', e.target.result);
-				}
-			} else {
-				$("#img-view").attr('src', '');
-			}
-		}
-	</script>
+	<script src="/js/checkReg/checkRegStore.js"></script>
 </body>
 </html>

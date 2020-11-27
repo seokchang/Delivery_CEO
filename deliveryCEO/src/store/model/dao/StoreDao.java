@@ -16,22 +16,21 @@ public class StoreDao {
 		PreparedStatement pstmt = null;
 
 		int result = 0;
-		String query = "INSERT INTO store_db VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)";
+		String query = "INSERT INTO store_db VALUES (store_db_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)";
 
 		try {
 			pstmt = conn.prepareStatement(query);
-			pstmt.setInt(1, store.getStoreNo());
-			pstmt.setString(2, store.getStoreCEO());
-			pstmt.setString(3, store.getStoreAddr());
-			pstmt.setString(4, store.getStoreTel());
-			pstmt.setString(5, store.getStoreDet());
-			pstmt.setString(6, store.getStoreName());
-			pstmt.setInt(7, store.getStoreCateId());
-			pstmt.setString(8, store.getStoreStartTime());
-			pstmt.setString(9, store.getStoreEndTime());
-			pstmt.setString(10, store.getStoreFilePath());
-			pstmt.setString(11, store.getStoreFileName());
-			pstmt.setString(12, store.getStoreRest());
+			pstmt.setString(1, store.getStoreCEO());
+			pstmt.setString(2, store.getStoreAddr());
+			pstmt.setString(3, store.getStoreTel());
+			pstmt.setString(4, store.getStoreDet());
+			pstmt.setString(5, store.getStoreName());
+			pstmt.setInt(6, store.getStoreCateId());
+			pstmt.setString(7, store.getStoreStartTime());
+			pstmt.setString(8, store.getStoreEndTime());
+			pstmt.setString(9, store.getStoreFilePath());
+			pstmt.setString(10, store.getStoreFileName());
+			pstmt.setString(11, store.getStoreRest());
 
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {

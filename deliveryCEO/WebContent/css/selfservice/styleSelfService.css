@@ -25,6 +25,8 @@ a {
 }
 
 .navi-bar>li {
+	margin-left: 0;
+	padding: 0;
 	width: calc(100%/ 3);
 	text-align: center;
 	box-sizing: border-box;
@@ -45,10 +47,12 @@ a {
 }
 
 .subMenu {
-	width: 250px;
+	width: 100%;
 }
 
 .subMenu>li {
+	margin: 0;
+	float: none;
 	text-align: center;
 	height: 45px;
 	line-height: 45px;

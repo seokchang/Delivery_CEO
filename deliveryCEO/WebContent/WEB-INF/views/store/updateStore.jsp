@@ -68,23 +68,29 @@
 				</tr>
 				<tr>
 					<th><label for="storeTel">전화번호</label></th>
-					<td>
+					<td style="text-align: left;">
 						<input type="text" name="storeTel" id="storeTel" class="form-control"
-							value="<%=store.getStoreTel()%>">
+							placeholder="ex) 02-1234-5678" value="<%=store.getStoreTel()%>"
+							style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;"></span>
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeStartTime">영업 시작 시간</label></th>
-					<td>
+					<td style="text-align: left;">
 						<input type="text" name="storeStartTime" id="storeStartTime" class="form-control"
-							value="<%=store.getStoreStartTime()%>">
+							placeholder="ex) 09:00" value="<%=store.getStoreStartTime()%>"
+							style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;"></span>
 					</td>
 				</tr>
 				<tr>
 					<th><label for="storeEndTime">영업 종료 시간</label></th>
-					<td>
+					<td style="text-align: left;">
 						<input type="text" name="storeEndTime" id="storeEndTime" class="form-control"
-							value="<%=store.getStoreEndTime()%>">
+							placeholder="ex) 23:00" value="<%=store.getStoreEndTime()%>"
+							style="width: 50%; display: inline-block;"> <span class="msg"
+							style="margin-left: 10px;"></span>
 					</td>
 				</tr>
 				<tr>
@@ -116,28 +122,14 @@
 					</td>
 				</tr>
 				<tr>
-					<th colspan="2" style="text-align: center;">
-						<button type="submit" class="btn btn-primary btn-lg">변경하기</button>
-					</th>
+					<th colspan="2" style="text-align: center;"><input type="submit"
+						class="btn btn-primary btn-lg" value="등록하기"></th>
 				</tr>
 			</table>
 		</form>
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
-	<script type="text/javascript">
-		function LoadImg(file) {
-			if (file.files.length != 0 && file.files[0] != 0) {
-				var reader = new FileReader();
-
-				reader.readAsDataURL(file.files[0]);
-				reader.onload = function(e) {
-					$("#img-view").attr('src', e.target.result);
-				}
-			} else {
-				$("#img-view").attr('src', '');
-			}
-		}
-	</script>
+	<script src="/js/checkReg/checkRegStore.js"></script>
 </body>
 </html>

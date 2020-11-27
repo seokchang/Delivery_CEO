@@ -50,10 +50,10 @@ String storeName = (String) request.getAttribute("storeName");
 				</tr>
 				<tr>
 					<th><label for="menuPrice">메뉴 가격</label></th>
-					<td>
+					<td style="text-align: left;">
 						<input type="text" name="menuPrice" id="menuPrice" class="form-control"
-							style="width: 50%; display: inline-block;"> <span class="msg"
-							style="margin-left: 10px;">메뉴 가격 유효성 검사</span>
+							placeholder="숫자만 입력 (ex : 10000)" style="width: 50%; display: inline-block;"> <span
+							class="msg" style="margin-left: 10px;"></span>
 					</td>
 				</tr>
 				<tr>
@@ -78,14 +78,14 @@ String storeName = (String) request.getAttribute("storeName");
 					</td>
 				</tr>
 				<tr>
-					<th colspan="2" style="text-align: center;">
-						<button type="submit" class="btn btn-primary btn-lg">등록하기</button>
-					</th>
+					<th colspan="2" style="text-align: center;"><input type="submit"
+						class="btn btn-primary btn-lg" value="등록하기"></th>
 				</tr>
 			</table>
 		</form>
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	<script src="/js/checkReg/checkRegMenu.js"></script>
 </body>
 </html>

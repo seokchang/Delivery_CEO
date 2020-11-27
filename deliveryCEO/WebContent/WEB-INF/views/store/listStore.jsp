@@ -29,7 +29,8 @@
 		<%
 			}
 		%>
-		<a class="btn btn-info btn-md" href="/insertStoreForm" style="float: right; margin-bottom: 5px;">가게 정보 등록</a>
+		<a class="btn btn-info btn-md" href="/insertStoreForm" style="float: right; margin-bottom: 5px;">가게
+			등록</a>
 		<div class="table-wrap">
 			<table class="table table-striped">
 				<tbody>

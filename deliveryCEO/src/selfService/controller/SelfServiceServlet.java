@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import ceo.model.vo.Ceo;
+import review.model.service.ReviewService;
+import review.model.vo.Review;
 import store.model.service.StoreService;
 import store.model.vo.Store;
 
@@ -47,10 +49,12 @@ public class SelfServiceServlet extends HttpServlet {
 			rd = request.getRequestDispatcher("/views/ceo/login.jsp");
 		} else {
 			ArrayList<Store> listStore = new StoreService().selectAllStore(loginCEO.getCeoId());
+			ArrayList<Review> listReview = new ReviewService().selectAllReview(loginCEO.getCeoId());
 
 			rd = request.getRequestDispatcher("/WEB-INF/views/pageSelfService/selfService.jsp");
 			request.setAttribute("Ceo", loginCEO);
 			request.setAttribute("listStore", listStore);
+			request.setAttribute("listReview", listReview);
 		}
 		rd.forward(request, response);
 	}

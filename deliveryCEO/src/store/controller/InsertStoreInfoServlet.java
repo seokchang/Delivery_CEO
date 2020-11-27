@@ -66,7 +66,6 @@ public class InsertStoreInfoServlet extends HttpServlet {
 
 		store.setStoreCateId(Integer.parseInt(mRequest.getParameter("storeCateId")));
 		store.setStoreCEO(mRequest.getParameter("storeCEO"));
-		store.setStoreNo(Integer.parseInt(mRequest.getParameter("storeNo")));
 		store.setStoreName(mRequest.getParameter("storeName"));
 		store.setStoreAddr(mRequest.getParameter("storeAddr"));
 		store.setStoreTel(mRequest.getParameter("storeTel"));

@@ -1,4 +1,9 @@
+<%@page import="review.model.vo.Review"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,30 +19,38 @@
 
 	<div class="blank"></div>
 	<div class="content-wrap">
-		<h1>리뷰 확인</h1>
+		<h1>리뷰 리스트</h1>
 		<hr>
 		<div class="table-wrap">
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>번호</th>
+						<th>리뷰번호</th>
 						<th>고객 ID</th>
-						<th>주문내용</th>
+						<th>주문번호</th>
 						<th>평점</th>
 						<th>날짜</th>
 					</tr>
 				</thead>
 				<tbody>
+					<%
+						if (!listReview.isEmpty()) {
+						for (Review review : listReview) {
+					%>
 					<tr height="70">
-						<td>1</td>
-						<td>USER01</td>
-						<td>후라이드 치킨외 1</td>
-						<td>☆☆☆☆☆</td>
-						<td>2020.11.23</td>
+						<td><%=review.getReviewNo()%></td>
+						<td><%=review.getReviewClientId()%></td>
+						<td><%=review.getReviewOrderNo()%></td>
+						<td><%=review.getReviewScore()%></td>
+						<td><%=review.getReviewEntrollDate()%></td>
 						<td>
 							<button type="button" class="btn btn-primary">리뷰확인</button>
 						</td>
 					</tr>
+					<%
+						}
+					}
+					%>
 				</tbody>
 			</table>
 		</div>
