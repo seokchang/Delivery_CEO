@@ -173,29 +173,32 @@ div.headermom:hover {
 			<div class="header" style="margin-top: -10px">
 				<div class="a">
 					<%
-							if (ceo == null) {
-						%>
+						if (ceo == null) {
+					%>
 					<ul>
-						<li class="menu"><a href="/views/ceo/joinClick.jsp" style="color: black;">회원가입</a></li>
-						<li class="menu"><a href="/views/ceo/login.jsp" style="color: black;">로그인</a></li>
-						<li class="menu"><a href="#" style="color: black;">고객센터</a></li>
-						<li class="menu"><a href="/selfService" style="color: black;">셀프서비스</a></li>
+						<li class="menu"><a href="/views/ceo/joinClick.jsp"
+							style="color: black; text-decoration: none;">회원가입</a></li>
+						<li class="menu"><a href="/views/ceo/login.jsp"
+							style="color: black; text-decoration: none;">로그인</a></li>
+						<li class="menu"><a href="#" style="color: black; text-decoration: none;">고객센터</a></li>
+						<li class="menu"><a href="/selfService" style="color: black; text-decoration: none;">셀프서비스</a></li>
 					</ul>
 					<%
-							} else {
-						%>
+						} else {
+					%>
 					<ul>
-						
-						<li class="menu"><a href="/logout" style="color: black;">로그아웃</a></li>
-						<li class="menu"><a href="/mypage?ceoId=<%=ceo.getCeoId()%>" style="color: black;"><%=ceo.getCeoName()%></a></li>
-						<li class="menu"><a href="#" style="color: black;">고객센터</a></li>
-						<li class="menu"><a href="/selfService" style="color: black;">셀프서비스</a></li>
+
+						<li class="menu"><a href="/logout" style="color: black; text-decoration: none;">로그아웃</a></li>
+						<li class="menu"><a href="/mypage?ceoId=<%=ceo.getCeoId()%>"
+							style="color: black; text-decoration: none;"><%=ceo.getCeoName()%></a></li>
+						<li class="menu"><a href="#" style="color: black; text-decoration: none;">고객센터</a></li>
+						<li class="menu"><a href="/selfService" style="color: black; text-decoration: none;">셀프서비스</a></li>
 					</ul>
 					<%}%>
 				</div>
 				<div class="b">
 					<p style="margin-top: 10px;">
-						<a href="#" style="color: black;">모방의민족</a>
+						<a href="/" style="color: black; text-decoration: none;">모방의민족</a>
 					</p>
 				</div>
 				<div class="c"></div>
