@@ -28,17 +28,17 @@ public class CeoService {
 
 	public Ceo selectOneCeo(String ceoId) {
 		Connection conn = JDBCTemplate.getConnection();
-		Ceo loginCeo = new CeoDao().selectOneCeo(conn,ceoId);
+		Ceo ceo = new CeoDao().selectOneCeo(conn,ceoId);
+		System.out.println("service"+ceo);
 		JDBCTemplate.close(conn);
-		return loginCeo;
+		
+		return ceo;
 	}
 
 	public Ceo searchId(String ceoName, String ceoTel) {
 		Connection conn = JDBCTemplate.getConnection();
 		Ceo ceo = new CeoDao().searchId(conn,ceoName,ceoTel);
 		JDBCTemplate.close(conn);
-		
-		System.out.println("ceo :"+ceo);
 		return ceo;
 	}
 
@@ -49,6 +49,33 @@ public class CeoService {
 		
 		return ceo;
 	}
+
+	public int updateCeo(Ceo ceo) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = new CeoDao().updateCeo(conn,ceo);
+		if(result> 0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		return result;
+	}
+
+	public int deleteCeo(String ceoId) {
+		Connection conn = JDBCTemplate.getConnection();
+		int result = new CeoDao().deleteCeo(conn,ceoId);
+		if(result>0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		return result;
+	}
+
+
+
 
 
 
