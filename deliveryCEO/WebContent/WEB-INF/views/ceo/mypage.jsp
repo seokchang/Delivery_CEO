@@ -12,10 +12,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>test</h1>
-	
-
-
 	<form action="/update" method="post"
 		style="width: 800px; margin: 0 auto; color: black;">
 		<h1>마이페이지</h1>
@@ -63,4 +59,10 @@
 		</table>
 	</form>
 </body>
+<style>
+table{
+	text-align:center;
+
+}
+</style>
 </html>

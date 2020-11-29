@@ -18,7 +18,7 @@
 				<div class="logo">
 
 
-					<p>모방의민족</p>
+					<p><a href="/" style="text-decoration:none;">모방의민족</a></p>
 				</div>
 
 				<div class="join">
@@ -28,7 +28,7 @@
 							 <input type="password" name="ceoPw" id="pw" class="a" placeholder="비밀번호를 입력하세요" required>
 						<ul>
 							<li><a href="/views/ceo/findId.jsp">아이디</a>/<a href="/views/ceo/findPw.jsp">비밀번호 찾기</a></li>
-							<li><a href="/views/ceo/join.jsp">회원가입</a></li>
+							<li><a href="/views/ceo/joinClick.jsp">회원가입</a></li>
 						</ul>
 
 						<input type="submit" value="로그인" class="a"

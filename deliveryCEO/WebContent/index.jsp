@@ -23,12 +23,89 @@
 	<div class="inner">
 		<div class="content">
 			<div class="inner2">
-				<div class="content1"></div>
-				<div class="content2"></div>
-				<div class="content1"></div>
-				<div class="content2"></div>
-				<div class="content1"></div>
-				<div class="content2"></div>
+				<div class="content1">
+				<div class="notice-wrap">
+				<h3>공지사항</h3>
+				<table class="table table-striped">
+					<tbody>
+						<tr>
+							<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
+							<td>2020.11.23</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btn-wrap">
+					<a class="btn btn-primary btn-md" href="#">공지사항 더보기</a>
+				</div>
+			</div>
+				</div>
+				<div class="content2">
+				<iframe width="425" height="300" src="https://www.youtube.com/embed/r5xvtN8DC9A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+				<div class="content1">
+				<div class="notice-wrap">
+				<h3>공지사항</h3>
+				<table class="table table-striped">
+					<tbody>
+						<tr>
+							<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
+							<td>2020.11.23</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btn-wrap">
+					<a class="btn btn-primary btn-md" href="#">공지사항 더보기</a>
+				</div>
+			</div>
+				</div>
+				<div class="content2">
+				<div class="notice-wrap">
+				<h3>공지사항</h3>
+				<table class="table table-striped">
+					<tbody>
+						<tr>
+							<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
+							<td>2020.11.23</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btn-wrap">
+					<a class="btn btn-primary btn-md" href="#">공지사항 더보기</a>
+				</div>
+			</div>
+				</div>
+				<div class="content1">
+				<div class="notice-wrap">
+				<h3>공지사항</h3>
+				<table class="table table-striped">
+					<tbody>
+						<tr>
+							<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
+							<td>2020.11.23</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btn-wrap">
+					<a class="btn btn-primary btn-md" href="#">공지사항 더보기</a>
+				</div>
+			</div>
+				</div>
+				<div class="content2">
+				<div class="notice-wrap">
+				<h3>공지사항</h3>
+				<table class="table table-striped">
+					<tbody>
+						<tr>
+							<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
+							<td>2020.11.23</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="btn-wrap">
+					<a class="btn btn-primary btn-md" href="#">공지사항 더보기</a>
+				</div>
+			</div>
+				</div>
 			</div>
 
 		</div>
@@ -45,25 +122,25 @@
 .content1 {
 	width: 425px;
 	height: 300px;
-	background-color: red;
 	float: left;
-	margin-top: 30px;
+	margin-top: 30px;	
 	margin-left: 50px;
+	border-top:1px solid gray;
 }
 
 .content2 {
-	width: 300px;
+	width: 425px;
 	height: 300px;
-	background-color: black;
 	margin-left: 70px;
 	margin-top: 30px;
 	float: left;
+	border-top:1px solid gray;
 }
 
 .content {
 	width: 100%;
 	height: 1000px;
-	background-color: teal;
+	background-
 }
 
 .blank {
@@ -153,12 +230,6 @@ div.headermom {
 	height: 150px;
 	position: relative;
 }
-
-div.headermom:hover {
-	background-color: gray;
-	color: gray;
-}
-
 body {
 	margin: 0;
 }

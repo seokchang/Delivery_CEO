@@ -23,7 +23,7 @@
 				<div class="logo">
 
 
-					<p>모방의민족</p>
+					<p><a href="/" style="text-decoration:none;">모방의민족</a></p>
 				</div>
 					<div class="join">
 						<h2 style="text-align: center;">아이디찾기</h2>

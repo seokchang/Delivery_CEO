@@ -16,7 +16,7 @@ Ceo ceo= (Ceo)request.getAttribute("ceo");
 	<div class="wrap">
 		<div id="userName">[<%=ceo.getCeoName()%>]님의 아이디</div><br>
 		<div id="userId">[<%=ceo.getCeoId()%>]입니다.</div>
-		<button id="button" class="btn btn-outline-info " onclick="location.href='/views/ceo/login.jsp'">로그인 하러가기</button>
+		
 	
 	</div>
 

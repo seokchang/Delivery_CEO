@@ -15,7 +15,7 @@
         <div class="content">
             <div class="logoinner">
                 <div class="logo">
-                    <p>모방의민족</p>
+                    <p><a href="/" style="text-decoration:none;">모방의민족</a></p>
                 </div>
                 
                     <div class="join">
@@ -24,7 +24,7 @@
                         <input type="text" name="ceoId" id="id" class="a" placeholder="아이디*(4~20자)" required><span id="idChkMsg"></span>
                         <input type="password" name="ceoPw" id="pw" class="a" placeholder="비밀번호*(영문+숫자,8~20자 영어먼저)" required>
                         <input type="text" name="ceoName" id="name" class="a" placeholder="이름* " required>
-                        <input type="number" name="ceoTel" id="tel" class="a" placeholder="휴대폰*(-빼고 쓰세요) " required>
+                        <input type="text" name="ceoTel" id="tel" class="a" placeholder="휴대폰*(-빼고 쓰세요) " required>
                         <input type="text" name="ceoAddr" id="addr" class="a" placeholder="주소* " required>
                         <br>
                         <br>

@@ -85,7 +85,9 @@ h5.b {
 </style>
 </head>
 <body>
+<hr>
 	<div class="inner">
+
 		<div class="footer">
 			<div class="footer1">
 				<ul>

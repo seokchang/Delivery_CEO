@@ -20,7 +20,6 @@
 .content1 {
 	width: 550px;
 	height: 300px;
-	background-color: red;
 	float: left;
 	margin-top: 30px;
 	margin-left: 50px;
@@ -29,7 +28,6 @@
 .content2 {
 	width: 300px;
 	height: 300px;
-	background-color: black;
 	margin-left: 70px;
 	margin-top: 30px;
 	float: left;
@@ -38,7 +36,6 @@
 .content {
 	width: 100%;
 	height: 1000px;
-	background-color: teal;
 }
 
 .blank {
@@ -96,19 +93,24 @@ div.c {
 div.one {
 	width: 100%;
 	height: 600px;
-	background-color: hotpink;
+	background-image: url(/img/a.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
 }
-
 div.two {
 	width: 100%;
 	height: 600px;
-	background-color: orange;
+	background-image: url(/img/b.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
 }
 
 div.three {
 	width: 100%;
 	height: 600px;
-	background-color: darkmagenta;
+	background-image: url(/img/c.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
 }
 
 div.container {
@@ -130,7 +132,7 @@ div.headermom {
 }
 
 div.headermom:hover {
-	background-color: gray;
+	background-color: white;
 	color: gray;
 }
 </style>
@@ -189,17 +191,15 @@ div.headermom:hover {
 					<ul>
 
 						<li class="menu"><a href="/logout" style="color: black; text-decoration: none;">로그아웃</a></li>
-						<li class="menu"><a href="/mypage?ceoId=<%=ceo.getCeoId()%>"
-							style="color: black; text-decoration: none;"><%=ceo.getCeoName()%></a></li>
+						<li class="menu"><a href="/mypage?ceoId=<%=ceo.getCeoId()%>" style="color: black; text-decoration: none;">[<%=ceo.getCeoId()%>]님 반갑습니다.</a></li>
 						<li class="menu"><a href="#" style="color: black; text-decoration: none;">고객센터</a></li>
-						<li class="menu"><a href="/selfService?reqPage=1"
-							style="color: black; text-decoration: none;">셀프서비스</a></li>
+						<li class="menu"><a href="/selfService" style="color: black; text-decoration: none;">셀프서비스</a></li>
 					</ul>
 					<%}%>
 				</div>
 				<div class="b">
 					<p style="margin-top: 10px;">
-						<a href="/" style="color: black; text-decoration: none;">모방의민족</a>
+						<a href="/" style="color: gray; text-decoration: none;"><img src="/img/logo3.png" alt="My Image"></a>
 					</p>
 				</div>
 				<div class="c"></div>
