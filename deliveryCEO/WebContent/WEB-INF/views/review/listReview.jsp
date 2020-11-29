@@ -2,7 +2,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
+	String pageNavi = (String) request.getAttribute("pageNavi");
+ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
 %>
 <!DOCTYPE html>
 <html>
@@ -53,6 +54,9 @@
 					%>
 				</tbody>
 			</table>
+		</div>
+		<div style="text-align: center;">
+			<div id="pageNavi"><%=pageNavi%></div>
 		</div>
 	</div>
 

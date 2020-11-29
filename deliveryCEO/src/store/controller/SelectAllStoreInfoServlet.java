@@ -1,7 +1,6 @@
 package store.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import store.model.service.StoreService;
-import store.model.vo.Store;
+import store.model.vo.StorePageData;
 
 /**
  * Servlet implementation class SelectAllStoreInfoServlet
@@ -37,14 +36,16 @@ public class SelectAllStoreInfoServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		// 1. view에서 받은 데이터 저장
 		String ceoId = request.getParameter("ceoId");
+		int reqPage = Integer.parseInt(request.getParameter("reqPage"));
 
 		// 2. 비즈니스 로직
-		ArrayList<Store> listStore = new StoreService().selectAllStore(ceoId);
+		StorePageData spd = new StoreService().selectAllStore(ceoId, reqPage);
 
 		// 3. 결과처리
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/store/listStore.jsp");
 
-		request.setAttribute("listStore", listStore);
+		request.setAttribute("listStore", spd.getListStore());
+		request.setAttribute("pageNavi", spd.getPageNavi());
 		rd.forward(request, response);
 	}
 

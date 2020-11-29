@@ -14,8 +14,10 @@ import javax.servlet.http.HttpSession;
 import ceo.model.vo.Ceo;
 import review.model.service.ReviewService;
 import review.model.vo.Review;
+import review.model.vo.ReviewPageData;
 import store.model.service.StoreService;
 import store.model.vo.Store;
+import store.model.vo.StorePageData;
 
 /**
  * Servlet implementation class SelfServiceServlet
@@ -48,13 +50,14 @@ public class SelfServiceServlet extends HttpServlet {
 		if (loginCEO == null) {
 			rd = request.getRequestDispatcher("/views/ceo/login.jsp");
 		} else {
-			ArrayList<Store> listStore = new StoreService().selectAllStore(loginCEO.getCeoId());
-			ArrayList<Review> listReview = new ReviewService().selectAllReview(loginCEO.getCeoId());
+			int reqPage = Integer.parseInt(request.getParameter("reqPage"));
+			StorePageData spd = new StoreService().selectAllStore(loginCEO.getCeoId(), reqPage);
+			ReviewPageData rpd = new ReviewService().selectAllReview(loginCEO.getCeoId(), reqPage);
 
 			rd = request.getRequestDispatcher("/WEB-INF/views/pageSelfService/selfService.jsp");
 			request.setAttribute("Ceo", loginCEO);
-			request.setAttribute("listStore", listStore);
-			request.setAttribute("listReview", listReview);
+			request.setAttribute("listStore", spd.getListStore());
+			request.setAttribute("listReview", rpd.getListReview());
 		}
 		rd.forward(request, response);
 	}

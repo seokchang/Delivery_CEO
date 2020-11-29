@@ -1,6 +1,7 @@
 package review.model.vo;
 
 public class Review {
+	private int rowNum;
 	private int reviewNo;
 	private int reviewOrderNo;
 	private int reviewScore;
@@ -23,6 +24,14 @@ public class Review {
 		this.reviewClientId = reviewClientId;
 		this.reviewStore = reviewStore;
 		this.reviewEntrollDate = reviewEntrollDate;
+	}
+
+	public int getRowNum() {
+		return rowNum;
+	}
+
+	public void setRowNum(int rowNum) {
+		this.rowNum = rowNum;
 	}
 
 	public int getReviewNo() {

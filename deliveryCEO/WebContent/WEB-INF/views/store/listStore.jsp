@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	ArrayList<Store> list = (ArrayList<Store>) request.getAttribute("listStore");
+String pageNavi = (String) request.getAttribute("pageNavi");
 %>
 <!DOCTYPE html>
 <html>
@@ -39,9 +40,9 @@
 						for (Store store : list) {
 					%>
 					<tr>
-						<td>1</td>
+						<td><%=store.getRowNum()%></td>
 						<td>
-							<img src="/img/tower1.PNG" width="150px;" height="150px;">
+							<img src="" width="150px;" height="150px;">
 						</td>
 						<td>
 							가게명 : <input type="text" name="storeName" value="<%=store.getStoreName()%>"
@@ -65,6 +66,7 @@
 				}
 				%>
 			</table>
+			<div style="text-align: center;"><%=pageNavi%></div>
 		</div>
 		<hr>
 

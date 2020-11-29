@@ -180,4 +180,77 @@ public class StoreDao {
 
 		return result;
 	}
+
+	public int getTotalStore(Connection conn, String ceoId) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		int result = 0;
+		String query = "SELECT count(*) cnt FROM store_db WHERE store_ceo=?";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, ceoId);
+			rset = pstmt.executeQuery();
+
+			if (rset.next()) {
+				result = rset.getInt("cnt");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
+		return result;
+	}
+
+	public ArrayList<Store> selectAllStore(Connection conn, String ceoId, int start, int end) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		ArrayList<Store> listStore = new ArrayList<Store>();
+		String query = "SELECT * FROM (SELECT ROWNUM AS RNUM, store.* FROM (SELECT * FROM store_db WHERE store_ceo=? ORDER BY store_no)store) WHERE RNUM BETWEEN ? AND ?";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, ceoId);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+			rset = pstmt.executeQuery();
+
+			while (rset.next()) {
+				Store store = new Store();
+
+				store.setRowNum(rset.getInt("rnum"));
+				store.setStoreNo(rset.getInt("store_no"));
+				store.setStoreCEO(rset.getString("store_ceo"));
+				store.setStoreAddr(rset.getString("store_addr"));
+				store.setStoreTel(rset.getString("store_tel"));
+				store.setStoreDet(rset.getString("store_det"));
+				store.setStoreName(rset.getString("store_name"));
+				store.setStoreCateId(rset.getInt("store_cate_id"));
+				store.setStoreStartTime(rset.getString("store_start_t"));
+				store.setStoreEndTime(rset.getString("store_end_t"));
+				store.setStoreRest(rset.getString("store_rest"));
+				store.setStoreFileName(rset.getString("store_filename"));
+				store.setStoreFilePath(rset.getString("store_filepath"));
+
+				listStore.add(store);
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
+
+		return listStore;
+	}
+
 }

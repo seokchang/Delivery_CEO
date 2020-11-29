@@ -3,8 +3,9 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	ArrayList<Store> listStore = (ArrayList<Store>) request.getAttribute("listStore");
-	ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
+	int length = 5;
+ArrayList<Store> listStore = (ArrayList<Store>) request.getAttribute("listStore");
+ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
 %>
 <!DOCTYPE html>
 <html>
@@ -23,10 +24,10 @@
 	<div class="content-wrap" style="width: 1300px">
 		<ul class="navi-bar">
 			<li><a href="/">HOME</a></li>
-			<li><a href="/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>">STORE</a></li>
+			<li><a href="/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">STORE</a></li>
 			<li><a href="javascript:void(0)">ORDER</a>
 				<ul class="subMenu">
-					<li><a href="/selectAllReview?ceoId=<%=ceo.getCeoId()%>">리뷰 리스트</a></li>
+					<li><a href="/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰 리스트</a></li>
 					<li><a href="#">주문 리스트</a></li>
 				</ul></li>
 		</ul>
@@ -34,11 +35,22 @@
 			<div class="notice-wrap">
 				<h3>공지사항</h3>
 				<table class="table table-striped">
+					<thead>
+						<tr>
+
+						</tr>
+					</thead>
 					<tbody>
+						<%
+							for (int i = 0; i < length; i++) {
+						%>
 						<tr>
 							<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
 							<td>2020.11.23</td>
 						</tr>
+						<%
+							}
+						%>
 					</tbody>
 				</table>
 				<div class="btn-wrap">
@@ -49,17 +61,26 @@
 			<div class="review-wrap">
 				<h3>리뷰</h3>
 				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>고객 아이디</th>
+							<th>리뷰 내용</th>
+							<th>평점</th>
+							<th>등록일</th>
+						</tr>
+					</thead>
 					<tbody>
 						<%
 							if (!listReview.isEmpty()) {
-							for (Review review : listReview) {
+							for (int i = 0; i < length; i++) {
 						%>
 						<tr>
-							<td><%=review.getReviewNo()%></td>
-							<td><%=review.getReviewClientId()%></td>
-							<td><%=review.getReviewContent()%></td>
-							<td><%=review.getReviewScore()%></td>
-							<td><%=review.getReviewEntrollDate()%></td>
+							<td><%=listReview.get(i).getRowNum()%></td>
+							<td><%=listReview.get(i).getReviewClientId()%></td>
+							<td><%=listReview.get(i).getReviewContent()%></td>
+							<td><%=listReview.get(i).getReviewScore()%></td>
+							<td><%=listReview.get(i).getReviewEntrollDate()%></td>
 						</tr>
 						<%
 							}
@@ -68,7 +89,8 @@
 					</tbody>
 				</table>
 				<div>
-					<a class="btn btn-primary btn-md" href="/selectAllReview?ceoId=<%=ceo.getCeoId()%>">리뷰 더보기</a>
+					<a class="btn btn-primary btn-md" href="/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰
+						더보기</a>
 				</div>
 			</div>
 		</div>
@@ -92,16 +114,16 @@
 				<tbody>
 					<%
 						if (!listStore.isEmpty()) {
-						for (Store store : listStore) {
+						for (int i = 0; i < length; i++) {
 					%>
 					<tr>
-						<td>1</td>
-						<td><%=store.getStoreCEO()%></td>
-						<td><%=store.getStoreName()%></td>
-						<td><%=store.getStoreAddr()%></td>
-						<td><%=store.getStoreTel()%></td>
-						<td><%=store.getStoreNo()%></td>
-						<td><%=store.getStoreDet()%></td>
+						<td><%=listStore.get(i).getRowNum()%></td>
+						<td><%=listStore.get(i).getStoreCEO()%></td>
+						<td><%=listStore.get(i).getStoreName()%></td>
+						<td><%=listStore.get(i).getStoreAddr()%></td>
+						<td><%=listStore.get(i).getStoreTel()%></td>
+						<td><%=listStore.get(i).getStoreNo()%></td>
+						<td><%=listStore.get(i).getStoreDet()%></td>
 					</tr>
 					<%
 						}
@@ -111,7 +133,7 @@
 				</tbody>
 			</table>
 			<div class="btn-wrap">
-				<a class="btn btn-primary btn-md" href="/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>">가게
+				<a class="btn btn-primary btn-md" href="/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">가게
 					더보기</a>
 			</div>
 		</div>

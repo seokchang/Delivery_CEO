@@ -1,6 +1,7 @@
 package store.model.vo;
 
 public class Store {
+	private int rowNum;
 	private int storeNo;
 	private String storeCEO;
 	private String storeAddr;
@@ -34,6 +35,14 @@ public class Store {
 		this.storeRest = storeRest;
 		this.storeFileName = storeFileName;
 		this.storeFilePath = storeFilePath;
+	}
+
+	public int getRowNum() {
+		return rowNum;
+	}
+
+	public void setRowNum(int rowNum) {
+		this.rowNum = rowNum;
 	}
 
 	public int getStoreNo() {

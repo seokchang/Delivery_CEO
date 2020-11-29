@@ -1,7 +1,6 @@
 package review.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import review.model.service.ReviewService;
-import review.model.vo.Review;
+import review.model.vo.ReviewPageData;
 
 /**
  * Servlet implementation class SelectAllReviewServlet
@@ -37,14 +36,16 @@ public class SelectAllReviewServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		// 1. view에서 받은 데이터 저장
 		String ceoId = request.getParameter("ceoId");
+		int reqPage = Integer.parseInt(request.getParameter("reqPage"));
 
 		// 2. 비즈니스 로직
-		ArrayList<Review> listReview = new ReviewService().selectAllReview(ceoId);
+		ReviewPageData rpd = new ReviewService().selectAllReview(ceoId, reqPage);
 
 		// 3. 결과처리
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/review/listReview.jsp");
 
-		request.setAttribute("listReview", listReview);
+		request.setAttribute("listReview", rpd.getListReview());
+		request.setAttribute("pageNavi", rpd.getPageNavi());
 		rd.forward(request, response);
 	}
 
