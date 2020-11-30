@@ -11,13 +11,14 @@ String pageNavi = (String) request.getAttribute("pageNavi");
 <head>
 <meta charset="UTF-8">
 <title>List Store JSP</title>
-<link rel="stylesheet" href="/css/selfservice/styleListMenu.css">
+<link rel="stylesheet" href="/CEO/css/selfservice/styleListMenu.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
+	
 	<div class="blank"></div>
 	<div class="content-wrap">
 		<h1>가게 정보</h1>
@@ -30,7 +31,7 @@ String pageNavi = (String) request.getAttribute("pageNavi");
 		<%
 			}
 		%>
-		<a class="btn btn-info btn-md" href="/insertStoreForm" style="float: right; margin-bottom: 5px;">가게
+		<a class="btn btn-info btn-md" href="/CEO/insertStoreForm" style="float: right; margin-bottom: 5px;">가게
 			등록</a>
 		<div class="table-wrap">
 			<table class="table table-striped">
@@ -52,11 +53,11 @@ String pageNavi = (String) request.getAttribute("pageNavi");
 						</td>
 						<td>
 							<a class="btn btn-info btn-md"
-								href="/selectAllMenu?storeNo=<%=store.getStoreNo()%>&storeName=<%=store.getStoreName()%>">메뉴
+								href="/CEO/selectAllMenu?storeNo=<%=store.getStoreNo()%>&storeName=<%=store.getStoreName()%>">메뉴
 								관리</a> <a class="btn btn-info btn-md"
-								href="/selectOneStoreInfo?ceoId=<%=ceo.getCeoId()%>&storeNo=<%=store.getStoreNo()%>">가게
+								href="/CEO/selectOneStoreInfo?ceoId=<%=ceo.getCeoId()%>&storeNo=<%=store.getStoreNo()%>">가게
 								정보 수정</a> <a class="btn btn-info btn-md"
-								href="/deleteStoreInfo?ceoId=<%=ceo.getCeoId()%>&storeNo=<%=store.getStoreNo()%>">가게 정보
+								href="/CEO/deleteStoreInfo?ceoId=<%=ceo.getCeoId()%>&storeNo=<%=store.getStoreNo()%>">가게 정보
 								삭제</a>
 						</td>
 					</tr>

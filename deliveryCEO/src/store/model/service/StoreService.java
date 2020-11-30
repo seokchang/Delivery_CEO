@@ -58,7 +58,7 @@ public class StoreService {
 
 		// 이전 버튼 만들기
 		if (pageNo != 1) {
-			pageNavi += "<a class='btn' href='/selectAllStoreInfo?ceoId=" + ceoId + "&reqPage=" + (pageNo - 1)
+			pageNavi += "<a class='btn' href='/CEO/selectAllStoreInfo?ceoId=" + ceoId + "&reqPage=" + (pageNo - 1)
 					+ "'>이전</a>";
 		}
 
@@ -67,7 +67,7 @@ public class StoreService {
 			if (reqPage == pageNo) {
 				pageNavi += "<span class='selectPage'>" + pageNo + "</span>";
 			} else {
-				pageNavi += "<a class='btn' href='/selectAllStoreInfo?ceoId=" + ceoId + "&reqPage=" + pageNo + "'>"
+				pageNavi += "<a class='btn' href='/CEO/selectAllStoreInfo?ceoId=" + ceoId + "&reqPage=" + pageNo + "'>"
 						+ pageNo + "</a>";
 			}
 			pageNo++;
@@ -77,7 +77,7 @@ public class StoreService {
 
 		// 다음 버튼 만들기
 		if (pageNo <= totalPage) {
-			pageNavi += "<a class='btn' href='/selectAllStoreInfo?ceoId=" + ceoId + "&reqPage=" + pageNo + "'>다음</a>";
+			pageNavi += "<a class='btn' href='/CEO/selectAllStoreInfo?ceoId=" + ceoId + "&reqPage=" + pageNo + "'>다음</a>";
 		}
 
 		StorePageData spd = new StorePageData(listStore, pageNavi);

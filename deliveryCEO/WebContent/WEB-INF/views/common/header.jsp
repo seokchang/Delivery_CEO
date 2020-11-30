@@ -93,24 +93,25 @@ div.c {
 div.one {
 	width: 100%;
 	height: 600px;
-	background-image: url(/img/a.jpg);
-	background-repeat:no-repeat;
-	background-size:cover;
+	background-image: url(/CEO/img/a.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
+
 div.two {
 	width: 100%;
 	height: 600px;
-	background-image: url(/img/b.jpg);
-	background-repeat:no-repeat;
-	background-size:cover;
+	background-image: url(/CEO/img/b.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 div.three {
 	width: 100%;
 	height: 600px;
-	background-image: url(/img/c.jpg);
-	background-repeat:no-repeat;
-	background-size:cover;
+	background-image: url(/CEO/img/c.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 div.container {
@@ -137,6 +138,7 @@ div.headermom:hover {
 }
 </style>
 </head>
+
 <body>
 	<div class="container" style="margin-top: -10px;">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -178,28 +180,34 @@ div.headermom:hover {
 						if (ceo == null) {
 					%>
 					<ul>
-						<li class="menu"><a href="/views/ceo/joinClick.jsp"
+						<li class="menu"><a href="/CEO/views/ceo/joinClick.jsp"
 							style="color: black; text-decoration: none;">회원가입</a></li>
-						<li class="menu"><a href="/views/ceo/login.jsp"
+						<li class="menu"><a href="/CEO/views/ceo/login.jsp"
 							style="color: black; text-decoration: none;">로그인</a></li>
 						<li class="menu"><a href="#" style="color: black; text-decoration: none;">고객센터</a></li>
-						<li class="menu"><a href="/selfService" style="color: black; text-decoration: none;">셀프서비스</a></li>
+						<li class="menu"><a href="/CEO/selfService" style="color: black; text-decoration: none;">셀프서비스</a></li>
 					</ul>
 					<%
 						} else {
 					%>
 					<ul>
 
-						<li class="menu"><a href="/logout" style="color: black; text-decoration: none;">로그아웃</a></li>
-						<li class="menu"><a href="/mypage?ceoId=<%=ceo.getCeoId()%>" style="color: black; text-decoration: none;">[<%=ceo.getCeoId()%>]님 반갑습니다.</a></li>
+						<li class="menu"><a href="/CEO/logout" style="color: black; text-decoration: none;">로그아웃</a></li>
+						<li class="menu"><a href="/CEO/mypage?ceoId=<%=ceo.getCeoId()%>"
+							style="color: black; text-decoration: none;">[<%=ceo.getCeoId()%>]님 반갑습니다.
+						</a></li>
 						<li class="menu"><a href="#" style="color: black; text-decoration: none;">고객센터</a></li>
-						<li class="menu"><a href="/selfService?reqPage=1" style="color: black; text-decoration: none;">셀프서비스</a></li>
+						<li class="menu"><a href="/CEO/selfService?reqPage=1"
+							style="color: black; text-decoration: none;">셀프서비스</a></li>
 					</ul>
-					<%}%>
+					<%
+						}
+					%>
 				</div>
 				<div class="b">
 					<p style="margin-top: 10px;">
-						<a href="/" style="color: gray; text-decoration: none;"><img src="/img/logo3.png" alt="My Image"></a>
+						<a href="/CEO" style="color: gray; text-decoration: none;"><img src="/CEO/img/logo3.png"
+							alt="My Image"></a>
 					</p>
 				</div>
 				<div class="c"></div>

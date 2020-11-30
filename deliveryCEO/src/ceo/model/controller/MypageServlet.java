@@ -19,43 +19,44 @@ import ceo.model.vo.Ceo;
 @WebServlet(name = "Mypage", urlPatterns = { "/mypage" })
 public class MypageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MypageServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				//1.인코딩
-				//2.view에서 온데이터값 저장
+	public MypageServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 1.인코딩
+		// 2.view에서 온데이터값 저장
 		String ceoId = request.getParameter("ceoId");
-		//3.비지니스 로직
-		System.out.println("값"+ceoId);
-		
-		Ceo ceo = new CeoService().selectOneCeo(ceoId);		
-		//4. 뷰처리
-		if(ceo!=null) {
+		// 3.비지니스 로직
+		System.out.println("값" + ceoId);
+
+		Ceo ceo = new CeoService().selectOneCeo(ceoId);
+		// 4. 뷰처리
+		if (ceo != null) {
 			request.setAttribute("ceo", ceo);
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/ceo/mypage.jsp");
 			rd.forward(request, response);
-		}else {
-			response.sendRedirect("/");
+		} else {
+			response.sendRedirect("/CEO");
 		}
-		
 	}
-				
-	
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

@@ -18,7 +18,7 @@
 
 	<div class="blank"></div>
 	<div class="content-wrap">
-		<form action="/updateStoreInfo" method="POST" enctype="multipart/form-data">
+		<form action="/CEO/updateStoreInfo" method="POST" enctype="multipart/form-data">
 			<h1>가게 정보 관리</h1>
 			<table class="table">
 				<tr>

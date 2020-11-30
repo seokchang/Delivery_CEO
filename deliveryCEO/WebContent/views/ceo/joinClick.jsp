@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +15,16 @@
 			</h1>
 			<br> <br> <br>
 			<h1>
-				<a href="/views/ceo/join.jsp">가입하기>></a>
+				<a href="/CEO/views/ceo/join.jsp">가입하기>></a>
 			</h1>
 		</div>
 	</div>
 	<script>
-        $(function () {
-            $(".box01 h1").css('transition','1s').css('transform','translateY(300px)');
-        });
-
-    </script>
+		$(function() {
+			$(".box01 h1").css('transition', '1s').css('transform',
+					'translateY(300px)');
+		});
+	</script>
 
 
 </body>

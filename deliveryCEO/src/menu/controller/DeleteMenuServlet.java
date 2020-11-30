@@ -47,7 +47,7 @@ public class DeleteMenuServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "메뉴 삭제 실패");
 		}
-		request.setAttribute("loc", "/");
+		request.setAttribute("loc", "/CEO");
 		rd.forward(request, response);
 	}
 

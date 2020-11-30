@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,29 +15,27 @@
 		<div class="content">
 			<div class="logoinner">
 				<div class="logo">
-
-
-					<p><a href="/" style="text-decoration:none;">모방의민족</a></p>
+					<p>
+						<a href="/CEO" style="text-decoration: none;">모방의민족</a>
+					</p>
 				</div>
 
 				<div class="join">
 					<h2 style="text-align: center;">로그인</h2>
-					<form action="/login" method='post'>
-						<input type="text" name="ceoId" id="id" class="a" placeholder="아이디를 입력하세요" required>
-							 <input type="password" name="ceoPw" id="pw" class="a" placeholder="비밀번호를 입력하세요" required>
+					<form action="/CEO/login" method='post'>
+						<input type="text" name="ceoId" id="id" class="a" placeholder="아이디를 입력하세요" required> <input
+							type="password" name="ceoPw" id="pw" class="a" placeholder="비밀번호를 입력하세요" required>
 						<ul>
-							<li><a href="/views/ceo/findId.jsp">아이디</a>/<a href="/views/ceo/findPw.jsp">비밀번호 찾기</a></li>
-							<li><a href="/views/ceo/joinClick.jsp">회원가입</a></li>
+							<li><a href="/CEO/views/ceo/findId.jsp">아이디</a>/<a href="/CEO/views/ceo/findPw.jsp">비밀번호
+									찾기</a></li>
+							<li><a href="/CEO/views/ceo/joinClick.jsp">회원가입</a></li>
 						</ul>
 
-						<input type="submit" value="로그인" class="a"
-							style="background-color: #1a7cff;">
+						<input type="submit" value="로그인" class="a" style="background-color: #1a7cff;">
 					</form>
 				</div>
-
 			</div>
 		</div>
-
 	</div>
 
 </body>

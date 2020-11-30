@@ -18,7 +18,7 @@ String storeName = (String) request.getAttribute("storeName");
 
 	<div class="blank"></div>
 	<div class="content-wrap">
-		<form action="/insertMenu" method="POST" enctype="multipart/form-data">
+		<form action="/CEO/insertMenu" method="POST" enctype="multipart/form-data">
 			<h1>메뉴 등록</h1>
 			<table class="table">
 				<tr>
@@ -65,7 +65,7 @@ String storeName = (String) request.getAttribute("storeName");
 				<tr>
 					<th>이미지보기</th>
 					<td>
-						<div id="img-view">
+						<div style="text-align: left;">
 							<img id="img-view" width="350">
 						</div>
 					</td>

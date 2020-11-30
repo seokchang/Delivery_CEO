@@ -36,7 +36,7 @@ public class InsertMenuFormServlet extends HttpServlet {
 		String storeName = request.getParameter("storeName");
 		// 2. 비즈니스 로직
 		// 3. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/menu/insertMenu.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/menu/insertMenu.jsp");
 
 		request.setAttribute("storeNo", storeNo);
 		request.setAttribute("storeName", storeName);

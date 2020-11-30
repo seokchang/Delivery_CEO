@@ -58,7 +58,7 @@ public class ReviewDao {
 				review.setReviewContent(rset.getString("rev_content"));
 				review.setReviewClientId(rset.getString("rev_cli_id"));
 				review.setReviewStore(rset.getInt("rev_store"));
-				review.setReviewEntrollDate(rset.getString("rev_enroll_date"));
+				review.setReviewEnrollDate(rset.getString("rev_enroll_date"));
 
 				listReview.add(review);
 			}
@@ -97,7 +97,7 @@ public class ReviewDao {
 				review.setReviewContent(rset.getString("rev_content"));
 				review.setReviewClientId(rset.getString("rev_cli_id"));
 				review.setReviewStore(rset.getInt("rev_store"));
-				review.setReviewEntrollDate(rset.getString("rev_enroll_date"));
+				review.setReviewEnrollDate(rset.getString("rev_enroll_date"));
 
 				listReview.add(review);
 			}
@@ -110,5 +110,39 @@ public class ReviewDao {
 		}
 
 		return listReview;
+	}
+
+	public Review selectOneReview(Connection conn, int reviewNo) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		String query = "SELECT * FROM rev_db WHERE rev_no=?";
+		Review review = null;
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, reviewNo);
+			rset = pstmt.executeQuery();
+
+			if (rset.next()) {
+				review = new Review();
+
+				review.setReviewNo(rset.getInt("rev_no"));
+				review.setReviewOrderNo(rset.getInt("rev_ord_no"));
+				review.setReviewScore(rset.getInt("rev_score"));
+				review.setReviewContent(rset.getString("rev_content"));
+				review.setReviewClientId(rset.getString("rev_cli_id"));
+				review.setReviewStore(rset.getInt("rev_store"));
+				review.setReviewEnrollDate(rset.getString("rev_enroll_date"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
+		return review;
 	}
 }

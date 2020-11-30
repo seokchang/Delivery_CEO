@@ -41,7 +41,7 @@ public class SelectOneMenuServlet extends HttpServlet {
 		Menu menu = new MenuService().selectOneMenu(menuNo);
 
 		// 3. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/menu/updateMenu.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/menu/updateMenu.jsp");
 
 		request.setAttribute("menu", menu);
 		rd.forward(request, response);

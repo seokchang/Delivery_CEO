@@ -48,7 +48,7 @@ public class DeleteStoreInfoServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "가게 정보 삭제 실패");
 		}
-		request.setAttribute("loc", "/");
+		request.setAttribute("loc", "/CEO");
 		rd.forward(request, response);
 	}
 

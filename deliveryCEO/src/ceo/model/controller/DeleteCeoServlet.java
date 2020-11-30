@@ -18,42 +18,46 @@ import ceo.model.service.CeoService;
 @WebServlet(name = "DeleteCeo", urlPatterns = { "/deleteCeo" })
 public class DeleteCeoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DeleteCeoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				//1.인코딩
-				//2.view에서 온 데이터값 저장
-				String ceoId = request.getParameter("ceoId");
-				//3.비지니스 로직
-				int result = new CeoService().deleteCeo(ceoId);
-				//4.결과처리
-				if(result >0) {
-					HttpSession session  = request.getSession(false);
-					session.invalidate();
-					request.setAttribute("msg", "삭제 성공");
-				}else {
-					request.setAttribute("msg", "삭제 실패");
-				}
-				request.setAttribute("loc", "/");
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
-				rd.forward(request, response);
-		
+	public DeleteCeoServlet() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 1.인코딩
+		// 2.view에서 온 데이터값 저장
+		String ceoId = request.getParameter("ceoId");
+		// 3.비지니스 로직
+		int result = new CeoService().deleteCeo(ceoId);
+		// 4.결과처리
+		if (result > 0) {
+			HttpSession session = request.getSession(false);
+			session.invalidate();
+			request.setAttribute("msg", "삭제 성공");
+		} else {
+			request.setAttribute("msg", "삭제 실패");
+		}
+		request.setAttribute("loc", "/CEO");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
+		rd.forward(request, response);
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

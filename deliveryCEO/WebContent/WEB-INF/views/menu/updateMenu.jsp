@@ -18,7 +18,7 @@
 
 	<div class="blank"></div>
 	<div class="content-wrap">
-		<form action="/updateMenu" method="POST" enctype="multipart/form-data">
+		<form action="/CEO/updateMenu" method="POST" enctype="multipart/form-data">
 			<h1>메뉴 수정</h1>
 			<table class="table">
 				<tr>

@@ -45,13 +45,13 @@ public class UpdateMenuServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 
 			request.setAttribute("msg", "사진 작성 오류[enctype]");
-			request.setAttribute("loc", "/");
+			request.setAttribute("loc", "/CEO");
 			rd.forward(request, response);
 
 			return;
 		}
 
-		String root = getServletContext().getRealPath("/");
+		String root = getServletContext().getRealPath("/CEO");
 		String saveDirectory = root + "upload/photo";
 		int maxSize = 10 * 1024 * 1024;
 
@@ -71,14 +71,14 @@ public class UpdateMenuServlet extends HttpServlet {
 		int result = new MenuService().updateMenu(menu);
 
 		// 3. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/common/msg.jsp");
 
 		if (result > 0) {
 			request.setAttribute("msg", "메뉴 정보 수정 성공");
 		} else {
 			request.setAttribute("msg", "메뉴 정보 수정 실패");
 		}
-		request.setAttribute("loc", "/");
+		request.setAttribute("loc", "/CEO");
 		rd.forward(request, response);
 	}
 

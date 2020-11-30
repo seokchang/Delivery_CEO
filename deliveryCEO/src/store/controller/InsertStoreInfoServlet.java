@@ -47,14 +47,14 @@ public class InsertStoreInfoServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 
 			request.setAttribute("msg", "사진 작성 오류[enctype]");
-			request.setAttribute("loc", "/WEB-INF/views/pageSelfService/selfService.jsp");
+			request.setAttribute("loc", "/CEO/WEB-INF/views/pageSelfService/selfService.jsp");
 			rd.forward(request, response);
 
 			return;
 		}
 
 		// 파일 업로드 준비
-		String root = getServletContext().getRealPath("/");
+		String root = getServletContext().getRealPath("/CEO");
 		String saveDirectory = root + "upload/photo";
 		// 최대 파일 크기 설정
 		int maxSize = 10 * 1024 * 1024;
@@ -80,14 +80,14 @@ public class InsertStoreInfoServlet extends HttpServlet {
 		int result = new StoreService().insertStoreInfo(store);
 
 		// 4. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/common/msg.jsp");
 
 		if (result > 0) {
 			request.setAttribute("msg", "가게 정보 등록 성공");
 		} else {
 			request.setAttribute("msg", "가게 정보 등록 실패");
 		}
-		request.setAttribute("loc", "/");
+		request.setAttribute("loc", "/CEO");
 		rd.forward(request, response);
 	}
 

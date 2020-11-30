@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<pre>
+	<pre>
 제 1 조 (목적)
 이 약관은 주식회사 우아한형제들(이하 “회사”라 함)이 제공하는 배달의민족 배민사장님광장(http://ceo.baemin.com)의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
 
@@ -233,8 +232,8 @@ EX, 비즈머니&비즈포인트 사용차감 순서 : 만료기간이 빠른 �
 </pre>
 </body>
 <style>
-body{
-color:gray;
+body {
+	color: gray;
 }
 </style>
 

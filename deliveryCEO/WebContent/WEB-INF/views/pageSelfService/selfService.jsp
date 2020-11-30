@@ -17,17 +17,17 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/styleSelfService.css">
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/styleSelfService.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
 
 	<div class="blank"></div>
 	<div class="content-wrap" style="width: 1300px">
 		<ul class="navi-bar">
-			<li><a href="/">HOME</a></li>
-			<li><a href="/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">STORE</a></li>
+			<li><a href="/CEO">HOME</a></li>
+			<li><a href="/CEO/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">STORE</a></li>
 			<li><a href="javascript:void(0)">ORDER</a>
 				<ul class="subMenu">
-					<li><a href="/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰 리스트</a></li>
+					<li><a href="/CEO/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰 리스트</a></li>
 					<li><a href="#">주문 리스트</a></li>
 				</ul></li>
 		</ul>
@@ -79,8 +79,16 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 							<td><%=listReview.get(i).getRowNum()%></td>
 							<td><%=listReview.get(i).getReviewClientId()%></td>
 							<td><%=listReview.get(i).getReviewContent()%></td>
-							<td><%=listReview.get(i).getReviewScore()%></td>
-							<td><%=listReview.get(i).getReviewEntrollDate()%></td>
+							<td>
+								<%
+									for (int j = 0; j < listReview.get(j).getReviewScore(); j++) {
+								%>
+								<img src="/CEO/img/star-on.png">
+								<%
+									}
+								%>
+							</td>
+							<td><%=listReview.get(i).getReviewEnrollDate()%></td>
 						</tr>
 						<%
 							}
@@ -89,8 +97,8 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 					</tbody>
 				</table>
 				<div>
-					<a class="btn btn-primary btn-md" href="/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰
-						더보기</a>
+					<a class="btn btn-primary btn-md"
+						href="/CEO/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰 더보기</a>
 				</div>
 			</div>
 		</div>
@@ -133,8 +141,8 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 				</tbody>
 			</table>
 			<div class="btn-wrap">
-				<a class="btn btn-primary btn-md" href="/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">가게
-					더보기</a>
+				<a class="btn btn-primary btn-md"
+					href="/CEO/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">가게 더보기</a>
 			</div>
 		</div>
 		<hr>

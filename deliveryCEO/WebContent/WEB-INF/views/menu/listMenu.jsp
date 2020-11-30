@@ -32,7 +32,7 @@ String storeName = (String) request.getAttribute("storeName");
 			}
 		%>
 		<a class="btn btn-info btn-md"
-			href="/insertMenuForm?storeNo=<%=storeNo%>&storeName=<%=storeName%>"
+			href="/CEO/insertMenuForm?storeNo=<%=storeNo%>&storeName=<%=storeName%>"
 			style="margin-bottom: 5px; float: right;">메뉴 등록</a>
 		<div class="table-wrap">
 			<table class="table">
@@ -53,8 +53,8 @@ String storeName = (String) request.getAttribute("storeName");
 							<textarea class="form-control" style="resize: none;" readonly="readonly"><%=menu.getMenuDetail()%></textarea>
 						</td>
 						<td>
-							<a class="btn btn-info btn-md" href="/selectOneMenu?menuNo=<%=menu.getMenuNo()%>">수정</a> <a
-								class="btn btn-info btn-md" href="/deleteMenu?menuNo=<%=menu.getMenuNo()%>">삭제</a>
+							<a class="btn btn-info btn-md" href="/CEO/selectOneMenu?menuNo=<%=menu.getMenuNo()%>">수정</a> <a
+								class="btn btn-info btn-md" href="/CEO/deleteMenu?menuNo=<%=menu.getMenuNo()%>">삭제</a>
 						</td>
 					</tr>
 					<%

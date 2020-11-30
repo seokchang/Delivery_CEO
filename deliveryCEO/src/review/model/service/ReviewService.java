@@ -41,7 +41,7 @@ public class ReviewService {
 
 		// 이전 버튼 만들기
 		if (pageNo != 1) {
-			pageNavi += "<a class='btn' href='/selectAllReview?ceoId=" + ceoId + "&reqPage=" + (pageNo - 1)
+			pageNavi += "<a class='btn' href='/CEO/selectAllReview?ceoId=" + ceoId + "&reqPage=" + (pageNo - 1)
 					+ "'>이전</a>";
 		}
 
@@ -50,7 +50,7 @@ public class ReviewService {
 			if (reqPage == pageNo) {
 				pageNavi += "<span class='selectPage'>" + pageNo + "</span>";
 			} else {
-				pageNavi += "<a class='btn' href='/selectAllReview?ceoId=" + ceoId + "&reqPage=" + pageNo + "'>"
+				pageNavi += "<a class='btn' href='/CEO/selectAllReview?ceoId=" + ceoId + "&reqPage=" + pageNo + "'>"
 						+ pageNo + "</a>";
 			}
 			pageNo++;
@@ -60,13 +60,23 @@ public class ReviewService {
 
 		// 다음 버튼 만들기
 		if (pageNo <= totalPage) {
-			pageNavi += "<a class='btn' href='/selectAllReview?ceoId=" + ceoId + "&reqPage=" + pageNo + "'>다음</a>";
+			pageNavi += "<a class='btn' href='/CEO/selectAllReview?ceoId=" + ceoId + "&reqPage=" + pageNo + "'>다음</a>";
 		}
 
 		ReviewPageData rpd = new ReviewPageData(listReview, pageNavi);
 		JDBCTemplate.close(conn);
 
 		return rpd;
+	}
+
+	public Review selectOneReview(int reviewNo) {
+		// TODO Auto-generated method stub
+		Connection conn = JDBCTemplate.getConnection();
+
+		Review review = new ReviewDao().selectOneReview(conn, reviewNo);
+		JDBCTemplate.close(conn);
+
+		return review;
 	}
 
 }

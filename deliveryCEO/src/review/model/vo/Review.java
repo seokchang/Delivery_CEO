@@ -8,7 +8,7 @@ public class Review {
 	private String reviewContent;
 	private String reviewClientId;
 	private int reviewStore;
-	private String reviewEntrollDate;
+	private String reviewEnrollDate;
 
 	public Review() {
 		// TODO Auto-generated constructor stub
@@ -23,7 +23,7 @@ public class Review {
 		this.reviewContent = reviewContent;
 		this.reviewClientId = reviewClientId;
 		this.reviewStore = reviewStore;
-		this.reviewEntrollDate = reviewEntrollDate;
+		this.reviewEnrollDate = reviewEntrollDate;
 	}
 
 	public int getRowNum() {
@@ -82,11 +82,11 @@ public class Review {
 		this.reviewStore = reviewStore;
 	}
 
-	public String getReviewEntrollDate() {
-		return reviewEntrollDate;
+	public String getReviewEnrollDate() {
+		return reviewEnrollDate;
 	}
 
-	public void setReviewEntrollDate(String reviewEntrollDate) {
-		this.reviewEntrollDate = reviewEntrollDate;
+	public void setReviewEnrollDate(String reviewEntrollDate) {
+		this.reviewEnrollDate = reviewEntrollDate;
 	}
 }

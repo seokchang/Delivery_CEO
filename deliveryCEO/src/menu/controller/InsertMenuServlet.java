@@ -44,13 +44,13 @@ public class InsertMenuServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 
 			request.setAttribute("msg", "사진 작성 오류[enctype]");
-			request.setAttribute("loc", "/WEB-INF/views/pageSelfService/selfService.jsp");
+			request.setAttribute("loc", "/CEO/WEB-INF/views/pageSelfService/selfService.jsp");
 			rd.forward(request, response);
 
 			return;
 		}
 
-		String root = getServletContext().getRealPath("/");
+		String root = getServletContext().getRealPath("/CEO");
 		String saveDirectory = root + "upload/photo";
 		int maxSize = 10 * 1024 * 1024;
 
@@ -77,7 +77,7 @@ public class InsertMenuServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "메뉴 등록 실패");
 		}
-		request.setAttribute("loc", "/");
+		request.setAttribute("loc", "/CEO");
 		rd.forward(request, response);
 	}
 

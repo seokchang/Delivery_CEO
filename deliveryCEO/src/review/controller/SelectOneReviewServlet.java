@@ -1,7 +1,6 @@
-package menu.controller;
+package review.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,20 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import menu.model.service.MenuService;
-import menu.model.vo.Menu;
+import review.model.service.ReviewService;
+import review.model.vo.Review;
 
 /**
- * Servlet implementation class SelectAllMenuServlet
+ * Servlet implementation class SelectOneReviewServlet
  */
-@WebServlet(name = "SelectAllMenu", urlPatterns = { "/selectAllMenu" })
-public class SelectAllMenuServlet extends HttpServlet {
+@WebServlet(name = "SelectOneReview", urlPatterns = { "/selectOneReview" })
+public class SelectOneReviewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SelectAllMenuServlet() {
+	public SelectOneReviewServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -35,20 +34,16 @@ public class SelectAllMenuServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// 1. view에서 보낸 데이터 저장
-		int storeNo = Integer.parseInt(request.getParameter("storeNo"));
-		String storeName = request.getParameter("storeName");
+		// 1. view에서 받은 데이터 저장
+		int reviewNo = Integer.parseInt(request.getParameter("reviewNo"));
 
 		// 2. 비즈니스 로직
-		ArrayList<Menu> listMenu = new MenuService().selectAllMenu(storeNo);
+		Review review = new ReviewService().selectOneReview(reviewNo);
 
 		// 3. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/menu/listMenu.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/review/infoReview.jsp");
 
-		request.setAttribute("listMenu", listMenu);
-		request.setAttribute("storeNo", storeNo);
-		request.setAttribute("storeName", storeName);
-
+		request.setAttribute("review", review);
 		rd.forward(request, response);
 	}
 

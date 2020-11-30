@@ -89,10 +89,6 @@ $("input[type=submit]").click(function() {
 	var start = checkStartTime();
 	var end = checkEndTime();
 
-	console.log(checkTel);
-	console.log(checkStartTime);
-	console.log(checkEndTime);
-
 	if (tel && start && end) {
 		return true;
 	} else {

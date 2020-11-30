@@ -45,14 +45,14 @@ public class UpdateStoreInfoServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 
 			request.setAttribute("msg", "사진 작성 오류[enctype]");
-			request.setAttribute("loc", "/WEB-INF/views/pageSelfService/selfService.jsp");
+			request.setAttribute("loc", "/CEO/WEB-INF/views/pageSelfService/selfService.jsp");
 			rd.forward(request, response);
 
 			return;
 		}
 
 		// 파일 업로드
-		String root = getServletContext().getRealPath("/");
+		String root = getServletContext().getRealPath("/CEO");
 		String saveDirectory = root + "upload/photo";
 		int maxSize = 10 * 1024 * 1024;
 
@@ -85,7 +85,7 @@ public class UpdateStoreInfoServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "가게 정보 수정 실패");
 		}
-		request.setAttribute("loc", "/");
+		request.setAttribute("loc", "/CEO");
 		rd.forward(request, response);
 	}
 

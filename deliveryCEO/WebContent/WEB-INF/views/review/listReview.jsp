@@ -16,7 +16,7 @@
 
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
 
 	<div class="blank"></div>
 	<div class="content-wrap">
@@ -28,7 +28,7 @@
 					<tr>
 						<th>번호</th>
 						<th>리뷰번호</th>
-						<th>고객 ID</th>
+						<th>고객 아이디</th>
 						<th>주문번호</th>
 						<th>평점</th>
 						<th>날짜</th>
@@ -44,10 +44,18 @@
 						<td><%=review.getReviewNo()%></td>
 						<td><%=review.getReviewClientId()%></td>
 						<td><%=review.getReviewOrderNo()%></td>
-						<td><%=review.getReviewScore()%></td>
-						<td><%=review.getReviewEntrollDate()%></td>
 						<td>
-							<button type="button" class="btn btn-primary">리뷰확인</button>
+							<%
+								for (int i = 0; i < review.getReviewScore(); i++) {
+							%>
+							<img src="/CEO/img/star-on.png">
+							<%
+								}
+							%>
+						</td>
+						<td><%=review.getReviewEnrollDate()%></td>
+						<td>
+							<a class="btn btn-primary btn-md" href="/CEO/selectOneReview?reviewNo=<%=review.getReviewNo()%>">리뷰확인</a>
 						</td>
 					</tr>
 					<%

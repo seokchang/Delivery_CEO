@@ -14,7 +14,7 @@
 
 	<div class="blank"></div>
 	<div class="content-wrap">
-		<form action="/insertStoreInfo" method="POST" enctype="multipart/form-data">
+		<form action="/CEO/insertStoreInfo" method="POST" enctype="multipart/form-data">
 			<h1>가게 정보 등록</h1>
 			<table class="table">
 				<tr>
@@ -36,7 +36,6 @@
 				<tr>
 					<th>아이디</th>
 					<td>
-						<!-- 로그인한 아이디 불러옴 -->
 						<input type="text" name="storeCEO" id="storeCEO" class="form-control"
 							value="<%=ceo.getCeoId()%>" readonly="readonly">
 					</td>
@@ -86,14 +85,14 @@
 				<tr>
 					<th>첨부파일</th>
 					<td>
-						<input type="file" name="fileName" onchange="LoadImg(this)">
+						<input type="file" name="fileName" onchange="loadImg(this)">
 					</td>
 				</tr>
 				<tr>
 					<th>이미지 보기</th>
 					<td>
-						<div id="img-view">
-							<img id="img-view" width="350">
+						<div style="text-align: left;">
+							<img id="img-view" width="300">
 						</div>
 					</td>
 				</tr>

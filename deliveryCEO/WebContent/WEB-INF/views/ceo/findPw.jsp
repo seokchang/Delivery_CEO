@@ -1,7 +1,7 @@
 <%@page import="ceo.model.vo.Ceo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-Ceo ceo= (Ceo)request.getAttribute("ceo");
+	Ceo ceo = (Ceo) request.getAttribute("ceo");
 %>
 <!DOCTYPE html>
 <html>
@@ -14,11 +14,13 @@ Ceo ceo= (Ceo)request.getAttribute("ceo");
 </head>
 <body>
 	<div class="wrap">
-		<div id="userName">[<%=ceo.getCeoName()%>]님의 비밀번호</div><br>
-		<div id="userId">[<%=ceo.getCeoPw()%>]입니다.</div>
-
-	
+		<div id="userName">
+			[<%=ceo.getCeoName()%>]님의 비밀번호
+		</div>
+		<br>
+		<div id="userId">
+			[<%=ceo.getCeoPw()%>]입니다.
+		</div>
 	</div>
-
 </body>
 </html>
