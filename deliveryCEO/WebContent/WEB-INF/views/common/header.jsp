@@ -193,7 +193,7 @@ div.headermom:hover {
 						<li class="menu"><a href="/logout" style="color: black; text-decoration: none;">로그아웃</a></li>
 						<li class="menu"><a href="/mypage?ceoId=<%=ceo.getCeoId()%>" style="color: black; text-decoration: none;">[<%=ceo.getCeoId()%>]님 반갑습니다.</a></li>
 						<li class="menu"><a href="#" style="color: black; text-decoration: none;">고객센터</a></li>
-						<li class="menu"><a href="/selfService" style="color: black; text-decoration: none;">셀프서비스</a></li>
+						<li class="menu"><a href="/selfService?reqPage=1" style="color: black; text-decoration: none;">셀프서비스</a></li>
 					</ul>
 					<%}%>
 				</div>

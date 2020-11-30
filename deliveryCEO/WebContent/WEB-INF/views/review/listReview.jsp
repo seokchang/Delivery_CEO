@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String pageNavi = (String) request.getAttribute("pageNavi");
-ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
+	ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
 %>
 <!DOCTYPE html>
 <html>
@@ -26,6 +26,7 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 			<table class="table table-hover">
 				<thead>
 					<tr>
+						<th>번호</th>
 						<th>리뷰번호</th>
 						<th>고객 ID</th>
 						<th>주문번호</th>
@@ -39,6 +40,7 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 						for (Review review : listReview) {
 					%>
 					<tr height="70">
+						<td><%=review.getRowNum()%></td>
 						<td><%=review.getReviewNo()%></td>
 						<td><%=review.getReviewClientId()%></td>
 						<td><%=review.getReviewOrderNo()%></td>
