@@ -1,11 +1,13 @@
+<%@page import="notice.model.vo.Notice"%>
 <%@page import="review.model.vo.Review"%>
 <%@page import="store.model.vo.Store"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	int length = 5;
-ArrayList<Store> listStore = (ArrayList<Store>) request.getAttribute("listStore");
-ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
+	ArrayList<Notice> listNotice = (ArrayList<Notice>) request.getAttribute("listNotice");
+	ArrayList<Store> listStore = (ArrayList<Store>) request.getAttribute("listStore");
+	ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
 %>
 <!DOCTYPE html>
 <html>
@@ -42,19 +44,21 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 					</thead>
 					<tbody>
 						<%
+							if (!listNotice.isEmpty()) {
 							for (int i = 0; i < length; i++) {
 						%>
 						<tr>
-							<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
-							<td>2020.11.23</td>
+							<td style="text-align: left;"><%=listNotice.get(i).getNoticeTitle()%></td>
+							<td><%=listNotice.get(i).getNoticeEnroll()%></td>
 						</tr>
 						<%
 							}
+						}
 						%>
 					</tbody>
 				</table>
 				<div class="btn-wrap">
-					<a class="btn btn-primary btn-md" href="#">공지사항 더보기</a>
+					<a class="btn btn-primary btn-md" href="/CEO/noticeList?reqPage=1">공지사항 더보기</a>
 				</div>
 			</div>
 
@@ -71,7 +75,7 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 						</tr>
 					</thead>
 					<tbody>
-					<%-- 	<%
+						<%-- 	<%
 							if (!listReview.isEmpty()) {
 							for (int i = 0; i < length; i++) {
 						%>

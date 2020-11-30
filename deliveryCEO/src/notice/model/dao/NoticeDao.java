@@ -39,7 +39,7 @@ public class NoticeDao {
 		ResultSet rset = null;
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		String query = "select * from(select rownum as rnum, n.* from (select * from NOTICE_DB order by 1 desc)n) where rnum between ? and ?";
-		
+
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, start);
@@ -64,18 +64,18 @@ public class NoticeDao {
 		return list;
 	}
 
-	public Notice selectOneNotice(Connection conn , int noticeNo) {
+	public Notice selectOneNotice(Connection conn, int noticeNo) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		Notice n = null;
-	
+
 		String query = "select * from NOTICE_DB where notice_no=?";
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, noticeNo);
 			rset = pstmt.executeQuery();
-			if(rset.next()) {
-				n= new Notice();
+			if (rset.next()) {
+				n = new Notice();
 				n.setNoticeNo(rset.getInt("notice_no"));
 				n.setNoticeTitle(rset.getString("notice_title"));
 				n.setNoticeAdminId(rset.getString("notice_admin_id"));
@@ -87,11 +87,11 @@ public class NoticeDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			JDBCTemplate.close(rset);
 			JDBCTemplate.close(pstmt);
 		}
-		
+
 		return n;
 	}
 
@@ -102,9 +102,9 @@ public class NoticeDao {
 		ArrayList<NoticeComment> list = new ArrayList<NoticeComment>();
 		try {
 			pstmt = conn.prepareStatement(query);
-			pstmt.setInt(1,noticeNo);
+			pstmt.setInt(1, noticeNo);
 			rset = pstmt.executeQuery();
-			while(rset.next()) {
+			while (rset.next()) {
 				NoticeComment nc = new NoticeComment();
 				nc.setNoticeCommentNo(rset.getInt("notice_comment_no"));
 				nc.setNoticeCommentLevel(rset.getInt("notice_comment_level"));
@@ -114,17 +114,47 @@ public class NoticeDao {
 				nc.setNoticeCommentRef(rset.getInt("notice_comment_ref"));
 				nc.setNoticeCommentDate(rset.getString("notice_comment_date"));
 				list.add(nc);
-				
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			JDBCTemplate.close(rset);
 			JDBCTemplate.close(pstmt);
 		}
-		
-		
+
 		return list;
+	}
+
+	public ArrayList<Notice> selectAllNotice(Connection conn) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		ArrayList<Notice> listNotice = new ArrayList<Notice>();
+		String query = "SELECT * FROM notice_db";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			rset = pstmt.executeQuery();
+
+			while (rset.next()) {
+				Notice n = new Notice();
+
+				n.setNoticeTitle(rset.getString("notice_title"));
+				n.setNoticeEnroll(rset.getString("notice_enroll_date"));
+
+				listNotice.add(n);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
+
+		return listNotice;
 	}
 }

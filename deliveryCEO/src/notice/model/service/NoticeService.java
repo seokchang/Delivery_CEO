@@ -86,4 +86,14 @@ public class NoticeService {
 		return nvd;
 	}
 
+	public ArrayList<Notice> selectAllNotice() {
+		// TODO Auto-generated method stub
+		Connection conn = JDBCTemplate.getConnection();
+
+		ArrayList<Notice> listNotice = new NoticeDao().selectAllNotice(conn);
+		JDBCTemplate.close(conn);
+
+		return listNotice;
+	}
+
 }
