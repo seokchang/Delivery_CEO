@@ -10,7 +10,7 @@
 
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
 
 	<div class="blank"></div>
 	<div class="content-wrap">
@@ -85,7 +85,7 @@
 				<tr>
 					<th>첨부파일</th>
 					<td>
-						<input type="file" name="fileName" onchange="loadImg(this)">
+						<input type="file" name="fileName" onchange="LoadImg(this)">
 					</td>
 				</tr>
 				<tr>
@@ -112,6 +112,6 @@
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
-	<script src="/js/checkReg/checkRegStore.js"></script>
+	<script src="/CEO/js/checkReg/checkRegStore.js"></script>
 </body>
 </html>

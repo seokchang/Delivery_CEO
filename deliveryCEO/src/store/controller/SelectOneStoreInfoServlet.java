@@ -42,7 +42,7 @@ public class SelectOneStoreInfoServlet extends HttpServlet {
 		Store store = new StoreService().selectOneStore(ceoId, storeNo);
 
 		// 3. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/store/updateStore.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/store/updateStore.jsp");
 
 		request.setAttribute("store", store);
 		rd.forward(request, response);

@@ -71,7 +71,7 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 						</tr>
 					</thead>
 					<tbody>
-						<%
+					<%-- 	<%
 							if (!listReview.isEmpty()) {
 							for (int i = 0; i < length; i++) {
 						%>
@@ -93,7 +93,7 @@ ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listRev
 						<%
 							}
 						}
-						%>
+						%> --%>
 					</tbody>
 				</table>
 				<div>

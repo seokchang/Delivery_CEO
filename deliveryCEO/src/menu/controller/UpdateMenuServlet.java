@@ -51,8 +51,8 @@ public class UpdateMenuServlet extends HttpServlet {
 			return;
 		}
 
-		String root = getServletContext().getRealPath("/CEO");
-		String saveDirectory = root + "upload/photo";
+		String root = getServletContext().getRealPath("/");
+		String saveDirectory = root + "/upload/photo";
 		int maxSize = 10 * 1024 * 1024;
 
 		MultipartRequest mRequest = new MultipartRequest(request, saveDirectory, maxSize, "UTF-8",
@@ -71,7 +71,7 @@ public class UpdateMenuServlet extends HttpServlet {
 		int result = new MenuService().updateMenu(menu);
 
 		// 3. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/common/msg.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 
 		if (result > 0) {
 			request.setAttribute("msg", "메뉴 정보 수정 성공");

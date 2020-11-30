@@ -32,55 +32,57 @@ public class NoticeService {
 		// reqPage=3 -> start : 22, end : 30
 		int start = (reqPage - 1) * numPerPage + 1; // 시작번호
 		int end = reqPage * numPerPage; // 해당페이지 게시물의 끝번호
-		System.out.println("시작번호 :"+start+"/끝번호 : " +end);
-		ArrayList<Notice> list = dao.selectList(conn,start,end);
-		//페이지 네비게이션 작성 시작
-		int pageNaviSize = 5; //페이지 네비게이션 길이 지정
-		String pageNavi = ""; //페이지 네비 태그 작성용
-		//페이지네비게이션의 시작번호 구하기
-		//reqPage : 1~5 - > 1, reqPage : 6 ~ 10 ->6, reqPage : 11~15 = 11
-		int pageNo = ((reqPage-1)/pageNaviSize)*pageNaviSize+1;
-		//이전 버튼 : 페이지 시작번호가 1이 아닌경우에만 이전버튼 생성 
-		if(pageNo != 1) {
-			pageNavi += "<a class='btn' href='/noticeList?reqPage="+(pageNo-1)+"'>이전</a>";
+		System.out.println("시작번호 :" + start + "/끝번호 : " + end);
+		ArrayList<Notice> list = dao.selectList(conn, start, end);
+		// 페이지 네비게이션 작성 시작
+		int pageNaviSize = 5; // 페이지 네비게이션 길이 지정
+		String pageNavi = ""; // 페이지 네비 태그 작성용
+		// 페이지네비게이션의 시작번호 구하기
+		// reqPage : 1~5 - > 1, reqPage : 6 ~ 10 ->6, reqPage : 11~15 = 11
+		int pageNo = ((reqPage - 1) / pageNaviSize) * pageNaviSize + 1;
+		// 이전 버튼 : 페이지 시작번호가 1이 아닌경우에만 이전버튼 생성
+		if (pageNo != 1) {
+			pageNavi += "<a class='btn' href='/CEO/noticeList?reqPage=" + (pageNo - 1) + "'>이전</a>";
 		}
-		//페이지 네비 숫자
-		//57ro -> totalPage = 6개페이지
-		//reqPage = 1, pageNo => 1
-		for(int i = 0;i<pageNaviSize;i++) {
-			if(reqPage == pageNo) { // 페이지 네비가 현재 요청페이지인 경우(a태그가 필요없음)
-				pageNavi += "<span class='selectPage'>"+pageNo+"</sapn>";
-			}else {
-				pageNavi += "<a class='btn' href='/noticeList?reqPage="+pageNo+"'>"+pageNo+"</a>";
+		// 페이지 네비 숫자
+		// 57ro -> totalPage = 6개페이지
+		// reqPage = 1, pageNo => 1
+		for (int i = 0; i < pageNaviSize; i++) {
+			if (reqPage == pageNo) { // 페이지 네비가 현재 요청페이지인 경우(a태그가 필요없음)
+				pageNavi += "<span class='selectPage'>" + pageNo + "</sapn>";
+			} else {
+				pageNavi += "<a class='btn' href='/CEO/noticeList?reqPage=" + pageNo + "'>" + pageNo + "</a>";
 			}
 			pageNo++;
-			if(pageNo > totalPage) {
+			if (pageNo > totalPage) {
 				break;
 			}
-			
+
 		}
-		//다음버튼
-		if(pageNo <= totalPage) {
-			pageNavi += "<a class= 'btn' href='/noticeList?reqPage="+pageNo+"'>다음</a>";
+		// 다음버튼
+		if (pageNo <= totalPage) {
+			pageNavi += "<a class= 'btn' href='/CEO/noticeList?reqPage=" + pageNo + "'>다음</a>";
 		}
 		NoticePageData npd = new NoticePageData(list, pageNavi);
-		
+
 		JDBCTemplate.close(conn);
 		return npd;
 	}
+
 	public Notice selectOneNotice(int noticeNo) {
 		Connection conn = JDBCTemplate.getConnection();
-		Notice n = new NoticeDao().selectOneNotice(conn , noticeNo);
+		Notice n = new NoticeDao().selectOneNotice(conn, noticeNo);
 		JDBCTemplate.close(conn);
 		return n;
 	}
+
 	public NoticeViewData selectNoticeView(int noticeNo) {
 		Connection conn = JDBCTemplate.getConnection();
-		Notice n = new NoticeDao().selectOneNotice(conn , noticeNo);
-		ArrayList<NoticeComment> list = new NoticeDao().selectNoticeCommentList(conn,noticeNo);
+		Notice n = new NoticeDao().selectOneNotice(conn, noticeNo);
+		ArrayList<NoticeComment> list = new NoticeDao().selectNoticeCommentList(conn, noticeNo);
 		JDBCTemplate.commit(conn);
 		NoticeViewData nvd = new NoticeViewData(n, list);
-	
+
 		return nvd;
 	}
 

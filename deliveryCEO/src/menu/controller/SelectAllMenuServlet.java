@@ -43,7 +43,7 @@ public class SelectAllMenuServlet extends HttpServlet {
 		ArrayList<Menu> listMenu = new MenuService().selectAllMenu(storeNo);
 
 		// 3. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/menu/listMenu.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/menu/listMenu.jsp");
 
 		request.setAttribute("listMenu", listMenu);
 		request.setAttribute("storeNo", storeNo);

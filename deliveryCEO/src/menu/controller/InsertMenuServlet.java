@@ -50,8 +50,8 @@ public class InsertMenuServlet extends HttpServlet {
 			return;
 		}
 
-		String root = getServletContext().getRealPath("/CEO");
-		String saveDirectory = root + "upload/photo";
+		String root = getServletContext().getRealPath("/");
+		String saveDirectory = root + "/upload/photo";
 		int maxSize = 10 * 1024 * 1024;
 
 		MultipartRequest mRequest = new MultipartRequest(request, saveDirectory, maxSize, "UTF-8",

@@ -41,7 +41,7 @@ public class SelectOneReviewServlet extends HttpServlet {
 		Review review = new ReviewService().selectOneReview(reviewNo);
 
 		// 3. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/review/infoReview.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/review/infoReview.jsp");
 
 		request.setAttribute("review", review);
 		rd.forward(request, response);

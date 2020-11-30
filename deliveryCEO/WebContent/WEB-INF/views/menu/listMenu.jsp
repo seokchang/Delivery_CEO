@@ -17,7 +17,7 @@ String storeName = (String) request.getAttribute("storeName");
 
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
 
 	<div class="blank"></div>
 	<div class="content-wrap">

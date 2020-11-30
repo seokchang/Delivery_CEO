@@ -54,8 +54,8 @@ public class InsertStoreInfoServlet extends HttpServlet {
 		}
 
 		// 파일 업로드 준비
-		String root = getServletContext().getRealPath("/CEO");
-		String saveDirectory = root + "upload/photo";
+		String root = getServletContext().getRealPath("/");
+		String saveDirectory = root + "/upload/photo";
 		// 최대 파일 크기 설정
 		int maxSize = 10 * 1024 * 1024;
 		// request -> MultipartRequest
@@ -80,7 +80,7 @@ public class InsertStoreInfoServlet extends HttpServlet {
 		int result = new StoreService().insertStoreInfo(store);
 
 		// 4. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/common/msg.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 
 		if (result > 0) {
 			request.setAttribute("msg", "가게 정보 등록 성공");

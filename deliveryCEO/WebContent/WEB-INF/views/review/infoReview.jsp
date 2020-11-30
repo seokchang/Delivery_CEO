@@ -11,7 +11,7 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
 	<div class="blank"></div>
 
 	<div class="content-wrap">
@@ -35,7 +35,7 @@
 					<%
 						for (int i = 0; i < review.getReviewScore(); i++) {
 					%>
-					<img src="/img/star-on.png">
+					<img src="/CEO/img/star-on.png">
 					<%
 						}
 					%>

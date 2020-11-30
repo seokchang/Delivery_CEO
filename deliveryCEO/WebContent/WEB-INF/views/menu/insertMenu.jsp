@@ -14,7 +14,7 @@ String storeName = (String) request.getAttribute("storeName");
 
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
 
 	<div class="blank"></div>
 	<div class="content-wrap">
@@ -66,7 +66,7 @@ String storeName = (String) request.getAttribute("storeName");
 					<th>이미지보기</th>
 					<td>
 						<div style="text-align: left;">
-							<img id="img-view" width="350">
+							<img id="img-view" width="300">
 						</div>
 					</td>
 				</tr>
@@ -86,6 +86,21 @@ String storeName = (String) request.getAttribute("storeName");
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
-	<script src="/js/checkReg/checkRegMenu.js"></script>
+	<script src="/CEO/js/checkReg/checkRegMenu.js"></script>
+	<script type="text/javascript">
+		// 이미지 보기
+		function LoadImg(file) {
+			if (file.files.length != 0 && file.files[0] != 0) {
+				var reader = new FileReader();
+
+				reader.readAsDataURL(file.files[0]);
+				reader.onload = function(e) {
+					$("#img-view").attr('src', e.target.result);
+				}
+			} else {
+				$("#img-view").attr('src', '');
+			}
+		}
+	</script>
 </body>
 </html>

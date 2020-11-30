@@ -14,7 +14,7 @@
 
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
 
 	<div class="blank"></div>
 	<div class="content-wrap">
@@ -47,7 +47,7 @@
 					<td style="text-align: left;">
 						<input type="text" name="menuPrice" id="menuPrice" class="form-control"
 							style="width: 50%; display: inline-block;" value="<%=menu.getMenuPrice()%>"> <span
-							class="msg" style="margin-left: 10px;">메뉴 가격 유효성 검사</span>
+							class="msg" style="margin-left: 10px;"></span>
 					</td>
 				</tr>
 				<tr>
@@ -59,8 +59,8 @@
 				<tr>
 					<th>이미지보기</th>
 					<td>
-						<div id="img-view">
-							<img id="img-view" width="350">
+						<div style="text-align: left;">
+							<img id="img-view" width="300">
 						</div>
 					</td>
 				</tr>
@@ -72,15 +72,14 @@
 					</td>
 				</tr>
 				<tr>
-					<th colspan="2" style="text-align: center;">
-						<button type="submit" class="btn btn-primary btn-lg">메뉴 수정</button>
-					</th>
+					<th colspan="2" style="text-align: center;"><input class="btn btn-primary btn-lg"
+						type="submit" value="메뉴 수정"></th>
 				</tr>
 			</table>
 		</form>
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
-	<script src="/js/checkReg/checkRegMenu.js"></script>
+	<script src="/CEO/js/checkReg/checkRegMenu.js"></script>
 </body>
 </html>

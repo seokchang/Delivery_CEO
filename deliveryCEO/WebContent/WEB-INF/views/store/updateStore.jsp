@@ -14,7 +14,7 @@
 
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
 
 	<div class="blank"></div>
 	<div class="content-wrap">
@@ -23,7 +23,7 @@
 			<table class="table">
 				<tr>
 					<th>카테고리</th>
-					<td>
+					<td style="text-align: left;">
 						<select name="storeCateId">
 							<option value="1" selected>치킨</option>
 							<option value="2">피자</option>
@@ -109,7 +109,7 @@
 				<tr>
 					<th>이미지보기</th>
 					<td>
-						<div id="img-view">
+						<div style="text-align: left;">
 							<img id="img-view" width="350">
 						</div>
 					</td>
@@ -123,13 +123,13 @@
 				</tr>
 				<tr>
 					<th colspan="2" style="text-align: center;"><input type="submit"
-						class="btn btn-primary btn-lg" value="등록하기"></th>
+						class="btn btn-primary btn-lg" value="변경하기"></th>
 				</tr>
 			</table>
 		</form>
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
-	<script src="/js/checkReg/checkRegStore.js"></script>
+	<script src="/CEO/js/checkReg/checkRegStore.js"></script>
 </body>
 </html>
