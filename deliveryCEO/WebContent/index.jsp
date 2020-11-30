@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%
+int length =5;
+%>
 
 <!DOCTYPE html>
 <html>
@@ -33,10 +35,16 @@
 						<h3>공지사항</h3>
 						<table class="table table-striped">
 							<tbody>
-								<tr>
-									<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
-									<td>2020.11.23</td>
-								</tr>
+						<%
+							for (int i = 0; i < length; i++) {
+						%>
+						<tr>
+							<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
+							<td>2020.11.23</td>
+						</tr>
+						<%
+							}
+						%>
 							</tbody>
 						</table>
 						<div class="btn-wrap">
@@ -142,13 +150,6 @@
 	float: left;
 	border-top: 1px solid gray;
 }
-
-.content {
-	width: 100%;
-	height: 1000px;
-	background-
-}
-
 .blank {
 	height: 440px;
 }

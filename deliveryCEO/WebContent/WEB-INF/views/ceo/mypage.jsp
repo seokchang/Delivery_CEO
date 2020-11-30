@@ -11,44 +11,45 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/CEO/update" method="post" style="width: 800px; margin: 0 auto; color: black;">
+	<form action="/CEO/update" method="post" style="width: 350px; margin: 0 auto; color: black; text-align:center;">
 		<h1>마이페이지</h1>
-		<table class="table">
+		
+		<table class="table" >
 
 			<tr>
-				<th>아이디</th>
+				<th >아이디</th>
 				<td>
-					<input type="text" name="ceoId" class="form-control" value="<%=c.getCeoId()%>" readonly>
+					<input type="text" name="ceoId" class="form-control" value="<%=c.getCeoId()%>" readonly style="width:250px; height:20px; ">
 				</td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
 				<td>
-					<input type="password" name="ceoPw" class="form-control" value="<%=c.getCeoPw()%>">
+					<input type="password" name="ceoPw" class="form-control" value="<%=c.getCeoPw()%>" style="width:250px; height:20px; margin-top:10px;">
 				</td>
 			</tr>
 			<tr>
 				<th>이름</th>
 				<td>
-					<input type="text" name="ceoName" class="form-control" value="<%=c.getCeoName()%>" readonly>
+					<input type="text" name="ceoName" class="form-control" value="<%=c.getCeoName()%>" readonly style="width:250px; height:20px; margin-top:10px;">
 				</td>
 			</tr>
 			<tr>
 				<th>전화번호</th>
 				<td>
-					<input type="text" name="ceoTel" class="form-control" value="<%=c.getCeoTel()%>">
+					<input type="text" name="ceoTel" class="form-control" value="<%=c.getCeoTel()%>" style="width:250px; height:20px; margin-top:10px;">
 				</td>
 			</tr>
 			<tr>
 				<th>주소</th>
 				<td>
-					<input type="text" name="ceoAddr" class="form-control" value="<%=c.getCeoAddr()%>">
+					<input type="text" name="ceoAddr" class="form-control" value="<%=c.getCeoAddr()%>" style="width:250px; height:20px; margin-top:10px;">
 				</td>
 			</tr>
 			<tr>
 				<th>가입일</th>
 				<td>
-					<input type="text" name="ceoEnroll" class="form-control" value="<%=c.getCeoEnroll()%>" readonly>
+					<input type="text" name="ceoEnroll" class="form-control" value="<%=c.getCeoEnroll()%>" readonly style="width:250px; height:20px; margin-top:10px;">
 				</td>
 			</tr>
 
@@ -68,5 +69,10 @@
 table {
 	text-align: center;
 }
+.center{
+	width:70%:
+	margin : 0 auto;
+}
 </style>
+
 </html>

@@ -115,7 +115,7 @@ div.three {
 }
 
 div.container {
-	width: 100%;
+	width: 1519px;
 	position: absolute;
 	margin: 0;
 	padding: 0;
@@ -140,12 +140,30 @@ div.headermom:hover {
 </head>
 
 <body>
-	<div class="container" style="margin-top: -10px;">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div class="container" style="margin-top: -10px; width: 1519px;">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 1519px;">
 			<!-- Indicators -->
 
 			<!-- Wrapper for slides -->
-			<div class="carousel-inner">
+			<div class="carousel-inner" style="width: 1519px;">
+
+				<div class="item active" style="width: 1519px;">
+					<div class="one" style="width: 1519px;"></div>
+					<div class="carousel-caption"></div>
+				</div>
+
+				<div class="item" style="width: 1519px;">
+					<div class="two" style="width: 1519px;"></div>
+					<div class="carousel-caption"></div>
+				</div>
+
+				<div class="item" style="width: 1519px;">
+					<div class="three" style="width: 1519px;"></div>
+					<div class="carousel-caption"></div>
+				</div>
+
+			</div>
+			<!-- <div class="carousel-inner">
 
 				<div class="item active">
 					<div class="one"></div>
@@ -162,7 +180,7 @@ div.headermom:hover {
 					<div class="carousel-caption"></div>
 				</div>
 
-			</div>
+			</div> -->
 
 			<!-- Left and right controls -->
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span
