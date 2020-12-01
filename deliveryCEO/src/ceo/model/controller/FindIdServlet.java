@@ -46,13 +46,13 @@ public class FindIdServlet extends HttpServlet {
 		// System.out.println("findServlet>"+ceo.getCeoId());
 		// 4. 뷰처리
 		if (ceo != null) {
-			RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/ceo/findId.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/ceo/findId.jsp");
 			request.setAttribute("ceo", ceo);
 			rd.forward(request, response);
 		} else {
 			request.setAttribute("msg", "정확한 정보를 입력해 주세요!.");
 			request.setAttribute("loc", "/CEO");
-			RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/common/msg.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 			rd.forward(request, response);
 		}
 	}

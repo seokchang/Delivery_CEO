@@ -16,7 +16,7 @@
 			<div class="logoinner">
 				<div class="logo">
 					<p>
-						<a href="/CEO" style="text-decoration: none;">모방의민족</a>
+						<a href="/CEO" style="text-decoration: none;"><img src="/CEO/img/logo3.png"></a>
 					</p>
 				</div>
 

@@ -15,7 +15,7 @@ import ceo.model.vo.Ceo;
 /**
  * Servlet implementation class UpdateServlet
  */
-@WebServlet(name = "Update", urlPatterns = { "/update" })
+@WebServlet(name = "Update", urlPatterns = { "/CEO/update" })
 public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -44,7 +44,7 @@ public class UpdateServlet extends HttpServlet {
 		// 3.비즈니스 로직
 		Ceo ceo = new Ceo(ceoId, ceoPw, ceoName, ceoTel, ceoAddr, ceoEnroll);
 		int result = new CeoService().updateCeo(ceo);
-		RequestDispatcher rd = request.getRequestDispatcher("/CEO/mypage?ceoId=" + ceoId);
+		RequestDispatcher rd = request.getRequestDispatcher("/mypage?ceoId=" + ceoId);
 
 		if (result > 0) {
 			rd.forward(request, response);

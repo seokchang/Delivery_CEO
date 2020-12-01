@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("loc", "/CEO");
 		} else {
 			request.setAttribute("msg", "아이디 혹은 비밀번호를 확인하세요.");
-			request.setAttribute("loc", "/views/ceo/login.jsp");
+			request.setAttribute("loc", "/CEO/views/ceo/login.jsp");
 		}
 		rd.forward(request, response);
 	}

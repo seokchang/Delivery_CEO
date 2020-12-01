@@ -16,6 +16,10 @@
 	width: 80%;
 	margin: 0 auto;
 }
+a{
+	font-size:19px;
+	font-family: Helvetica, Arial, sans-serif;
+}
 
 .content1 {
 	width: 550px;
@@ -64,7 +68,7 @@ li {
 	list-style-type: none;
 	float: right;
 	margin-left: 15px;
-	font-size: 13px;
+	font-size: 18px;
 	color: white;
 	margin-top: 10px;
 }
@@ -136,6 +140,9 @@ div.headermom:hover {
 	background-color: white;
 	color: gray;
 }
+.menu{
+	font-size:20px;
+}
 </style>
 </head>
 
@@ -199,24 +206,24 @@ div.headermom:hover {
 					%>
 					<ul>
 						<li class="menu"><a href="/CEO/views/ceo/joinClick.jsp"
-							style="color: black; text-decoration: none;">회원가입</a></li>
+							style="color: black; text-decoration: none;"><img src="/CEO/img/join1.png"></a></li>
 						<li class="menu"><a href="/CEO/views/ceo/login.jsp"
-							style="color: black; text-decoration: none;">로그인</a></li>
-						<li class="menu"><a href="#" style="color: black; text-decoration: none;">고객센터</a></li>
-						<li class="menu"><a href="/CEO/selfService" style="color: black; text-decoration: none;">셀프서비스</a></li>
+							style="color: black; text-decoration: none;"><img src="/CEO/img/login1.png"></a></li>
+						<li class="menu"><a href="#" style="color: black; text-decoration: none;"><img src="/CEO/img/call.png"></a></li>
+						<li class="menu"><a href="/CEO/selfService" style="color: black; text-decoration: none;"><img src="/CEO/img/SELF.png"></a></li>
 					</ul>
 					<%
 						} else {
 					%>
 					<ul>
 
-						<li class="menu"><a href="/CEO/logout" style="color: black; text-decoration: none;">로그아웃</a></li>
+						<li class="menu"><a href="/CEO/logout" style="color: black; text-decoration: none;"><img src="/CEO/img/logout.png"></a></li>
 						<li class="menu"><a href="/CEO/mypage?ceoId=<%=ceo.getCeoId()%>"
-							style="color: black; text-decoration: none;">[<%=ceo.getCeoId()%>]님 반갑습니다.
+							style="color: black; text-decoration: none;">[<%=ceo.getCeoId()%>]<img src="/CEO/img/hi.png">
 						</a></li>
-						<li class="menu"><a href="#" style="color: black; text-decoration: none;">고객센터</a></li>
+						<li class="menu"><a href="#" style="color: black; text-decoration: none;"><img src="/CEO/img/call.png"></a></li>
 						<li class="menu"><a href="/CEO/selfService?reqPage=1"
-							style="color: black; text-decoration: none;">셀프서비스</a></li>
+							style="color: black; text-decoration: none;"><img src="/CEO/img/SELF.png"></a></li>
 					</ul>
 					<%
 						}

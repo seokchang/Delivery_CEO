@@ -44,7 +44,7 @@ p {
 	width: 100%;
 	height: 100%;
 	position: relative;
-	background-image: url(/img/img01.jpg);
+	background-image: url(/CEO/img/img01.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 }

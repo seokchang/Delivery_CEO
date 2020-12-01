@@ -42,7 +42,7 @@ public class FindPwServlet extends HttpServlet {
 		Ceo ceo = new CeoService().searchPw(ceoId, ceoTel, ceoName);
 		// 4. 결과처리
 		if (ceo != null) {
-			RequestDispatcher rd = request.getRequestDispatcher("/CEO/WEB-INF/views/ceo/findPw.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/ceo/findPw.jsp");
 			request.setAttribute("ceo", ceo);
 			rd.forward(request, response);
 		} else {
