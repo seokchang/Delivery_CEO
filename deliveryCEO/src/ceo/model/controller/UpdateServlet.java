@@ -15,7 +15,7 @@ import ceo.model.vo.Ceo;
 /**
  * Servlet implementation class UpdateServlet
  */
-@WebServlet(name = "Update", urlPatterns = { "/CEO/update" })
+@WebServlet(name = "Update", urlPatterns = { "/update" })
 public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -44,11 +44,15 @@ public class UpdateServlet extends HttpServlet {
 		// 3.비즈니스 로직
 		Ceo ceo = new Ceo(ceoId, ceoPw, ceoName, ceoTel, ceoAddr, ceoEnroll);
 		int result = new CeoService().updateCeo(ceo);
-		RequestDispatcher rd = request.getRequestDispatcher("/mypage?ceoId=" + ceoId);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
 
 		if (result > 0) {
-			rd.forward(request, response);
+			request.setAttribute("msg", "회원 정보 수정 성공");
+		} else {
+			request.setAttribute("msg", "회원 정보 수정 실패");
 		}
+		request.setAttribute("loc", "/CEO");
+		rd.forward(request, response);
 	}
 
 	/**
