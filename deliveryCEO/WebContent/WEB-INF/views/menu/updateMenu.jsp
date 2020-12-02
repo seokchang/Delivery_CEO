@@ -2,6 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	Menu menu = (Menu) request.getAttribute("menu");
+	int storeNo = (Integer) request.getAttribute("storeNo");
+	String storeName = (String) request.getAttribute("storeName");
 %>
 <!DOCTYPE html>
 <html>
@@ -19,6 +21,8 @@
 	<div class="blank"></div>
 	<div class="content-wrap">
 		<form action="/CEO/updateMenu" method="POST" enctype="multipart/form-data">
+			<input type="hidden" name="storeNo" value="<%=storeNo%>">
+			<input type="hidden" name="storeName" value="<%=storeName%>">
 			<h1>메뉴 수정</h1>
 			<table class="table">
 				<tr>

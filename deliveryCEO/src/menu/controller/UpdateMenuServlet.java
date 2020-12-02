@@ -58,6 +58,9 @@ public class UpdateMenuServlet extends HttpServlet {
 		MultipartRequest mRequest = new MultipartRequest(request, saveDirectory, maxSize, "UTF-8",
 				new DefaultFileRenamePolicy());
 
+		int storeNo = Integer.parseInt(mRequest.getParameter("storeNo"));
+		String storeName = mRequest.getParameter("storeName");
+
 		Menu menu = new Menu();
 
 		menu.setMenuNo(Integer.parseInt(mRequest.getParameter("menuNo")));
@@ -78,7 +81,7 @@ public class UpdateMenuServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "메뉴 정보 수정 실패");
 		}
-		request.setAttribute("loc", "/CEO");
+		request.setAttribute("loc", "/CEO/selectAllMenu?storeNo=" + storeNo + "&storeName=" + storeName);
 		rd.forward(request, response);
 	}
 

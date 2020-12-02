@@ -1,4 +1,10 @@
+<%@page import="order.model.vo.Order"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	ArrayList<Order> listOrder = (ArrayList<Order>) request.getAttribute("listOrder");
+String pageNavi = (String) request.getAttribute("pageNavi");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +16,7 @@
 
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
-	<link rel="stylesheet" href="/css/selfservice/stylePageCommon.css">
+	<link rel="stylesheet" href="/CEO/css/selfservice/stylePageCommon.css">
 
 	<div class="blank"></div>
 	<div class="content-wrap">
@@ -20,25 +26,34 @@
 				<thead>
 					<tr>
 						<th>번호</th>
-						<th>고객ID</th>
-						<th>메뉴</th>
-						<th>주소</th>
+						<th>고객 아이디</th>
+						<th>주문 요청</th>
+						<th>배달 주소</th>
 						<th>가격</th>
 						<th>날짜</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr height="70">
-						<td>1</td>
-						<td>User01</td>
-						<td>후라이드 치킨 1</td>
-						<td>서울 영등포구 당산동</td>
-						<td>10,000</td>
-						<td>2020.11.23</td>
+					<%
+						if (!listOrder.isEmpty()) {
+						for (Order order : listOrder) {
+					%>
+					<tr>
+						<td><%=order.getRowNum()%></td>
+						<td><%=order.getOrderClientId()%></td>
+						<td><%=order.getOrderRequest()%></td>
+						<td><%=order.getOrderAddress()%></td>
+						<td><%=order.getOrderTotalPrice()%></td>
+						<td><%=order.getOrderDate()%></td>
 					</tr>
+					<%
+						}
+					}
+					%>
 				</tbody>
 			</table>
 		</div>
+		<div id="pageNavi"><%=pageNavi%></div>
 	</div>
 
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>

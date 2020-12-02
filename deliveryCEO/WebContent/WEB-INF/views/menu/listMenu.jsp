@@ -3,15 +3,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	ArrayList<Menu> listMenu = (ArrayList<Menu>) request.getAttribute("listMenu");
-int storeNo = (Integer) request.getAttribute("storeNo");
-String storeName = (String) request.getAttribute("storeName");
+	int storeNo = (Integer) request.getAttribute("storeNo");
+	String storeName = (String) request.getAttribute("storeName");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>List Menu JSP</title>
-<link rel="stylesheet" href="/css/selfservice/styleListMenu.css">
+<link rel="stylesheet" href="/CEO/css/selfservice/styleListMenu.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
@@ -44,7 +44,7 @@ String storeName = (String) request.getAttribute("storeName");
 					<tr>
 						<td>1</td>
 						<td>
-							<img src="/img/tower1.PNG" width="150px;" height="150px;">
+							<img src="" width="150px;" height="150px;">
 						</td>
 						<td>
 							<input type="text" name="menuName" class="form-control" value="<%=menu.getMenuName()%>"
@@ -53,8 +53,9 @@ String storeName = (String) request.getAttribute("storeName");
 							<textarea class="form-control" style="resize: none;" readonly="readonly"><%=menu.getMenuDetail()%></textarea>
 						</td>
 						<td>
-							<a class="btn btn-info btn-md" href="/CEO/selectOneMenu?menuNo=<%=menu.getMenuNo()%>">수정</a> <a
-								class="btn btn-info btn-md" href="/CEO/deleteMenu?menuNo=<%=menu.getMenuNo()%>">삭제</a>
+							<a class="btn btn-info btn-md"
+								href="/CEO/selectOneMenu?menuNo=<%=menu.getMenuNo()%>&storeNo=<%=storeNo%>&storeName=<%=storeName%>">수정</a> <a class="btn btn-info btn-md"
+								href="/CEO/deleteMenu?menuNo=<%=menu.getMenuNo()%>&storeNo=<%=storeNo%>&storeName=<%=storeName%>">삭제</a>
 						</td>
 					</tr>
 					<%

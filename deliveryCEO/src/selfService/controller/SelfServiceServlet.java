@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 import ceo.model.vo.Ceo;
 import notice.model.service.NoticeService;
 import notice.model.vo.Notice;
+import order.model.service.OrderService;
+import order.model.vo.OrderPageData;
 import review.model.service.ReviewService;
 import review.model.vo.Review;
 import review.model.vo.ReviewPageData;
@@ -52,16 +54,19 @@ public class SelfServiceServlet extends HttpServlet {
 		if (loginCEO == null) {
 			rd = request.getRequestDispatcher("/views/ceo/login.jsp");
 		} else {
-			ArrayList<Notice> listNotice = new NoticeService().selectAllNotice();
 			int reqPage = Integer.parseInt(request.getParameter("reqPage"));
+
+			ArrayList<Notice> listNotice = new NoticeService().selectAllNotice();
 			StorePageData spd = new StoreService().selectAllStore(loginCEO.getCeoId(), reqPage);
 			ReviewPageData rpd = new ReviewService().selectAllReview(loginCEO.getCeoId(), reqPage);
+			OrderPageData opd = new OrderService().selectAllOrder(loginCEO.getCeoId(), reqPage);
 
 			rd = request.getRequestDispatcher("/WEB-INF/views/pageSelfService/selfService.jsp");
 			request.setAttribute("Ceo", loginCEO);
 			request.setAttribute("listNotice", listNotice);
 			request.setAttribute("listStore", spd.getListStore());
 			request.setAttribute("listReview", rpd.getListReview());
+			request.setAttribute("listOrder", opd.getListOrder());
 		}
 		rd.forward(request, response);
 	}

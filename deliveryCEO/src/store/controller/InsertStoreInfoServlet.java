@@ -87,7 +87,7 @@ public class InsertStoreInfoServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "가게 정보 등록 실패");
 		}
-		request.setAttribute("loc", "/CEO");
+		request.setAttribute("loc", "/CEO/selectAllStoreInfo?ceoId=" + store.getStoreCEO() + "&reqPage=1");
 		rd.forward(request, response);
 	}
 

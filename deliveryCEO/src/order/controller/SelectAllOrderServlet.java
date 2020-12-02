@@ -1,4 +1,4 @@
-package menu.controller;
+package order.controller;
 
 import java.io.IOException;
 
@@ -8,21 +8,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import menu.model.service.MenuService;
-import menu.model.vo.Menu;
+import order.model.service.OrderService;
+import order.model.vo.OrderPageData;
 
 /**
- * Servlet implementation class SelectOneMenuServlet
+ * Servlet implementation class SelectAllOrderServlet
  */
-@WebServlet(name = "SelectOneMenu", urlPatterns = { "/selectOneMenu" })
-public class SelectOneMenuServlet extends HttpServlet {
+@WebServlet(name = "SelectAllOrder", urlPatterns = { "/selectAllOrder" })
+public class SelectAllOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SelectOneMenuServlet() {
+	public SelectAllOrderServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -34,20 +35,18 @@ public class SelectOneMenuServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// 1. view에서 보낸 데이터 저장
-		int menuNo = Integer.parseInt(request.getParameter("menuNo"));
-		int storeNo = Integer.parseInt(request.getParameter("storeNo"));
-		String storeName = request.getParameter("storeName");
+		// 1. view에서 받은 데이터 저장
+		String ceoId = request.getParameter("ceoId");
+		int reqPage = Integer.parseInt(request.getParameter("reqPage"));
 
 		// 2. 비즈니스 로직
-		Menu menu = new MenuService().selectOneMenu(menuNo);
+		OrderPageData opd = new OrderService().selectAllOrder(ceoId, reqPage);
 
 		// 3. 결과처리
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/menu/updateMenu.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/order/listOrder.jsp");
 
-		request.setAttribute("menu", menu);
-		request.setAttribute("storeNo", storeNo);
-		request.setAttribute("storeName", storeName);
+		request.setAttribute("listOrder", opd.getListOrder());
+		request.setAttribute("pageNavi", opd.getPageNavi());
 
 		rd.forward(request, response);
 	}

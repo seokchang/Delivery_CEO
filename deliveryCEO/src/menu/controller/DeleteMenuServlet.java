@@ -35,6 +35,8 @@ public class DeleteMenuServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		// 1. view에서 받은 데이터 저장
 		int menuNo = Integer.parseInt(request.getParameter("menuNo"));
+		int storeNo = Integer.parseInt(request.getParameter("storeNo"));
+		String storeName = request.getParameter("storeName");
 
 		// 2. 비즈니스 로직
 		int result = new MenuService().deleteMenu(menuNo);
@@ -47,7 +49,7 @@ public class DeleteMenuServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "메뉴 삭제 실패");
 		}
-		request.setAttribute("loc", "/CEO");
+		request.setAttribute("loc", "/CEO/selectAllMenu?storeNo=" + storeNo + "&storeName=" + storeName);
 		rd.forward(request, response);
 	}
 
