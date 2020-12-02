@@ -1,6 +1,7 @@
 package menu.model.vo;
 
 public class Menu {
+	private int rowNum;
 	private int menuNo;
 	private int menuPrice;
 	private int menuStoreNo;
@@ -23,6 +24,14 @@ public class Menu {
 		this.menuName = menuName;
 		this.menuFileName = menuFileName;
 		this.menuFilePath = menuFilePath;
+	}
+
+	public int getRowNum() {
+		return rowNum;
+	}
+
+	public void setRowNum(int rowNum) {
+		this.rowNum = rowNum;
 	}
 
 	public int getMenuNo() {
@@ -80,5 +89,4 @@ public class Menu {
 	public void setMenuFilePath(String menuFilePath) {
 		this.menuFilePath = menuFilePath;
 	}
-
 }

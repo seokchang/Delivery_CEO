@@ -78,7 +78,7 @@ public class InsertMenuServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "메뉴 등록 실패");
 		}
-		request.setAttribute("loc", "/CEO/selectAllMenu?storeNo=" + menu.getMenuStoreNo() + "&storeName=" + storeName);
+		request.setAttribute("loc", "/CEO/selectAllMenu?storeNo=" + menu.getMenuStoreNo() + "&storeName=" + storeName + "&reqPage=1");
 		// response.sendRedirect("/CEO/selectAllMenu");
 		rd.forward(request, response);
 	}

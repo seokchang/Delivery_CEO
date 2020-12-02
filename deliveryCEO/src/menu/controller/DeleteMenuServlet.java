@@ -49,7 +49,7 @@ public class DeleteMenuServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "메뉴 삭제 실패");
 		}
-		request.setAttribute("loc", "/CEO/selectAllMenu?storeNo=" + storeNo + "&storeName=" + storeName);
+		request.setAttribute("loc", "/CEO/selectAllMenu?storeNo=" + storeNo + "&storeName=" + storeName + "&reqPage=1");
 		rd.forward(request, response);
 	}
 

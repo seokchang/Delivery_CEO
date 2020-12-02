@@ -2,9 +2,10 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	ArrayList<Menu> listMenu = (ArrayList<Menu>) request.getAttribute("listMenu");
 	int storeNo = (Integer) request.getAttribute("storeNo");
-	String storeName = (String) request.getAttribute("storeName");
+String storeName = (String) request.getAttribute("storeName");
+ArrayList<Menu> listMenu = (ArrayList<Menu>) request.getAttribute("listMenu");
+String pageNavi = (String) request.getAttribute("pageNavi");
 %>
 <!DOCTYPE html>
 <html>
@@ -42,7 +43,7 @@
 						for (Menu menu : listMenu) {
 					%>
 					<tr>
-						<td>1</td>
+						<td><%=menu.getRowNum()%></td>
 						<td>
 							<img src="" width="150px;" height="150px;">
 						</td>
@@ -54,7 +55,8 @@
 						</td>
 						<td>
 							<a class="btn btn-info btn-md"
-								href="/CEO/selectOneMenu?menuNo=<%=menu.getMenuNo()%>&storeNo=<%=storeNo%>&storeName=<%=storeName%>">수정</a> <a class="btn btn-info btn-md"
+								href="/CEO/selectOneMenu?menuNo=<%=menu.getMenuNo()%>&storeNo=<%=storeNo%>&storeName=<%=storeName%>">수정</a>
+							<a class="btn btn-info btn-md"
 								href="/CEO/deleteMenu?menuNo=<%=menu.getMenuNo()%>&storeNo=<%=storeNo%>&storeName=<%=storeName%>">삭제</a>
 						</td>
 					</tr>
@@ -64,6 +66,7 @@
 					%>
 				</tbody>
 			</table>
+			<div id="pageNavi"><%=pageNavi%></div>
 		</div>
 		<hr>
 		<%@ include file="/WEB-INF/views/common/footer.jsp"%>

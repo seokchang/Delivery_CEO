@@ -153,4 +153,69 @@ public class MenuDao {
 		}
 		return result;
 	}
+
+	public int getTotalMenu(Connection conn, int storeNo) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		int result = 0;
+		String query = "SELECT count(*) cnt FROM menu_db WHERE menu_store_no=?";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, storeNo);
+			rset = pstmt.executeQuery();
+
+			if (rset.next()) {
+				result = rset.getInt("cnt");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
+		return result;
+	}
+
+	public ArrayList<Menu> selectAllMenu(Connection conn, int storeNo, int start, int end) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		ArrayList<Menu> listMenu = new ArrayList<Menu>();
+		String query = "SELECT * FROM (SELECT rownum AS rnum, menu.* FROM (SELECT * FROM menu_db WHERE menu_store_no=?)menu) WHERE rnum BETWEEN ? AND ?";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, storeNo);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+			rset = pstmt.executeQuery();
+
+			while (rset.next()) {
+				Menu menu = new Menu();
+
+				menu.setRowNum(rset.getInt("rnum"));
+				menu.setMenuNo(rset.getInt("menu_no"));
+				menu.setMenuPrice(rset.getInt("menu_price"));
+				menu.setMenuStoreNo(rset.getInt("menu_store_no"));
+				menu.setMenuDetail(rset.getString("menu_det"));
+				menu.setMenuName(rset.getString("menu_name"));
+				menu.setMenuFileName(rset.getString("menu_filename"));
+				menu.setMenuFilePath(rset.getString("menu_filepath"));
+
+				listMenu.add(menu);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
+		return listMenu;
+	}
 }

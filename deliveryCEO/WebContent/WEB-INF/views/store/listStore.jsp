@@ -53,7 +53,7 @@
 						</td>
 						<td>
 							<a class="btn btn-info btn-md"
-								href="/CEO/selectAllMenu?storeNo=<%=store.getStoreNo()%>&storeName=<%=store.getStoreName()%>">메뉴
+								href="/CEO/selectAllMenu?storeNo=<%=store.getStoreNo()%>&storeName=<%=store.getStoreName()%>&reqPage=1">메뉴
 								관리</a> <a class="btn btn-info btn-md"
 								href="/CEO/selectOneStoreInfo?ceoId=<%=ceo.getCeoId()%>&storeNo=<%=store.getStoreNo()%>">가게
 								정보 수정</a> <a class="btn btn-info btn-md"
