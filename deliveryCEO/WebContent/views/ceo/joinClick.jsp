@@ -11,7 +11,7 @@
 	<div class="box01">
 		<div class="inner">
 			<h1>
-				모방의 민족에 오신 <br> 것을 환영합니다.
+				delivery-A에 오신 <br> 것을 환영합니다.
 			</h1>
 			<br> <br> <br>
 			<h1>

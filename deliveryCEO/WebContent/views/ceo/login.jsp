@@ -16,7 +16,7 @@
 			<div class="logoinner">
 				<div class="logo">
 					<p>
-						<a href="/CEO" style="text-decoration: none;"><img src="/CEO/img/logo3.png"></a>
+						<a href="/CEO" style="text-decoration: none;"><img src="/CEO/img/aaa.png" alt="My Image"></a>
 					</p>
 				</div>
 
@@ -31,7 +31,7 @@
 							<li><a href="/CEO/views/ceo/joinClick.jsp">회원가입</a></li>
 						</ul>
 
-						<input type="submit" value="로그인" class="a" style="background-color: #1a7cff;">
+						<button class="btn btn-default" type="submit" style="width: 387px;height: 40px; margin-top:20px;" >로그인</button>
 					</form>
 				</div>
 			</div>

@@ -21,7 +21,7 @@
 			<div class="logoinner">
 				<div class="logo">
 					<p>
-						<a href="/CEO" style="text-decoration: none;"><img src="/CEO/img/logo3.png"></a>
+						<a href="/CEO" style="text-decoration: none;"><img src="/CEO/img/aaa.png" alt="My Image"></a>
 					</p>
 				</div>
 				<div class="join">
@@ -48,7 +48,7 @@
 			}
 			var url = "/CEO/findPw"; // 서블릿요청
 			var title = "findPw";
-			var status = "left=500px, top=100px, width=300px, height=200px, menubar=no, status=no, scrollbar=yes";
+			var status = "left=450px, top=30px, width=700px, height=60px, menubar=no, status=no, scrollbar=yes";
 			var popup = window.open("", title, status); //빈창 오픈    	
 			searchFrm.id.value = id;
 			searchFrm.phone.value = phone;

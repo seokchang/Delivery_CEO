@@ -47,8 +47,7 @@ public class FindPwServlet extends HttpServlet {
 			rd.forward(request, response);
 		} else {
 			request.setAttribute("msg", "정확한 정보를 입력해 주세요.!");
-			request.setAttribute("loc", "/CEO");
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/ceo/findPw.jsp");
 			rd.forward(request, response);
 		}
 

@@ -32,7 +32,7 @@ int length =5;
 			<div class="inner2">
 				<div class="content1">
 					<div class="notice-wrap">
-						<h3>공지사항</h3>
+						<h3><img src="/CEO/img/notice.png"></h3>
 						<table class="table table-striped">
 							<tbody>
 						<%
@@ -57,24 +57,14 @@ int length =5;
 						frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				</div>
 				<div class="content1">
-					<div class="notice-wrap">
-						<h3>공지사항</h3>
-						<table class="table table-striped">
-							<tbody>
-								<tr>
-									<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
-									<td>2020.11.23</td>
-								</tr>
-							</tbody>
-						</table>
-						<div class="btn-wrap">
-							<a class="btn btn-primary btn-md" href="#">공지사항 더보기</a>
+					<h3><img src="/CEO/img/sign2.png"></h3>
+					<div class="btn-wrap">
+							<a class="btn btn-primary btn-md" href="#">가게등록 하러가기</a>
 						</div>
-					</div>
 				</div>
 				<div class="content2">
 					<div class="notice-wrap">
-						<h3>공지사항</h3>
+						<h3></h3>
 						<table class="table table-striped">
 							<tbody>
 								<tr>

@@ -15,7 +15,7 @@
 			<div class="logoinner">
 				<div class="logo">
 					<p>
-						<a href="/CEO" style="text-decoration: none;"><img src="/CEO/img/logo3.png"></a>
+						<a href="/CEO" style="text-decoration: none;"><img src="/CEO/img/aaa.png" alt="My Image"></a>
 					</p>
 				</div>
 
@@ -41,7 +41,8 @@
 							<li class="b" style="color: gray;">배민사장님광장 회원에게 제공하는 서비스의 광고성 정보를 수신합니다.<br> <br></li>
 							<li class="c">만 14세 이상 회원만 가입 가능합니다. <a href="/CEO/views/ceo/joinAgreeMent.jsp">내용보기</a></li>
 						</ul>
-						<input type="submit" value="회원가입" class="a" style="background-color: #1a7cff;">
+						<!--  <input type="submit" value="회원가입" class="a" style="background-color: #1a7cff;">-->
+						<button class="btn btn-default" type="submit" style="width:300px;height: 40px;" >회원가입</button>
 					</form>
 				</div>
 

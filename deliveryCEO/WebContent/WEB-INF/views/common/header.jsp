@@ -231,8 +231,7 @@ div.headermom:hover {
 				</div>
 				<div class="b">
 					<p style="margin-top: 10px;">
-						<a href="/CEO" style="color: gray; text-decoration: none;"><img src="/CEO/img/logo3.png"
-							alt="My Image"></a>
+						<a href="/CEO" style="color: gray; text-decoration: none;"><img src="/CEO/img/aaa.png" alt="My Image"></a>
 					</p>
 				</div>
 				<div class="c"></div>
