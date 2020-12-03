@@ -54,8 +54,8 @@ public class InsertStoreInfoServlet extends HttpServlet {
 		}
 
 		// 파일 업로드 준비
-		String root = getServletContext().getRealPath("/");
-		String saveDirectory = root + "/upload/photo";
+		String root = "C:\\Resources";
+		String saveDirectory = root + "\\01_store";
 		// 최대 파일 크기 설정
 		int maxSize = 10 * 1024 * 1024;
 		// request -> MultipartRequest

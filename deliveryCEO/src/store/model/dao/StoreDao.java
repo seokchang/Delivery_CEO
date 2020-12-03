@@ -213,7 +213,7 @@ public class StoreDao {
 		ResultSet rset = null;
 
 		ArrayList<Store> listStore = new ArrayList<Store>();
-		String query = "SELECT * FROM (SELECT ROWNUM AS RNUM, store.* FROM (SELECT * FROM store_db WHERE store_ceo=? ORDER BY store_no)store) WHERE RNUM BETWEEN ? AND ?";
+		String query = "SELECT * FROM (SELECT ROWNUM AS RNUM, store.* FROM (SELECT * FROM store_db WHERE store_ceo=? ORDER BY store_no DESC)store) WHERE RNUM BETWEEN ? AND ?";
 
 		try {
 			pstmt = conn.prepareStatement(query);
