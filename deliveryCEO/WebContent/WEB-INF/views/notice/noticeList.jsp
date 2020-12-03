@@ -35,7 +35,7 @@
 <body>
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 	<div class="blank2"></div>
-	<section>
+	<section style="margin: 0 auto; width:1600px;">
 	<div class="table-wrapper" style="text-align: center; width: 80%; margin: 0 auto;">
 
 		<table class="table table-striped">
@@ -60,6 +60,13 @@
 		<div id="pageNavi"><%=pageNavi %></div>
 	</div>
 	</section>
+	<div class="footerinner">
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	</div>
 </body>
+<style>
+.footerinner{
+width:1300px;
+margin: 0 auto;}
+</style>
 </html>
