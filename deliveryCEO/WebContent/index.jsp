@@ -31,8 +31,6 @@ ArrayList<Notice> list = (ArrayList<Notice>) request.getAttribute("list");
 	<script type="text/javascript">
 		function getList() {
 			location.href = "/CEO/indexNoticeList";
-
-			console.log("test");
 		}
 
 		$(function() {
