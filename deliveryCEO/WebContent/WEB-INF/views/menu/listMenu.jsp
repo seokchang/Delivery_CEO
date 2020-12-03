@@ -1,11 +1,12 @@
 <%@page import="menu.model.vo.Menu"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%
 	int storeNo = (Integer) request.getAttribute("storeNo");
-String storeName = (String) request.getAttribute("storeName");
-ArrayList<Menu> listMenu = (ArrayList<Menu>) request.getAttribute("listMenu");
-String pageNavi = (String) request.getAttribute("pageNavi");
+	String storeName = (String) request.getAttribute("storeName");
+	ArrayList<Menu> listMenu = (ArrayList<Menu>) request.getAttribute("listMenu");
+	String pageNavi = (String) request.getAttribute("pageNavi");
 %>
 <!DOCTYPE html>
 <html>
@@ -13,7 +14,8 @@ String pageNavi = (String) request.getAttribute("pageNavi");
 <meta charset="UTF-8">
 <title>List Menu JSP</title>
 <link rel="stylesheet" href="/CEO/css/selfservice/styleListMenu.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
@@ -40,36 +42,37 @@ String pageNavi = (String) request.getAttribute("pageNavi");
 				<tbody>
 					<%
 						if (!listMenu.isEmpty()) {
-						for (Menu menu : listMenu) {
+							for (Menu menu : listMenu) {
 					%>
 					<tr>
 						<td><%=menu.getRowNum()%></td>
 						<td><img style="border: 1px solid black"
-							src="/filepath/01_store/<%=menu.getMenuFilePath()%>"
+							src="/filepath/02_menu/<%=menu.getMenuFilePath()%>"
 							width="150px;" height="150px;"></td>
-						<td>
-							<input type="text" name="menuName" class="form-control" value="<%=menu.getMenuName()%>"
-								readonly="readonly"> <br> <input type="text" name="menuPrice"
-								class="form-control" value="<%=menu.getMenuPrice()%>" readonly="readonly"> <br>
-							<textarea class="form-control" style="resize: none;" readonly="readonly"><%=menu.getMenuDetail()%></textarea>
-						</td>
-						<td>
+						<td><input type="text" name="menuName" class="form-control"
+							value="<%=menu.getMenuName()%>" readonly="readonly"> <br>
+							<input type="text" name="menuPrice" class="form-control"
+							value="<%=menu.getMenuPrice()%>" readonly="readonly"> <br>
+							<textarea class="form-control" style="resize: none;"
+								readonly="readonly"><%=menu.getMenuDetail()%></textarea></td>
+						<td><a class="btn btn-info btn-md"
+							href="/CEO/selectOneMenu?menuNo=<%=menu.getMenuNo()%>&storeNo=<%=storeNo%>&storeName=<%=storeName%>">수정</a>
 							<a class="btn btn-info btn-md"
-								href="/CEO/selectOneMenu?menuNo=<%=menu.getMenuNo()%>&storeNo=<%=storeNo%>&storeName=<%=storeName%>">수정</a>
-							<a class="btn btn-info btn-md"
-								href="/CEO/deleteMenu?menuNo=<%=menu.getMenuNo()%>&storeNo=<%=storeNo%>&storeName=<%=storeName%>">삭제</a>
+							href="/CEO/deleteMenu?menuNo=<%=menu.getMenuNo()%>&storeNo=<%=storeNo%>&storeName=<%=storeName%>">삭제</a>
 						</td>
 					</tr>
 					<%
 						}
-					}
+						}
 					%>
 				</tbody>
 			</table>
 			<div id="pageNavi"><%=pageNavi%></div>
 		</div>
 		<hr>
-		<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+		<div style="margin: 0 auto; width: 1300px;">
+			<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+		</div>
 	</div>
 </body>
 </html>

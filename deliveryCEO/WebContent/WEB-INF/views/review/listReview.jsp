@@ -1,6 +1,7 @@
 <%@page import="review.model.vo.Review"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%
 	String pageNavi = (String) request.getAttribute("pageNavi");
 	ArrayList<Review> listReview = (ArrayList<Review>) request.getAttribute("listReview");
@@ -11,7 +12,8 @@
 <meta charset="UTF-8">
 <title>List Review JSP</title>
 <link rel="stylesheet" href="/css/selfservice/styleListReview.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
@@ -37,7 +39,7 @@
 				<tbody>
 					<%
 						if (!listReview.isEmpty()) {
-						for (Review review : listReview) {
+							for (Review review : listReview) {
 					%>
 					<tr height="70">
 						<td><%=review.getRowNum()%></td>
@@ -47,20 +49,18 @@
 						<td>
 							<%
 								for (int i = 0; i < review.getReviewScore(); i++) {
-							%>
-							<img src="/CEO/img/star-on.png">
-							<%
-								}
-							%>
+							%> <img src="/CEO/img/star-on.png"> <%
+ 	}
+ %>
 						</td>
 						<td><%=review.getReviewEnrollDate()%></td>
-						<td>
-							<a class="btn btn-primary btn-md" href="/CEO/selectOneReview?reviewNo=<%=review.getReviewNo()%>">리뷰확인</a>
+						<td><a class="btn btn-primary btn-md"
+							href="/CEO/selectOneReview?reviewNo=<%=review.getReviewNo()%>">리뷰확인</a>
 						</td>
 					</tr>
 					<%
 						}
-					}
+						}
 					%>
 				</tbody>
 			</table>
@@ -69,7 +69,8 @@
 			<div id="pageNavi"><%=pageNavi%></div>
 		</div>
 	</div>
-
-	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	<div style="margin: 0 auto; width: 1300px;">
+		<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	</div>
 </body>
 </html>

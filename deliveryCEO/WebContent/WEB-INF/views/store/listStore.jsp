@@ -71,8 +71,9 @@
 			<div style="text-align: center;"><%=pageNavi%></div>
 		</div>
 		<hr>
-
-		<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+		<div style="margin: 0 auto; width: 1300px;">
+			<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+		</div>
 	</div>
 </body>
 </html>

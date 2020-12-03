@@ -3,7 +3,8 @@
 <%@page import="review.model.vo.Review"%>
 <%@page import="store.model.vo.Store"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%
 	int length = 5;
 	ArrayList<Notice> listNotice = (ArrayList<Notice>) request.getAttribute("listNotice");
@@ -16,7 +17,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Self Service</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
@@ -28,11 +30,16 @@
 	<div class="content-wrap" style="width: 1300px">
 		<ul class="navi-bar">
 			<li><a href="/CEO">HOME</a></li>
-			<li><a href="/CEO/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">STORE</a></li>
+			<li><a
+				href="/CEO/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">STORE</a></li>
 			<li><a href="javascript:void(0)">ORDER</a>
 				<ul class="subMenu">
-					<li><a href="/CEO/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰 리스트</a></li>
-					<li><a href="/CEO/selectAllOrder?ceoId=<%=ceo.getCeoId()%>&reqPage=1">주문 리스트</a></li>
+					<li><a
+						href="/CEO/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰
+							리스트</a></li>
+					<li><a
+						href="/CEO/selectAllOrder?ceoId=<%=ceo.getCeoId()%>&reqPage=1">주문
+							리스트</a></li>
 				</ul></li>
 		</ul>
 		<div class="content-1">
@@ -47,8 +54,8 @@
 					<tbody>
 						<%
 							if (!listNotice.isEmpty()) {
-							if (listNotice.size() >= length) {
-								for (int i = 0; i < length; i++) {
+								if (listNotice.size() >= length) {
+									for (int i = 0; i < length; i++) {
 						%>
 						<tr>
 							<td style="text-align: left;"><%=listNotice.get(i).getNoticeTitle()%></td>
@@ -56,8 +63,8 @@
 						</tr>
 						<%
 							}
-						} else {
-						for (Notice notice : listNotice) {
+								} else {
+									for (Notice notice : listNotice) {
 						%>
 						<tr>
 							<td style="text-align: left;"><%=notice.getNoticeTitle()%></td>
@@ -65,13 +72,14 @@
 						</tr>
 						<%
 							}
-						}
-						}
+								}
+							}
 						%>
 					</tbody>
 				</table>
 				<div class="btn-wrap">
-					<a class="btn btn-primary btn-md" href="/CEO/noticeList?reqPage=1">공지사항 더보기</a>
+					<a class="btn btn-primary btn-md" href="/CEO/noticeList?reqPage=1">공지사항
+						더보기</a>
 				</div>
 			</div>
 
@@ -90,8 +98,8 @@
 					<tbody>
 						<%
 							if (!listReview.isEmpty()) {
-							if (listReview.size() >= length) {
-								for (int i = 0; i < length; i++) {
+								if (listReview.size() >= length) {
+									for (int i = 0; i < length; i++) {
 						%>
 						<tr>
 							<td><%=listReview.get(i).getRowNum()%></td>
@@ -100,18 +108,16 @@
 							<td>
 								<%
 									for (int j = 0; j < listReview.get(i).getReviewScore(); j++) {
-								%>
-								<img src="/CEO/img/star-on.png">
-								<%
-									}
-								%>
+								%> <img src="/CEO/img/star-on.png"> <%
+ 	}
+ %>
 							</td>
 							<td><%=listReview.get(i).getReviewEnrollDate()%></td>
 						</tr>
 						<%
 							}
-						} else {
-						for (Review review : listReview) {
+								} else {
+									for (Review review : listReview) {
 						%>
 						<tr>
 							<td><%=review.getRowNum()%></td>
@@ -120,24 +126,23 @@
 							<td>
 								<%
 									for (int j = 0; j < review.getReviewScore(); j++) {
-								%>
-								<img src="/CEO/img/star-on.png">
-								<%
-									}
-								%>
+								%> <img src="/CEO/img/star-on.png"> <%
+ 	}
+ %>
 							</td>
 							<td><%=review.getReviewEnrollDate()%></td>
 						</tr>
 						<%
 							}
-						}
-						}
+								}
+							}
 						%>
 					</tbody>
 				</table>
 				<div>
 					<a class="btn btn-primary btn-md"
-						href="/CEO/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰 더보기</a>
+						href="/CEO/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰
+						더보기</a>
 				</div>
 			</div>
 		</div>
@@ -161,7 +166,7 @@
 				<tbody>
 					<%
 						if (!listStore.isEmpty()) {
-							if(listStore.size() >= length) {
+							if (listStore.size() >= length) {
 								for (int i = 0; i < length; i++) {
 					%>
 					<tr>
@@ -175,8 +180,8 @@
 					</tr>
 					<%
 						}
-					} else {
-						for(Store store : listStore) {
+							} else {
+								for (Store store : listStore) {
 					%>
 					<tr>
 						<td><%=store.getRowNum()%></td>
@@ -188,16 +193,17 @@
 						<td><%=store.getStoreDet()%></td>
 					</tr>
 					<%
+						}
 							}
 						}
-					}
 					%>
 
 				</tbody>
 			</table>
 			<div class="btn-wrap">
 				<a class="btn btn-primary btn-md"
-					href="/CEO/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">가게 더보기</a>
+					href="/CEO/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">가게
+					더보기</a>
 			</div>
 		</div>
 		<hr>
@@ -218,21 +224,31 @@
 					<tbody>
 						<%
 							if (!listOrder.isEmpty()) {
-								if(listOrder.size() >= length) {
+								if (listOrder.size() >= length) {
 									for (int i = 0; i < length; i++) {
 						%>
 						<tr>
 							<td><%=listOrder.get(i).getRowNum()%></td>
 							<td><%=listOrder.get(i).getOrderClientId()%></td>
+							<%
+								if (listOrder.get(i).getOrderRequest() != null) {
+							%>
 							<td><%=listOrder.get(i).getOrderRequest()%></td>
+							<%
+								} else {
+							%>
+							<td>x</td>
+							<%
+								}
+							%>
 							<td><%=listOrder.get(i).getOrderAddress()%></td>
 							<td><%=listOrder.get(i).getOrderTotalPrice()%></td>
 							<td><%=listOrder.get(i).getOrderDate()%></td>
 						</tr>
 						<%
 							}
-						} else {
-							for(Order order : listOrder) {
+								} else {
+									for (Order order : listOrder) {
 						%>
 						<tr>
 							<td><%=order.getRowNum()%></td>
@@ -244,21 +260,23 @@
 						</tr>
 						<%
 							}
-						}
-						}
+								}
+							}
 						%>
 					</tbody>
 				</table>
 				<div class="btn-wrap">
 					<a class="btn btn-primary btn-md"
-						href="/CEO/selectAllOrder?ceoId=<%=ceo.getCeoId()%>&reqPage=1">주문 관리</a>
+						href="/CEO/selectAllOrder?ceoId=<%=ceo.getCeoId()%>&reqPage=1">주문
+						관리</a>
 				</div>
 			</div>
 		</div>
 		<hr>
 	</div>
-
-	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	<div style="margin: 0 auto; width: 1300px;">
+		<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	</div>
 
 	<script type="text/javascript">
 		var navi = $(".navi-bar>li");

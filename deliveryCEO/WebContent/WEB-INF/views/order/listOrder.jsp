@@ -1,9 +1,10 @@
 <%@page import="order.model.vo.Order"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%
 	ArrayList<Order> listOrder = (ArrayList<Order>) request.getAttribute("listOrder");
-String pageNavi = (String) request.getAttribute("pageNavi");
+	String pageNavi = (String) request.getAttribute("pageNavi");
 %>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,8 @@ String pageNavi = (String) request.getAttribute("pageNavi");
 <meta charset="UTF-8">
 <title>List Order JSP</title>
 <link rel="stylesheet" href="/css/selfservice/styleListOrder.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
@@ -36,26 +38,37 @@ String pageNavi = (String) request.getAttribute("pageNavi");
 				<tbody>
 					<%
 						if (!listOrder.isEmpty()) {
-						for (Order order : listOrder) {
+							for (Order order : listOrder) {
 					%>
 					<tr>
 						<td><%=order.getRowNum()%></td>
 						<td><%=order.getOrderClientId()%></td>
+						<%
+							if (order.getOrderRequest() != null) {
+						%>
 						<td><%=order.getOrderRequest()%></td>
+						<%
+							} else {
+						%>
+						<td>x</td>
+						<%
+							}
+						%>
 						<td><%=order.getOrderAddress()%></td>
 						<td><%=order.getOrderTotalPrice()%></td>
 						<td><%=order.getOrderDate()%></td>
 					</tr>
 					<%
 						}
-					}
+						}
 					%>
 				</tbody>
 			</table>
 		</div>
 		<div id="pageNavi"><%=pageNavi%></div>
 	</div>
-
-	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	<div style="margin: 0 auto; width: 1300px;">
+		<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	</div>
 </body>
 </html>
