@@ -54,13 +54,13 @@ int length =5;
 				</div>
 				<div class="content2">
 					<h2>사장님 로그인해주세요!</h2>
-					<a class="btn btn-primary btn-md" href="/CEO/views/ceo/login.jsp" style="margin-top:30px; width: 200px;height:70px;line-height:60px;" >사장님 로그인하기</a>
+					<a class="btn btn-primary btn-md" href="/CEO/views/ceo/login.jsp" style="margin-top:30px; width: 200px;height:70px;line-height:60px; margin-left:50px;" >사장님 로그인하기</a>
 					<br><br><br>
 					<ul>
 					
-							<li><a href="/CEO/views/ceo/findId.jsp" style="font-size:15px; color:gray;">아이디찾기</a>    <a href="/CEO/views/ceo/findPw.jsp" style="font-size:15px; color:gray;">비밀번호
+							<li><a href="/CEO/views/ceo/findId.jsp" style="font-size:12px; color:gray;">아이디찾기</a>    <a href="/CEO/views/ceo/findPw.jsp" style="font-size:12px; color:gray;">비밀번호
 									찾기</a></li>
-							<li><a href="/CEO/views/ceo/joinClick.jsp" style="font-size:15px; color:gray;">회원가입</a></li>
+							<li><a href="/CEO/views/ceo/joinClick.jsp" style="font-size:12px; color:gray;">회원가입</a></li>
 						</ul>
 					
 				</div>
@@ -69,20 +69,20 @@ int length =5;
 					<a href="https://academy.baemin.com/event/33?utm_source=ceopage&utm_medium=banner_family&utm_campaign=campaign_201201"><img src="/CEO/img/helmat.png" style="width:500px; height:300px;"></a>
 				
 				</div>
-				<div class="content2">
+				<div class="content22">
 					<h2>셀프서비스 이용하기!!</h2>
-					<a class="btn btn-primary btn-md" href="/CEO/selfService?reqPage=1" style="margin-top:10px; margin-bottom:15px; width: 200px;height:70px;line-height:60px;">셀프서비스 바로가기</a>
+					<a class="btn btn-primary btn-md" href="/CEO/selfService?reqPage=1" style="margin-top:10px; margin-bottom:15px; width: 200px;height:70px;line-height:60px; margin-left:50px;">셀프서비스 바로가기</a>
 					<iframe width="300" height="200" src="https://www.youtube.com/embed/FkkZQjZ_-oM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="content1">
 					<h3>배민상회</h3>
 					<a href="https://mart.baemin.com/goods/list/100475?utm_source=ceo&utm_medium=B_201120&utm_campaign=prod&utm_content=family%20banner&utm_term="><img src="/CEO/img/helmat2.png" style="width:500px; height:300px;"></a>
 				</div>
-				<div class="content2">
+				<div class="content22">
 				<h3>고객센터</h3>
 				<p style="color:orange; font-size:25px; margin:0; font-weight:bolder;">1600- 0987 (유료)</p><br>
 				<p style="color:orange; font-size:25px; margin:0; font-weight:bolder; margin-bottom:30px;">080-849-0987(무료)</p>
-				<a class="btn btn-primary btn-md" href="#" style="margin-bottom:20px; margin-top:-23px; width:200px; height:50px; line-height:40px;">고객센터 바로가기</a>
+				<a class="btn btn-primary btn-md" href="https://ceo.baemin.com/#/cscenter" style="margin-bottom:20px; margin-top:-23px; width:200px; height:50px; line-height:40px;">고객센터 바로가기</a>
 				<iframe width="300" height="200" src="https://www.youtube.com/embed/XTj4c5joupc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						
 				</div>
@@ -90,7 +90,7 @@ int length =5;
 
 		</div>
 	</div>
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
 	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
 </body>
 <style>
@@ -114,6 +114,15 @@ int length =5;
 	height: 300px;
 	margin-left: 70px;
 	margin-top: 30px;
+	float: left;
+	border-top: 1px solid gray;
+	margin-bottom:50px;
+}
+.content22 {
+	width: 350px;
+	height: 200px;
+	margin-left: 70px;
+	margin-top:-44px;
 	float: left;
 	border-top: 1px solid gray;
 	margin-bottom:50px;

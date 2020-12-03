@@ -209,7 +209,7 @@ div.headermom:hover {
 							style="color: black; text-decoration: none;"><img src="/CEO/img/join1.png"></a></li>
 						<li class="menu"><a href="/CEO/views/ceo/login.jsp"
 							style="color: black; text-decoration: none;"><img src="/CEO/img/login1.png"></a></li>
-						<li class="menu"><a href="#" style="color: black; text-decoration: none;"><img src="/CEO/img/call.png"></a></li>
+						<li class="menu"><a href="https://ceo.baemin.com/#/cscenter" style="color: black; text-decoration: none;"><img src="/CEO/img/call.png"></a></li>
 						<li class="menu"><a href="/CEO/selfService" style="color: black; text-decoration: none;"><img src="/CEO/img/SELF.png"></a></li>
 					</ul>
 					<%
@@ -221,7 +221,7 @@ div.headermom:hover {
 						<li class="menu"><a href="/CEO/mypage?ceoId=<%=ceo.getCeoId()%>"
 							style="color: black; text-decoration: none;">[<%=ceo.getCeoId()%>]<img src="/CEO/img/hi.png">
 						</a></li>
-						<li class="menu"><a href="#" style="color: black; text-decoration: none;"><img src="/CEO/img/call.png"></a></li>
+						<li class="menu"><a href="https://ceo.baemin.com/#/cscenter" style="color: black; text-decoration: none;"><img src="/CEO/img/call.png"></a></li>
 						<li class="menu"><a href="/CEO/selfService?reqPage=1"
 							style="color: black; text-decoration: none;"><img src="/CEO/img/SELF.png"></a></li>
 					</ul>
