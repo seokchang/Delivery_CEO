@@ -10,7 +10,7 @@ body {
 }
 
 .inner {
-	width: 70%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -85,7 +85,7 @@ h5.b {
 </style>
 </head>
 <body>
-<hr>
+
 	<div class="inner">
 
 		<div class="footer">

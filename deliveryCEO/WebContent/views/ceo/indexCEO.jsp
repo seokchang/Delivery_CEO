@@ -107,10 +107,10 @@ ArrayList<Notice> list = (ArrayList<Notice>) request.getAttribute("list");
 					<h3>배민아카데미</h3>
 					<a
 						href="https://academy.baemin.com/event/33?utm_source=ceopage&utm_medium=banner_family&utm_campaign=campaign_201201"><img
-						src="/CEO/img/helmat.png" style="width: 500px; height: 300px;"></a>
+						src="/CEO/img/helmat.png" style="width: 600px; height: 350px;"></a>
 
 				</div>
-				<div class="content22">
+				<div class="content2">
 					<h2>셀프서비스 이용하기!!</h2>
 					<a class="btn btn-primary btn-md" href="/CEO/selfService?reqPage=1"
 						style="margin-top: 10px; margin-bottom: 15px; width: 200px; height: 70px; line-height: 60px; margin-left: 50px;">셀프서비스
@@ -124,9 +124,9 @@ ArrayList<Notice> list = (ArrayList<Notice>) request.getAttribute("list");
 					<h3>배민상회</h3>
 					<a
 						href="https://mart.baemin.com/goods/list/100475?utm_source=ceo&utm_medium=B_201120&utm_campaign=prod&utm_content=family%20banner&utm_term="><img
-						src="/CEO/img/helmat2.png" style="width: 500px; height: 300px;"></a>
+						src="/CEO/img/helmat2.png" style="width: 600px; height: 350px;"></a>
 				</div>
-				<div class="content22">
+				<div class="content2">
 					<h3>고객센터</h3>
 					<p style="color: orange; font-size: 25px; margin: 0; font-weight: bolder;">1600- 0987 (유료)</p>
 					<br>
@@ -146,38 +146,46 @@ ArrayList<Notice> list = (ArrayList<Notice>) request.getAttribute("list");
 	</div>
 	<br>
 	<br>
+	<br><br>
 	<br>
+	<br><br><br>
 	<br>
+	<br><br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+	<hr>
+	<div class="footerinner">
+<%@ include file="/WEB-INF/views/common/footer.jsp"%>
+</div>
+	
 </body>
 <style>
+.content{
+width:1300px;
+margin: 0 auto;
+}
+.footerinner{
+width:1300px;
+margin: 0 auto;}
 .inner2 {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 }
 
 .content1 {
-	width: 500px;
+	width: 600px;
 	height: 300px;
 	float: left;
 	margin-top: 30px;
-	margin-left: 50px;
 	border-top: 1px solid gray;
 	margin-bottom: 50px;
 }
 
 .content2 {
-	width: 350px;
+	width: 450px;
 	height: 300px;
 	margin-left: 70px;
 	margin-top: 30px;
-	float: left;
+	float:right;
 	border-top: 1px solid gray;
 	margin-bottom: 50px;
 }
@@ -243,32 +251,6 @@ div.b {
 div.c {
 	width: 100%;
 }
-
-div.one {
-	width: 100%;
-	height: 600px;
-	background-color: hotpink;
-}
-
-div.two {
-	width: 100%;
-	height: 600px;
-	background-color: orange;
-}
-
-div.three {
-	width: 100%;
-	height: 600px;
-	background-color: darkmagenta;
-}
-
-div.container {
-	width: 100%;
-	position: absolute;
-	margin: 0;
-	padding: 0;
-}
-
 p {
 	font-size: 40px;
 	color: white;

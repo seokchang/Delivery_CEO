@@ -13,7 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
 .inner2 {
-	width: 80%;
+	width: 1300px;
 	margin: 0 auto;
 }
 a{
@@ -23,7 +23,7 @@ a{
 
 .content1 {
 	width: 550px;
-	height: 300px;
+	height: 300px; 
 	float: left;
 	margin-top: 30px;
 	margin-left: 50px;
@@ -119,7 +119,7 @@ div.three {
 }
 
 div.container {
-	width: 1519px;
+	width: 100%;
 	position: absolute;
 	margin: 0;
 	padding: 0;
@@ -147,25 +147,25 @@ div.headermom:hover {
 </head>
 
 <body>
-	<div class="container" style="margin-top: -10px; width: 1519px;">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 1519px;">
+	<div class="container"  style="max-width:100%;">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="max-width:100%;">
 			<!-- Indicators -->
 
 			<!-- Wrapper for slides -->
-			<div class="carousel-inner" style="width: 1519px;">
+			<div class="carousel-inner" style="max-width:100%;" >
 
-				<div class="item active" style="width: 1519px;">
-					<div class="one" style="width: 1519px;"></div>
+				<div class="item active" style="max-width:100%;">
+					<div class="one" style="max-width:100%;"></div>
 					<div class="carousel-caption"></div>
 				</div>
 
-				<div class="item" style="width: 1519px;">
-					<div class="two" style="width: 1519px;"></div>
+				<div class="item" style="max-width:100%;" >
+					<div class="two" style="max-width:100%;"></div>
 					<div class="carousel-caption"></div>
 				</div>
 
-				<div class="item" style="width: 1519px;">
-					<div class="three" style="width: 1519px;"></div>
+				<div class="item" style="max-width:100%;">
+					<div class="three" style="max-width:100%;"></div>
 					<div class="carousel-caption"></div>
 				</div>
 
