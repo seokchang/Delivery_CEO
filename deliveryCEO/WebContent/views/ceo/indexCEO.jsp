@@ -90,12 +90,15 @@ ArrayList<Notice> list = (ArrayList<Notice>) request.getAttribute("list");
 					</ul>
 				<%}else {%>
 					<h2>[<%=ceo.getCeoId()%>]님 반갑습니다~</h2>
+					<br>
+					<br>
+					 사장님의 가게부터 광고까지,<br>
+							직접 간편하게 관리할 수 있도록 돕습니다.<br>
+						    지금 우리 가게의 매력을 발굴해보세요.
 					<a class="btn btn-primary btn-md" href="/CEO/mypage?ceoId=<%=ceo.getCeoId()%>"
 						style="margin-top: 30px; width: 200px; height: 70px; line-height: 60px; margin-left: 50px;">마이페이지로 이동하기
 						</a> <br> <br> <br>
-					 		 사장님의 가게부터 광고까지,<br>
-							직접 간편하게 관리할 수 있도록 돕습니다.<br>
-						    지금 우리 가게의 매력을 발굴해보세요.
+					 		
 					
 				
 				<%}%>
