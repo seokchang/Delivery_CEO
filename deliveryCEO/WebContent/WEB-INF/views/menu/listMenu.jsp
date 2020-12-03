@@ -44,9 +44,9 @@ String pageNavi = (String) request.getAttribute("pageNavi");
 					%>
 					<tr>
 						<td><%=menu.getRowNum()%></td>
-						<td>
-							<img src="" width="150px;" height="150px;">
-						</td>
+						<td><img style="border: 1px solid black"
+							src="/filepath/01_store/<%=menu.getMenuFilePath()%>"
+							width="150px;" height="150px;"></td>
 						<td>
 							<input type="text" name="menuName" class="form-control" value="<%=menu.getMenuName()%>"
 								readonly="readonly"> <br> <input type="text" name="menuPrice"
