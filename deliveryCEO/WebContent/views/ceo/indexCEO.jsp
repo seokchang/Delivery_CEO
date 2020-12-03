@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="notice.model.vo.Notice"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="ceo.model.vo.Ceo"%>
 <%
 	int length = 5;
 ArrayList<Notice> list = (ArrayList<Notice>) request.getAttribute("list");
 %>
+
 
 <!DOCTYPE html>
 <html>
@@ -75,17 +77,28 @@ ArrayList<Notice> list = (ArrayList<Notice>) request.getAttribute("list");
 					</div>
 				</div>
 				<div class="content2">
+					<%if(ceo ==null) {%>
+					
 					<h2>사장님 로그인해주세요!</h2>
 					<a class="btn btn-primary btn-md" href="/CEO/views/ceo/login.jsp"
 						style="margin-top: 30px; width: 200px; height: 70px; line-height: 60px; margin-left: 50px;">사장님
 						로그인하기</a> <br> <br> <br>
 					<ul>
-
 						<li><a href="/CEO/views/ceo/findId.jsp" style="font-size: 12px; color: gray;">아이디찾기</a> <a
 							href="/CEO/views/ceo/findPw.jsp" style="font-size: 12px; color: gray;">비밀번호 찾기</a></li>
 						<li><a href="/CEO/views/ceo/joinClick.jsp" style="font-size: 12px; color: gray;">회원가입</a></li>
 					</ul>
-
+				<%}else {%>
+					<h2>[<%=ceo.getCeoId()%>]님 반갑습니다~</h2>
+					<a class="btn btn-primary btn-md" href="/CEO/mypage?ceoId=<%=ceo.getCeoId()%>"
+						style="margin-top: 30px; width: 200px; height: 70px; line-height: 60px; margin-left: 50px;">마이페이지로 이동하기
+						</a> <br> <br> <br>
+					 		 사장님의 가게부터 광고까지,<br>
+							직접 간편하게 관리할 수 있도록 돕습니다.<br>
+						    지금 우리 가게의 매력을 발굴해보세요.
+					
+				
+				<%}%>
 				</div>
 				<div class="content1">
 					<h3>배민아카데미</h3>

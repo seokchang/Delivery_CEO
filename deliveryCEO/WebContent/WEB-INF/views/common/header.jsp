@@ -1,5 +1,5 @@
-<%@page import="ceo.model.vo.Ceo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="ceo.model.vo.Ceo"%>
 <%
 	Ceo ceo = (Ceo) session.getAttribute("Ceo");
 %>
