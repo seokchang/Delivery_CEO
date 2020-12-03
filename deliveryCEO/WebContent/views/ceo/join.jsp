@@ -42,7 +42,7 @@
 							<li class="c">만 14세 이상 회원만 가입 가능합니다. <a href="/CEO/views/ceo/joinAgreeMent.jsp">내용보기</a></li>
 						</ul>
 						<!--  <input type="submit" value="회원가입" class="a" style="background-color: #1a7cff;">-->
-						<button class="btn btn-default" type="submit" style="width:300px;height: 40px;" >회원가입</button>
+						<button class="btn btn-default" type="submit" style="width:100%;height: 40px;" >회원가입</button>
 					</form>
 				</div>
 

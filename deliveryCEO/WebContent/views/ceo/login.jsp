@@ -31,7 +31,7 @@
 							<li><a href="/CEO/views/ceo/joinClick.jsp">회원가입</a></li>
 						</ul>
 
-						<button class="btn btn-default" type="submit" style="width: 387px;height: 40px; margin-top:20px;" >로그인</button>
+						<button class="btn btn-default" type="submit" style="width: 100%;height: 40px; margin-top:20px;" >로그인</button>
 					</form>
 				</div>
 			</div>
