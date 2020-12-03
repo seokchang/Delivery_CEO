@@ -78,7 +78,10 @@
 	</form>
 	<div class="blank"></div>
 </body>
+<div class="footerinner">
 <%@ include file="/WEB-INF/views/common/footer.jsp"%>
+</div>
+
 <style>
 table {
 	text-align: center;
@@ -90,6 +93,10 @@ table {
 
 .center {
 	width: 70%:         
+	margin: 0 auto;
+}
+.footerinner{
+	width: 1300px;
 	margin: 0 auto;
 }
 </style>
