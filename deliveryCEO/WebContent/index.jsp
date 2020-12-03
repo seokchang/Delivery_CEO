@@ -100,7 +100,7 @@ int length =5;
 }
 
 .content1 {
-	width: 550px;
+	width: 500px;
 	height: 300px;
 	float: left;
 	margin-top: 30px;
