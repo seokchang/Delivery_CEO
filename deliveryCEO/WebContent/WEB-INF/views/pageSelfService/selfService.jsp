@@ -90,7 +90,7 @@
 						<tr>
 							<th>번호</th>
 							<th>고객 아이디</th>
-							<th>리뷰 내용</th>
+							<th>주문 번호</th>
 							<th>평점</th>
 							<th>등록일</th>
 						</tr>
@@ -104,7 +104,7 @@
 						<tr>
 							<td><%=listReview.get(i).getRowNum()%></td>
 							<td><%=listReview.get(i).getReviewClientId()%></td>
-							<td><%=listReview.get(i).getReviewContent()%></td>
+							<td><%=listReview.get(i).getReviewOrderNo()%></td>
 							<td>
 								<%
 									for (int j = 0; j < listReview.get(i).getReviewScore(); j++) {
@@ -122,7 +122,7 @@
 						<tr>
 							<td><%=review.getRowNum()%></td>
 							<td><%=review.getReviewClientId()%></td>
-							<td><%=review.getReviewContent()%></td>
+							<td><%=review.getReviewOrderNo()%></td>
 							<td>
 								<%
 									for (int j = 0; j < review.getReviewScore(); j++) {
