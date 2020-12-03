@@ -29,9 +29,9 @@
 					<input type="text" name="ceoId" id="id" class="a" placeholder="ID를 입력하세요" required> <input
 						type="number" name="ceoTel" id="phone" class="a" placeholder="휴대폰을 입력하세요" required>
 					<button type="button" id="searchBtn" onclick="searchPw();"
-						style="background-color: #1a7cff; width: 100%; height: 40px; margin-top: 40px;">검색</button>
+						class="btn btn-default" style="width: 100%;height: 40px; margin-top:20px;">검색</button>
 					<button type="button" onclick="location.href='/CEO/views/ceo/login.jsp'"
-						style="background-color: #1a7cff; width: 100%; height: 40px; margin-top: 40px;">로그인하러가기</button>
+						class="btn btn-default" style="width: 100%;height: 40px; margin-top:20px;">로그인하러가기</button>
 				</div>
 			</div>
 		</div>
