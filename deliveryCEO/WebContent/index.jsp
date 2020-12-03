@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="notice.model.vo.Notice"%>
+<%@page import="java.util.ArrayList"%>
 <%
 int length =5;
+ArrayList<Notice> list = (ArrayList<Notice>)request.getAttribute("list");
 %>
 
 <!DOCTYPE html>
@@ -33,22 +36,41 @@ int length =5;
 				<div class="content1">
 					<div class="notice-wrap">
 						<h3>공지사항</h3>
-						<table class="table table-striped">
-							<tbody>
+						
+				<table class="table table-striped">
+					<thead>
+						<tr>
+
+						</tr>
+					</thead>
+					<tbody>
 						<%
-							for (int i = 0; i < length; i++) {
+							if (!list.isEmpty()) {
+							if (list.size() >= length) {
+								for (int i = 0; i < length; i++) {
 						%>
 						<tr>
-							<td style="text-align: left;">[공지사항] 개인정보 방침 일부 변경에 관한 안내</td>
-							<td>2020.11.23</td>
+							<td style="text-align: left;"><%=list.get(i).getNoticeTitle()%></td>
+							<td><%=list.get(i).getNoticeEnroll()%></td>
 						</tr>
 						<%
 							}
+						} else {
+						for (Notice notice : list) {
 						%>
-							</tbody>
-						</table>
-						<div class="btn-wrap">
-							<a class="btn btn-primary btn-md" href="/CEO/noticeList?reqPage=1">공지사항 더보기</a>
+						<tr>
+							<td style="text-align: left;"><%=notice.getNoticeTitle()%></td>
+							<td><%=notice.getNoticeEnroll()%></td>
+						</tr>
+						<%
+							}
+						}
+						}
+						%>
+					</tbody>
+				</table>
+				<div class="btn-wrap">
+					<a class="btn btn-primary btn-md" href="/CEO/noticeList?reqPage=1">공지사항 더보기</a>
 						</div>
 					</div>
 				</div>

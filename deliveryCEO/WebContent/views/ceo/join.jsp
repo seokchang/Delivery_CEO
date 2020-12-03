@@ -15,7 +15,7 @@
 			<div class="logoinner">
 				<div class="logo">
 					<p>
-						<a href="/CEO" style="text-decoration: none;"><img src="/CEO/img/aaa.png" alt="My Image"></a>
+						<a href="/CEO" style="text-decoration: none;"><img src="/CEO/img/logo100.png" alt="My Image"></a>
 					</p>
 				</div>
 
