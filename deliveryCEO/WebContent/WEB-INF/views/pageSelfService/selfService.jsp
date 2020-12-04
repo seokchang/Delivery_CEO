@@ -32,8 +32,8 @@
 			<li><a href="/CEO">HOME</a></li>
 			<li><a
 				href="/CEO/selectAllStoreInfo?ceoId=<%=ceo.getCeoId()%>&reqPage=1">STORE</a></li>
-			<li><a href="javascript:void(0)">ORDER</a>
-				<ul class="subMenu">
+			<li><a href="javascript:void(0)" style="position: relative;">ORDER</a>
+				<ul class="subMenu" style="width:333px; position: absolute;">
 					<li><a
 						href="/CEO/selectAllReview?ceoId=<%=ceo.getCeoId()%>&reqPage=1">리뷰
 							리스트</a></li>
