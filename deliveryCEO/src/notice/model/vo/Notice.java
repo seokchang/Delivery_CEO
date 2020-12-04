@@ -56,6 +56,9 @@ public class Notice {
 	public void setNoticeEnroll(String noticeEnroll) {
 		this.noticeEnroll = noticeEnroll;
 	}
+	public String getNoticeContentBr() {
+		return noticeContent.replaceAll("\r\n","<br>");
+	}
 	public String getNoticeContent() {
 		return noticeContent;
 	}

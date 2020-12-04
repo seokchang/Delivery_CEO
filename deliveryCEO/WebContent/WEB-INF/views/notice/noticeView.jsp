@@ -40,7 +40,7 @@
             </tr>
             <tr>
                <th>내용</th>
-              
+               <td><%=n.getNoticeContentBr() %></td>
             </tr>
             <tr>
                <th colspan="2">
@@ -60,11 +60,6 @@
                      <input type="hidden" name="noticeCommentLevel" value ="1" />
                      <input type="hidden" name="noticeCommentWriter" value ="<%=ceo.getCeoId() %>" />
                      <input type="hidden" name="noticeRef" value ="<%=n.getNoticeNo() %>" />
-                     <input type="hidden" name="noticeCommentRef" value ="0" />
-                     <textarea class="form-control" name="noticeCommentContent"></textarea>
-                  </li>
-                  <li>
-                     <button class="btn btn-secondary btn-lg btn-block">등록</button>
                   </li>
                </ul>
             </form>
