@@ -91,8 +91,8 @@ h5.b {
 		<div class="footer">
 			<div class="footer1">
 				<ul>
-					<li class="headermenu">(주)우아한형제들</li>
-					<li class="headermenu">배달의민족</li>
+					<li class="headermenu">(주)A-Team</li>
+					<li class="headermenu">Delivery-A</li>
 					<li class="headermenu">회사소개</li>
 					<li class="headermenu">이용약관</li>
 					<li class="headermenu">광고서비스운영원칙</li>
