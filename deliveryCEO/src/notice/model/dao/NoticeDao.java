@@ -81,8 +81,8 @@ public class NoticeDao {
 				n.setNoticeAdminId(rset.getString("notice_admin_id"));
 				n.setNoticeContent(rset.getString("notice_content"));
 				n.setNoticeEnroll(rset.getString("notice_enroll_date"));
-				n.setFilename(rset.getString("filename"));
-				n.setFilepath(rset.getString("filepath"));
+				n.setFilename(rset.getString("notice_file_name"));
+				n.setFilepath(rset.getString("notice_file_filepath"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
