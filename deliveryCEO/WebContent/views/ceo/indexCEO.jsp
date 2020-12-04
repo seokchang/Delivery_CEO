@@ -148,10 +148,7 @@ ArrayList<Notice> list = (ArrayList<Notice>) request.getAttribute("list");
 	<br>
 	<br><br>
 	<br>
-	<br><br><br>
-	<br>
-	<br><br>
-	<br>
+
 	<hr>
 	<div class="footerinner">
 <%@ include file="/WEB-INF/views/common/footer.jsp"%>
@@ -161,6 +158,7 @@ ArrayList<Notice> list = (ArrayList<Notice>) request.getAttribute("list");
 <style>
 .content{
 width:1300px;
+height:1300px;
 margin: 0 auto;
 }
 .footerinner{
@@ -175,6 +173,14 @@ margin: 0 auto;}
 	width: 600px;
 	height: 300px;
 	float: left;
+	margin-top: 60px;
+	border-top: 1px solid gray;
+	margin-bottom: 50px;
+}
+.content11 {
+	width: 600px;
+	height: 300px;
+	float: left;
 	margin-top: 30px;
 	border-top: 1px solid gray;
 	margin-bottom: 50px;
@@ -184,7 +190,7 @@ margin: 0 auto;}
 	width: 450px;
 	height: 300px;
 	margin-left: 70px;
-	margin-top: 30px;
+	margin-top: 60px;
 	float:right;
 	border-top: 1px solid gray;
 	margin-bottom: 50px;
