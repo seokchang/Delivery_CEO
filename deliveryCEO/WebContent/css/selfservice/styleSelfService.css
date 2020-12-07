@@ -31,17 +31,17 @@ a {
 	text-align: center;
 	box-sizing: border-box;
 	float: left;
-	background-color: skyblue;
+	background-color: #337ab7;
 }
 
 .navi-bar>li:hover {
-	background-color: blue;
+	background-color: #0076be;
 }
 
 .navi-bar>li>a {
 	font-size: 15px;
 	text-decoration: none;
-	color: white;
+	color: #fff;
 	height: 70px;
 	line-height: 70px;
 }
@@ -56,12 +56,12 @@ a {
 	text-align: center;
 	height: 45px;
 	line-height: 45px;
-	background-color: skyblue;
+	background-color: #337ab7;
 }
 
 .subMenu>li>a {
 	text-decoration: none;
-	color: white;
+	color: #fff;
 }
 
 .content-1 {

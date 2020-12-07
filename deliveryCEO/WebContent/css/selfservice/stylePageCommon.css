@@ -16,8 +16,10 @@ tr {
 }
 
 .table>tbody>tr>th {
+	width: 100px;
 	text-align: center;
 	vertical-align: middle;
+	text-align: center;
 }
 
 .table>tbody>tr>td {
