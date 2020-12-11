@@ -51,7 +51,10 @@ ArrayList<Order> listOrder = (ArrayList<Order>) request.getAttribute("listOrder"
 								for (int i = 0; i < length; i++) {
 						%>
 						<tr>
-							<td style="text-align: left;"><%=listNotice.get(i).getNoticeTitle()%></td>
+							<td style="text-align: left;">
+								<a href="/CEO/noticeList?reqPage=1"
+									style="color: black; font-size: 15px; text-decoration: none;"><%=listNotice.get(i).getNoticeTitle()%></a>
+							</td>
 							<td><%=listNotice.get(i).getNoticeEnroll()%></td>
 						</tr>
 						<%
@@ -150,7 +153,6 @@ ArrayList<Order> listOrder = (ArrayList<Order>) request.getAttribute("listOrder"
 				<thead>
 					<tr>
 						<th>번호</th>
-						<th>아이디</th>
 						<th>상호명</th>
 						<th>위치</th>
 						<th>전화번호</th>
@@ -166,12 +168,15 @@ ArrayList<Order> listOrder = (ArrayList<Order>) request.getAttribute("listOrder"
 					%>
 					<tr>
 						<td><%=listStore.get(i).getRowNum()%></td>
-						<td><%=listStore.get(i).getStoreCEO()%></td>
 						<td><%=listStore.get(i).getStoreName()%></td>
 						<td><%=listStore.get(i).getStoreAddr()%></td>
 						<td><%=listStore.get(i).getStoreTel()%></td>
 						<td><%=listStore.get(i).getStoreNo()%></td>
 						<td><%=listStore.get(i).getStoreDet()%></td>
+						<td>
+							<a class="btn btn-info btn-sm"
+								href="/CEO/selectAllMenu?storeNo=<%=listStore.get(i).getStoreNo()%>&reqPage=1">메뉴관리</a>
+						</td>
 					</tr>
 					<%
 						}
